@@ -47,7 +47,7 @@ CREATE table funcionario(
     data_de_admissao DATE NOT NULL,
     carga_horaria NUMBER,
     complemento VARCHAR2(20),
-    numero NUMBER,
+    numero VARCHAR2(6),
     data_hora_troca NUMBER,
     CONSTRAINT funcionario_pk PRIMARY KEY (cpf_p),
     CONSTRAINT funcionario_fk FOREIGN KEY (cpf_proximo_turno) REFERENCES funcionario (cpf_p),
