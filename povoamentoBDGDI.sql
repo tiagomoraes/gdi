@@ -178,7 +178,19 @@ INSERT INTO balconista (cpf_p, vendas_realizadas)
 --INSERINDO CLIENTE
 
 INSERT INTO cliente (cpf_cli) 
-            VALUES (010);
+            VALUES ('42937926193');
+
+INSERT INTO cliente (cpf_cli) 
+            VALUES ('06018888980');
+
+INSERT INTO cliente (cpf_cli) 
+            VALUES ('34938034867');
+
+INSERT INTO cliente (cpf_cli) 
+            VALUES ('63469369054');
+
+INSERT INTO cliente (cpf_cli) 
+            VALUES ('15051468446');
 
 --INSERINDO COMPOSTO
 
