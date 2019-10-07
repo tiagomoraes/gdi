@@ -142,10 +142,38 @@ INSERT INTO endereco_funcionario (cep, cidade, bairro, cpf_p)
 INSERT INTO endereco_funcionario (cep, cidade, bairro, cpf_p) 
             VALUES ('50670350', 'Recife', 'Iputinga', '15051468446');
 
---INSERINDO BALCONISTA
+--INSERINDO FARMACEUTICO
 
-INSERT INTO balconista (cpf_balc, vendas_realizadas) 
-            VALUES (001, 30);
+INSERT INTO farmaceutico (cpf_p, formacao_academica)
+            VALUES ('04304130170', 'Doutor');
+
+INSERT INTO farmaceutico (cpf_p, formacao_academica)
+            VALUES ('94512104909', 'Doutorando');
+
+INSERT INTO farmaceutico (cpf_p, formacao_academica)
+            VALUES ('19876905910', 'Mestre');
+
+INSERT INTO farmaceutico (cpf_p, formacao_academica)
+            VALUES ('26467070615', 'Mestranda');
+
+INSERT INTO farmaceutico (cpf_p, formacao_academica)
+            VALUES ('58142191571', 'Pos-graduado');
+
+-- INSERINDO BALCONISTA
+INSERT INTO balconista (cpf_p, vendas_realizadas) 
+            VALUES ('40080313752', 79);
+
+INSERT INTO balconista (cpf_p, vendas_realizadas) 
+            VALUES ('22827250349', 23);
+
+INSERT INTO balconista (cpf_p, vendas_realizadas) 
+            VALUES ('22343283060', 26);
+
+INSERT INTO balconista (cpf_p, vendas_realizadas) 
+            VALUES ('21779708149', 45);
+
+INSERT INTO balconista (cpf_p, vendas_realizadas) 
+            VALUES ('89249155255', 12);
 
 --INSERINDO CLIENTE
 
