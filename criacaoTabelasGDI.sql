@@ -88,7 +88,7 @@ CREATE table composto(
     id VARCHAR2(5),
     custo NUMBER,
     peso NUMBER,
-    nome VARCHAR2(20),
+    nome VARCHAR2(40),
     CONSTRAINT composto_pk PRIMARY KEY (id)
 );
 

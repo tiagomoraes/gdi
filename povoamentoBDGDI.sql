@@ -195,7 +195,47 @@ INSERT INTO cliente (cpf_cli)
 --INSERINDO COMPOSTO
 
 INSERT INTO composto (id_comp, custo, peso, nome) 
-            VALUES ('000', 10, 408, 'Multigripe');
+            VALUES ('00001', 90, 400, 'Paracetamol');
+
+INSERT INTO composto (id_comp, custo, peso, nome) 
+            VALUES ('00010', 30, 4, 'Maleato de Clorfeniramina');
+
+INSERT INTO composto (id_comp, custo, peso, nome) 
+            VALUES ('00011', 20, 4, 'Cloridato de Fenilefrina'); -- Multigrip, Benegrip
+
+INSERT INTO composto (id_comp, custo, peso, nome) 
+            VALUES ('00100', 120, 500, 'Paracetamol');
+
+INSERT INTO composto (id_comp, custo, peso, nome) 
+            VALUES ('00101', 200, 65, 'Cafeina');  -- Tylenol
+
+INSERT INTO composto (id_comp, custo, peso, nome) 
+            VALUES ('00110', 60, 300, 'Dipirona');
+
+INSERT INTO composto (id_comp, custo, peso, nome) 
+            VALUES ('00111', 100, 30, 'Cafeina');
+
+INSERT INTO composto (id_comp, custo, peso, nome) 
+            VALUES ('01000', 76, 30, 'Mucato de Isometepteno'); -- Doralgina
+
+--INSERINDO CRIOU_COMPONENTE
+
+INSERT INTO criou_componente (cpf_p, data_e_hora)
+            VALUES ('04304130170', '06/10/19 14:58');
+
+INSERT INTO criou_componente (cpf_p, data_e_hora)
+            VALUES ('04304130170', '04/10/19 11:37');
+
+INSERT INTO criou_componente (cpf_p, data_e_hora)
+            VALUES ('94512104909', '04/10/19 16:19');
+
+INSERT INTO criou_componente (cpf_p, data_e_hora)
+            VALUES ('26467070615', '06/10/19 15:38');
+
+INSERT INTO criou_componente (cpf_p, data_e_hora)
+            VALUES ('58142191571', '06/10/19 08:25');
+
+
 
 --INSERINDO PROMOCAO
 
