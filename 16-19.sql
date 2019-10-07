@@ -9,10 +9,10 @@ SELECT COUNT(*)
 FROM funcionario f
 WHERE f.salario < (SELECT AVG (salario) FROM funcionario)
 
---Compostos cujo o peso é maior 
-SELECT c.nome
+--Compostos cujo o custo é maior que o todos os preços dos produtos
+SELECT c.nome, c.custo
 FROM composto c
-WHERE c.peso > ALL (SELECT peso FROM produto)
+WHERE c.custo > ALL (SELECT peso FROM produto)
 
 --peso e o nome do remedio com menor peso
 SELECT p.peso, p.nome

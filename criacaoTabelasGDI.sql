@@ -6,17 +6,10 @@ DROP table farmaceutico;
 DROP table balconista;
 DROP table cliente;
 DROP table composto;
-DROP table criou_componente;
-DROP table componente;
-DROP table dados_componente;
-DROP table composto_componente;
-DROP table componente_formula;
-DROP table formula;
+DROP table receita_medica;
 DROP table manipulou_medicamento;
 DROP table medicamento_manipulado;
 DROP table dados_medicamento;
-DROP table componente_medicamento;
-DROP table produto;
 DROP table emissao_compra;
 DROP table promocao;
 DROP table cliente_balconista_medicamento;
@@ -88,81 +81,37 @@ CREATE table composto(
     id VARCHAR2(5),
     custo NUMBER,
     peso NUMBER,
-    nome VARCHAR2(20),
+    nome VARCHAR2(4DAD0),
     CONSTRAINT composto_pk PRIMARY KEY (id)
 );
 
-CREATE table criou_componente(
-    cpf_p VARCHAR2(11),
-    data_e_hora VARCHAR2(20),
-    CONSTRAINT criou_componente_fk FOREIGN KEY (cpf_p) references farmaceutico (cpf_p)
-);
+CREATE sequence seq START WITH 1 INCREMENT BY 1;
 
-CREATE table componente(
-    id VARCHAR2(5),
-    cpf_p VARCHAR2(11),
-    id_composto VARCHAR2(5),
-    CONSTRAINT componente_pk PRIMARY KEY (id, cpf_p, id_composto),
-    CONSTRAINT componente_cpf_fk FOREIGN KEY (cpf_p) references farmaceutico (cpf_p),
-    CONSTRAINT componente_id_composto_fk FOREIGN KEY (id_composto) references composto (id)
-);
-
-CREATE table dados_componente(
-    id VARCHAR2(5),
-    nome VARCHAR2(20),
-    peso NUMBER,
-    CONSTRAINT dados_componente_pk PRIMARY KEY (id)
-);
-
-CREATE table composto_componente(
-    id_componente VARCHAR2(5),
-    cpf_p_componente VARCHAR2(11),
-    id_composto_componente VARCHAR2(5),
-    id VARCHAR2(5),
-    peso NUMBER,
-    CONSTRAINT composto_componente_pk PRIMARY KEY (id_componente, cpf_p_componente, id_composto_componente, id),
-    CONSTRAINT composto_componente_id_componente_fk FOREIGN KEY (id_componente) references componente (id),
-    CONSTRAINT composto_componente_cpf_p_fk FOREIGN KEY (cpf_p_componente) references componente (cpf_p),
-    CONSTRAINT composto_componente_id_composto_componente_fk FOREIGN KEY (id_composto_componente) references componente (id_composto)
-);
-
-CREATE table formula(
+CREATE table receita_medica(
     cpf_cliente VARCHAR2(11),
-    id VARCHAR2(5),
+    qtd NUMBER DEFAULT seq.NEXTVAL,
     medico VARCHAR2(20),
-    CONSTRAINT formula_pk PRIMARY KEY (cpf_cliente, id),
-    CONSTRAINT formula_fk FOREIGN KEY (cpf_cliente) REFERENCES cliente (cpf_p)
-);
-
-CREATE table componente_formula(
-    id_formula VARCHAR2(5),
-    id VARCHAR2(5),
-    cpf_p VARCHAR2(11),
-    peso NUMBER,
-    CONSTRAINT componente_formula_pk PRIMARY KEY (id_formula, id, cpf_p),
-    CONSTRAINT componente_formula_cpf_p_fk FOREIGN KEY (cpf_p) references formula (cpf_cliente),
-    CONSTRAINT componente_formula_id_formula_fk FOREIGN KEY (id_formula) references formula (id)
+    CONSTRAINT receita_medica_pk PRIMARY KEY (cpf_cliente, qtd),
+    CONSTRAINT receita_medica_fk FOREIGN KEY (cpf_cliente) REFERENCES cliente (cpf_p)
 );
 
 CREATE table manipulou_medicamento(
     cpf_p VARCHAR2(11),
     data_hora VARCHAR2(20),
+    CONSTRAINT manipulou_medicamento_pk PRIMARY KEY (cfp_p),
     CONSTRAINT manipulou_medicamento_fk FOREIGN KEY (cpf_p) references farmaceutico (cpf_p)
 );
 
 CREATE table medicamento_manipulado(
     id VARCHAR2(5),
     cpf_p VARCHAR2(11),
-    id_componente VARCHAR2(5),
-    cpf_p_componente VARCHAR2(11),
-    id_composto_componente VARCHAR2(5),
-    CONSTRAINT medicamento_manipulado_pk PRIMARY KEY (id, cpf_p, id_componente, cpf_p_componente, id_composto_componente),
-    CONSTRAINT medicamento_manipulado_id_componente_fk FOREIGN KEY (id_componente) references componente(id),
-    CONSTRAINT medicamento_manipulado_cpf_p_componente_fk FOREIGN KEY (cpf_p_componente) references componente(cpf_p),
-    CONSTRAINT medicamento_manipulado_id_composto_componente_fk FOREIGN KEY (id_composto_componente) references componente(id_composto)
+    id_composto VARCHAR2(5),
+    CONSTRAINT medicamento_manipulado_pk PRIMARY KEY (id, cpf_p, id_composto),
+    CONSTRAINT medicamento_manipulado_cpf_p_fk FOREIGN KEY (cpf_p) references farmaceutico(cpf_p)
+    CONSTRAINT medicamento_manipulado_id_composto_fk FOREIGN KEY (id_composto) references composto(id),
 );
 
-CREATE table dados_medicamento(
+CREATE table produto(
     id VARCHAR2(5),
     validade DATE NOT NULL,
     peso NUMBER,
@@ -171,37 +120,6 @@ CREATE table dados_medicamento(
     usuario VARCHAR2(20),
     medico VARCHAR2(20),
     CONSTRAINT dados_medicamento_pk PRIMARY KEY (id)
-);
-
-CREATE table componente_medicamento(
-    id VARCHAR2(5),
-    peso NUMBER,
-    id_medicamento VARCHAR2(5),
-    cpf_p_medicamento VARCHAR2(11),
-    id_componente_medicamento VARCHAR2(5),
-    cpf_p_componente_medicamento VARCHAR2(5),
-    id_composto_componente_medicamento VARCHAR2(5),
-    CONSTRAINT componente_medicamento_pk PRIMARY KEY (id, id_medicamento, cpf_p_medicamento, id_componente_medicamento, cpf_p_componente_medicamento, id_composto_componente_medicamento),
-    CONSTRAINT componente_medicamento_id_medicamento_fk FOREIGN KEY (id_medicamento) REFERENCES medicamento_manipulado(id),
-    CONSTRAINT componente_medicamento_cpf_p_medicamento_fk FOREIGN KEY (cpf_p_medicamento) REFERENCES medicamento_manipulado(cpf_p),
-    CONSTRAINT componente_medicamento_id_componente_medicamento_fk FOREIGN KEY (id_componente_medicamento) REFERENCES medicamento_manipulado(id_componente),
-    CONSTRAINT componente_medicamento_cpf_p_componente_medicamento_fk FOREIGN KEY (cpf_p_componente_medicamento) REFERENCES medicamento_manipulado(cpf_p_componente),
-    CONSTRAINT componente_medicamento_id_composto_componente_medicamento_fk FOREIGN KEY (id_composto_componente_medicamento) REFERENCES medicamento_manipulado(id_composto_componente)
-);
-
-CREATE table produto(
-    id_medicamento VARCHAR2(5),
-    cpf_p_medicamento VARCHAR2(11),
-    id_componente_medicamento VARCHAR2(5),
-    cpf_p_componente_medicamento VARCHAR2(5),
-    id_composto_componente_medicamento VARCHAR2(5),
-    preco NUMBER,
-    CONSTRAINT produto_pk PRIMARY KEY (id_medicamento, cpf_p_medicamento, id_componente_medicamento, cpf_p_componente_medicamento, id_composto_componente_medicamento),
-    CONSTRAINT produto_id_medicamento_fk FOREIGN KEY (id_medicamento) REFERENCES medicamento_manipulado(id),
-    CONSTRAINT produto_cpf_p_medicamento_fk FOREIGN KEY (cpf_p_medicamento) REFERENCES medicamento_manipulado(cpf_p),
-    CONSTRAINT produto_id_componente_medicamento_fk FOREIGN KEY (id_componente_medicamento) REFERENCES medicamento_manipulado(id_componente),
-    CONSTRAINT produto_cpf_p_componente_medicamento_fk FOREIGN KEY (cpf_p_componente_medicamento) REFERENCES medicamento_manipulado(cpf_p_componente),
-    CONSTRAINT produto_id_composto_componente_medicamento_fk FOREIGN KEY (id_composto_componente_medicamento) REFERENCES medicamento_manipulado(id_composto_componente)
 );
 
 CREATE table emissao_compra(
@@ -225,42 +143,34 @@ CREATE table cliente_balconista_medicamento(
     cpf_b VARCHAR2(11),
     id_medicamento VARCHAR2(5),
     cpf_p_medicamento VARCHAR2(11),
-    id_componente_medicamento VARCHAR2(5),
-    cpf_p_componente_medicamento VARCHAR2(5),
-    id_composto_componente_medicamento VARCHAR2(5),
-    CONSTRAINT cbm_pk PRIMARY KEY (cpf_c, cpf_b, id_medicamento, cpf_p_medicamento, id_componente_medicamento, cpf_p_componente_medicamento, id_composto_componente_medicamento),
+    id_composto_medicamento VARCHAR2(5),
+    CONSTRAINT cbm_pk PRIMARY KEY (cpf_c, cpf_b, id_medicamento, cpf_p_medicamento, id_composto_medicamento),
     CONSTRAINT cbm_id_medicamento_fk FOREIGN KEY (id_medicamento) REFERENCES medicamento_manipulado(id),
     CONSTRAINT cbm_cpf_p_medicamento_fk FOREIGN KEY (cpf_p_medicamento) REFERENCES medicamento_manipulado(cpf_p),
-    CONSTRAINT cbm_id_componente_medicamento_fk FOREIGN KEY (id_componente_medicamento) REFERENCES medicamento_manipulado(id_componente),
-    CONSTRAINT cbm_cpf_p_componente_medicamento_fk FOREIGN KEY (cpf_p_componente_medicamento) REFERENCES medicamento_manipulado(cpf_p_componente),
-    CONSTRAINT cbm_id_composto_componente_medicamento_fk FOREIGN KEY (id_composto_componente_medicamento) REFERENCES medicamento_manipulado(id_composto_componente)
+    CONSTRAINT cbm_id_componente_medicamento_fk FOREIGN KEY (id_composto_medicamento) REFERENCES medicamento_manipulado(id_composto)
 );
 
 CREATE table desconto(
     cpf_c VARCHAR2(11),
     cpf_b VARCHAR2(11),
-    id_medicamento VARCHAR2(5),
-    cpf_p_medicamento VARCHAR2(11),
-    id_componente_medicamento VARCHAR2(5),
-    cpf_p_componente_medicamento VARCHAR2(5),
-    id_composto_componente_medicamento VARCHAR2(5),
+    id_medicamento_cbm VARCHAR2(5),
+    cpf_p_medicamento_cbm VARCHAR2(11),
+    id_composto_medicamento_cbm VARCHAR2(5),
     promocao VARCHAR2(5),
     valor NUMBER,
-    CONSTRAINT desconto_pk PRIMARY KEY (cpf_c, cpf_b, id_medicamento, cpf_p_medicamento, id_componente_medicamento, cpf_p_componente_medicamento, id_composto_componente_medicamento, promocao),
+    CONSTRAINT desconto_pk PRIMARY KEY (cpf_c, cpf_b, id_medicamento_cbm, cpf_p_cbm, id_composto_cbm, promocao),
     CONSTRAINT desconto_cpf_c_cbm_fk FOREIGN KEY (cpf_c) REFERENCES cliente_balconista_medicamento(cpf_c),
     CONSTRAINT desconto_cpf_b_cbm_fk FOREIGN KEY (cpf_b) REFERENCES cliente_balconista_medicamento(cpf_b),
-    CONSTRAINT desconto_id_medicamento_cbm_fk FOREIGN KEY (id_medicamento) REFERENCES cliente_balconista_medicamento(id_medicamento),
-    CONSTRAINT desconto_cpf_p_medicamento_cbm_fk FOREIGN KEY (cpf_p_medicamento) REFERENCES cliente_balconista_medicamento(cpf_p_medicamento),
-    CONSTRAINT desconto_id_componente_medicamento_cbm_fk FOREIGN KEY (id_componente_medicamento) REFERENCES cliente_balconista_medicamento(id_componente_medicamento),
-    CONSTRAINT desconto_cpf_p_componente_medicamento_cbm_fk FOREIGN KEY (cpf_p_componente_medicamento) REFERENCES cliente_balconista_medicamento(cpf_p_componente_medicamento),
-    CONSTRAINT desconto_id_composto_componente_cbm_fk FOREIGN KEY (id_composto_componente_medicamento) REFERENCES cliente_balconista_medicamento(id_composto_componente_medicamento),
+    CONSTRAINT desconto_id_medicamento_cbm_fk FOREIGN KEY (id_medicamento_cbm) REFERENCES cliente_balconista_medicamento(id_medicamento),
+    CONSTRAINT desconto_cpf_p_medicamento_cbm_fk FOREIGN KEY (cpf_p_medicamento_cbm) REFERENCES cliente_balconista_medicamento(cpf_p_medicamento),
+    CONSTRAINT desconto_id_composto_medicamento_cbm_fk FOREIGN KEY (id_composto_medicamento_cbm) REFERENCES cliente_balconista_medicamento(id_composto_medicamento),
     CONSTRAINT desconto_promocao_fk FOREIGN KEY (promocao) REFERENCES promocao(id)
 );
 
 CREATE table fornecedor(
     cnpj VARCHAR2(14),
     complemento VARCHAR2(20),
-    numero NUMBER,
+    numero VARCHAR2(5),
     CONSTRAINT fornecedor_pk PRIMARY KEY (cnpj)
 );
 

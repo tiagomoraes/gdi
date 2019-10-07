@@ -81,138 +81,204 @@ INSERT INTO telefone_pessoa (cpf_p, num)
 -- INSERINDO FUNCIONARIO
 
 INSERT INTO funcionario (cpf-p, cpf_proximo_turno, salario, data_de_admissao, carga_horaria, complemento, numero, data_hora_troca)
-            VALUES ('04304130170', '94512104909', 9664, to_date('03/08/02', 'dd/mm/yy'), 'Apt 101', '78', 14)
+            VALUES ('04304130170', '94512104909', 9664, to_date('03/08/02', 'dd/mm/yy'), 'Apt 101', '78', 14);
 
 INSERT INTO funcionario (cpf-p, cpf_proximo_turno, salario, data_de_admissao, carga_horaria, complemento, numero, data_hora_troca)
-            VALUES ('42937926193', '06018888980', 8543, to_date('10/08/02', 'dd/mm/yy'), 'Apt 201', '29', 12)
+            VALUES ('42937926193', '06018888980', 8543, to_date('10/08/02', 'dd/mm/yy'), 'Apt 201', '29', 12);
 
 INSERT INTO funcionario (cpf-p, cpf_proximo_turno, salario, data_de_admissao, carga_horaria, complemento, numero, data_hora_troca)
-            VALUES ('94512104909', '19876905910', 5342, to_date('15/08/02', 'dd/mm/yy'), 'Apt 402', '38', 16)
+            VALUES ('94512104909', '19876905910', 5342, to_date('15/08/02', 'dd/mm/yy'), 'Apt 402', '38', 16);
 
 INSERT INTO funcionario (cpf-p, cpf_proximo_turno, salario, data_de_admissao, carga_horaria, complemento, numero, data_hora_troca)
-            VALUES ('06018888980', '22343283060', 4567, to_date('15/08/02', 'dd/mm/yy'), 'Apt 705', '79', 11)
+            VALUES ('06018888980', '22343283060', 4567, to_date('15/08/02', 'dd/mm/yy'), 'Apt 705', '79', 11);
 
 INSERT INTO funcionario (cpf-p, cpf_proximo_turno, salario, data_de_admissao, carga_horaria, complemento, numero, data_hora_troca)
-            VALUES ('19876905910', '26467070615', 7456, to_date('19/08/02', 'dd/mm/yy'), 'Apt 209', '80', 17)
+            VALUES ('19876905910', '26467070615', 7456, to_date('19/08/02', 'dd/mm/yy'), 'Apt 209', '80', 17);
 
 INSERT INTO funcionario (cpf-p, cpf_proximo_turno, salario, data_de_admissao, carga_horaria, complemento, numero, data_hora_troca)
-            VALUES ('22343283060', '21779708149', 3567, to_date('26/08/02', 'dd/mm/yy'), 'Apt 809', '33', 10)
+            VALUES ('22343283060', '21779708149', 3567, to_date('26/08/02', 'dd/mm/yy'), 'Apt 809', '33', 10);
 
 INSERT INTO funcionario (cpf-p, cpf_proximo_turno, salario, data_de_admissao, carga_horaria, complemento, numero, data_hora_troca)
-            VALUES ('26467070615', '58142191571', 4578, to_date('20/08/02', 'dd/mm/yy'), 'Apt 102', '23', 18)
+            VALUES ('26467070615', '58142191571', 4578, to_date('20/08/02', 'dd/mm/yy'), 'Apt 102', '23', 18);
 
 INSERT INTO funcionario (cpf-p, cpf_proximo_turno, salario, data_de_admissao, carga_horaria, complemento, numero, data_hora_troca)
-            VALUES ('21779708149', '15051468446', 1356, to_date('30/08/02', 'dd/mm/yy'), 'Apt 508', '81', 15)
+            VALUES ('21779708149', '15051468446', 1356, to_date('30/08/02', 'dd/mm/yy'), 'Apt 508', '81', 15);
 
 INSERT INTO funcionario (cpf-p, cpf_proximo_turno, salario, data_de_admissao, carga_horaria, complemento, numero, data_hora_troca)
-            VALUES ('58142191571', '04304130170', 999, to_date('26/08/02', 'dd/mm/yy'), 'Apt 502', '73', 11)
+            VALUES ('58142191571', '04304130170', 999, to_date('26/08/02', 'dd/mm/yy'), 'Apt 502', '73', 11);
 
 INSERT INTO funcionario (cpf-p, cpf_proximo_turno, salario, data_de_admissao, carga_horaria, complemento, numero, data_hora_troca)
-            VALUES ('15051468446', '42937926193', 8001, to_date('29/08/02', 'dd/mm/yy'), 'Apt 902', '71', 12)
+            VALUES ('15051468446', '42937926193', 8001, to_date('29/08/02', 'dd/mm/yy'), 'Apt 902', '71', 12);
 
+--INSERINDO ENDERECO_FUNCIONARIO
 
+INSERT INTO endereco_funcionario (cep, cidade, bairro, cpf_p) 
+            VALUES ('56512360', 'Arcoverde', 'Sao Cristovao', '04304130170');
+
+INSERT INTO endereco_funcionario (cep, cidade, bairro, cpf_p) 
+            VALUES ('55200000', 'Pesqueira', 'Pedra Redonda', '42937926193');
+
+INSERT INTO endereco_funcionario (cep, cidade, bairro, cpf_p) 
+            VALUES ('55153065', 'Belo Jardim', 'Bom Conselho', '94512104909');
+
+INSERT INTO endereco_funcionario (cep, cidade, bairro, cpf_p) 
+            VALUES ('55130000', 'São Caetano', 'Sem bairro', '06018888980');
+
+INSERT INTO endereco_funcionario (cep, cidade, bairro, cpf_p) 
+            VALUES ('55010280', 'Caruaru', 'Divinopolis', '19876905910');
+
+INSERT INTO endereco_funcionario (cep, cidade, bairro, cpf_p) 
+            VALUES ('55660000', 'Bezerros', 'Gameleira', '22343283060');
+
+INSERT INTO endereco_funcionario (cep, cidade, bairro, cpf_p) 
+            VALUES ('55644510', 'Gravatá', 'Cruzeiro', '26467070615');
+
+INSERT INTO endereco_funcionario (cep, cidade, bairro, cpf_p) 
+            VALUES ('55602520', 'Vitória', 'Mangueira', '21779708149');
+
+INSERT INTO endereco_funcionario (cep, cidade, bairro, cpf_p) 
+            VALUES ('53690000', 'Moreno', 'Joao Paulo II', '58142191571');
+
+INSERT INTO endereco_funcionario (cep, cidade, bairro, cpf_p) 
+            VALUES ('50670350', 'Recife', 'Iputinga', '15051468446');
 
 --INSERINDO FARMACEUTICO
 
-INSERT INTO farmaceutico (cpf_farm, formacao_academica) 
-            VALUES (000, 'Graduacao');
+INSERT INTO farmaceutico (cpf_p, formacao_academica)
+            VALUES ('04304130170', 'Doutor');
 
---INSERINDO BALCONISTA
+INSERT INTO farmaceutico (cpf_p, formacao_academica)
+            VALUES ('94512104909', 'Doutorando');
 
-INSERT INTO balconista (cpf_balc, vendas_realizadas) 
-            VALUES (001, 30);
+INSERT INTO farmaceutico (cpf_p, formacao_academica)
+            VALUES ('19876905910', 'Mestre');
+
+INSERT INTO farmaceutico (cpf_p, formacao_academica)
+            VALUES ('26467070615', 'Mestranda');
+
+INSERT INTO farmaceutico (cpf_p, formacao_academica)
+            VALUES ('58142191571', 'Pos-graduado');
+
+-- INSERINDO BALCONISTA
+INSERT INTO balconista (cpf_p, vendas_realizadas) 
+            VALUES ('40080313752', 79);
+
+INSERT INTO balconista (cpf_p, vendas_realizadas) 
+            VALUES ('22827250349', 23);
+
+INSERT INTO balconista (cpf_p, vendas_realizadas) 
+            VALUES ('22343283060', 26);
+
+INSERT INTO balconista (cpf_p, vendas_realizadas) 
+            VALUES ('21779708149', 45);
+
+INSERT INTO balconista (cpf_p, vendas_realizadas) 
+            VALUES ('89249155255', 12);
 
 --INSERINDO CLIENTE
 
 INSERT INTO cliente (cpf_cli) 
-            VALUES (010);
+            VALUES ('42937926193');
+
+INSERT INTO cliente (cpf_cli) 
+            VALUES ('06018888980');
+
+INSERT INTO cliente (cpf_cli) 
+            VALUES ('34938034867');
+
+INSERT INTO cliente (cpf_cli) 
+            VALUES ('63469369054');
+
+INSERT INTO cliente (cpf_cli) 
+            VALUES ('15051468446');
 
 --INSERINDO COMPOSTO
 
 INSERT INTO composto (id_comp, custo, peso, nome) 
-            VALUES ('000', 10, 408, 'Multigripe');
+            VALUES ('00001', 90, 400, 'Paracetamol');
 
---INSERINDO PROMOCAO
+INSERT INTO composto (id_comp, custo, peso, nome) 
+            VALUES ('00010', 30, 4, 'Maleato de Clorfeniramina');
 
-INSERT INTO promocao (id_prom, percentual, intervalo_de_duracao) 
-            VALUES (000, 20, 6);
+INSERT INTO composto (id_comp, custo, peso, nome) 
+            VALUES ('00011', 20, 4, 'Cloridato de Fenilefrina'); -- Multigrip, Benegrip
 
---INSERINDO FORMULA
+INSERT INTO composto (id_comp, custo, peso, nome) 
+            VALUES ('00101', 200, 65, 'Cafeina');  -- Tylenol
 
-INSERT INTO formula (cpf_cli, id_form, medico) 
-            VALUES (010, 000, 'Kakashi');
+INSERT INTO composto (id_comp, custo, peso, nome) 
+            VALUES ('00110', 60, 300, 'Dipirona');
 
---INSERINDO DESCONTO
+INSERT INTO composto (id_comp, custo, peso, nome) 
+            VALUES ('01000', 76, 30, 'Mucato de Isometepteno'); -- Doralgina
 
-
---INSERINDO COMPOSTO_FORNECEDOR
-
-INSERT INTO composto_fornecedor (fornecedor, nome_composto) 
-            VALUES (000, 'Cloridato de Fenilefrina');
-INSERT INTO composto_fornecedor (fornecedor, nome_composto) 
-            VALUES (000, 'Paracetamol');
-INSERT INTO composto_fornecedor (fornecedor, nome_composto) 
-            VALUES (000, 'Maleato de Clorfeniramina');
-
---INSERINDO TELEFONE_FORNECEDOR
-
-INSERT INTO telefone_fornecedor (fornecedor, num) 
-            VALUES (000, 01234567);
-
---INSERINDO COMPOSTO_COMPONENTE
-
-
-
---INSERINDO TELEFONE_PESSOA
-
-INSERT INTO telefone_pessoa (pessoa, num) 
-            VALUES (000, 12345678);
-
---INSERINDO COMPONENTE_MEDICAMENTO
-
---INSERINDO COMPONENTE_FORMULA
-
-INSERT INTO componente_formula (formula, id, peso) 
-            VALUES (010, 000, 816);
-
---INSERINDO DADOS_COMPONENTE
-
-INSERT INTO dados_componente (id, nome, pessoa) 
-            VALUES ()
-
---INSERINDO CRIOU_COMPONENTE
-
---INSERINDO COMPONENTE
-
---INSERINDO DADOS_MEDICAMENTO
+--INSERINDO RECEITA MEDICA
 
 --INSERINDO MANIPULOU_MEDICAMENTO
 
 --INSERINDO MEDICAMENTO_MANIPULADO
 
+--INSERINDO DADOS_MEDICAMENTO
+
 --INSERINDO PRODUTO
 
 --INSERINDO EMISSAO_COMPRA
 
+--INSERINDO PROMOCAO
+
 --INSERINDO CLIENTE_BALCONISTA_MEDICAMENTO
 
---INSERINDO FUNCIONARIO
-
-INSERT INTO funcionario (cpf_p, cpf_proximo_turno, salario, data_de_admissao, carga_horario
-                        complemento, numero_func, data_hora_troca)
-            VALUES (000, 0001, 2000, to_date('23/07/19', 'dd/mm/yy'), 6, 'A01', '16h');
-
---INSERINDO ENDERECO_FUNCIONARIO
-
-INSERT INTO endereco_funcionario (cep_func, cidade, bairro, cpf_p);
-            VALUES (10000, 'Recife', 'Iputinga', 000)
+--INSERINDO DESCONTO
 
 --INSERINDO FORNECEDOR
 
-INSERT INTO fornecedor (cnpj, complemento, numero_forn)
-            VALUES (123456, 'B202', 76543210)
+INSERT INTO fornecedor (cnpj, complemento, numero)
+            VALUES ('71527969000163', 'Bloco 2', '450');
+
+INSERT INTO fornecedor (cnpj, complemento, numero)
+            VALUES ('09477207000126', 'Bloco 1', '346');
+
+INSERT INTO fornecedor (cnpj, complemento, numero)
+            VALUES ('20270630000193', 'Bloco 2', '28');
+
+INSERT INTO fornecedor (cnpj, complemento, numero)
+            VALUES ('59500684000133', 'Bloco 3', '789');
+
+INSERT INTO fornecedor (cnpj, complemento, numero)
+            VALUES ('86493632000150', 'Bloco 1', '456');
 
 --INSERINDO ENDERECO_FORNECEDOR
 
-INSERT INTO endereco_fornecedor (cep_forn, cidade, bairro, cnpj_f)
-            VALUES (10001, 'Recife', 'Boa Viagem', 123456)
+INSERT INTO endereco_fornecedor (cep, cidade, bairro, cnpj_f)
+            VALUES ('56310380', 'Petrolina', 'Cohab', '71527969000163');
+
+INSERT INTO endereco_fornecedor (cep, cidade, bairro, cnpj_f)
+            VALUES ('55296160', 'Garanhuns', 'Heliopolis', '09477207000126');
+
+INSERT INTO endereco_fornecedor (cep, cidade, bairro, cnpj_f)
+            VALUES ('53402680', 'Paulista', 'Fragoso', '20270630000193');
+
+INSERT INTO endereco_fornecedor (cep, cidade, bairro, cnpj_f)
+            VALUES ('54410250', 'Jaboatao', 'Piedade', '59500684000133');
+
+INSERT INTO endereco_fornecedor (cep, cidade, bairro, cnpj_f)
+            VALUES ('55192285', 'Santa Cruz', 'Centro', '86493632000150');
+
+--INSERINDO COMPOSTO_FORNECEDOR
+
+--INSERINDO TELEFONE_FORNECEDOR
+
+INSERT INTO telefone_fornecedor (fornecedor, num)
+            VALUES ('71527969000163', '87361050482');
+
+INSERT INTO telefone_fornecedor (fornecedor, num)
+            VALUES ('09477207000126', '81368608189');
+
+INSERT INTO telefone_fornecedor (fornecedor, num)
+            VALUES ('20270630000193', '81041390277');
+
+INSERT INTO telefone_fornecedor (fornecedor, num)
+            VALUES ('59500684000133', '81401607655');
+
+INSERT INTO telefone_fornecedor (fornecedor, num)
+            VALUES ('86493632000150', '87385156975');

@@ -9,3 +9,6 @@ Repositório para o desenvolvimento do projeto do **Grupo 6** da disciplina de _
 + Gabriel Cavalcanti _(gbc7)_
 + Kevin Melo _(kbm)_
 + Douglas Cavalcante _(dmc5)_
+
+## Links Úteis:
++ [Checklist](https://drive.google.com/file/d/1IsPBtKykj1y5oqJak7GLKzCvFv1fGGQ2/view)
