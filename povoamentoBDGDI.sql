@@ -235,7 +235,68 @@ INSERT INTO criou_componente (cpf_p, data_e_hora)
 INSERT INTO criou_componente (cpf_p, data_e_hora)
             VALUES ('58142191571', '06/10/19 08:25');
 
+--INSERINDO COMPONENTE
 
+INSERT INTO componente (id, cpf_p, id_composto)
+            VALUES ('00001', '04304130170', '00001');
+
+INSERT INTO componente (id, cpf_p, id_composto)
+            VALUES ('00001', '04304130170', '00010');
+
+INSERT INTO componente (id, cpf_p, id_composto)
+            VALUES ('00001', '04304130170', '00011');
+
+INSERT INTO componente (id, cpf_p, id_composto)
+            VALUES ('00010', '94512104909', '00100');
+
+INSERT INTO componente (id, cpf_p, id_composto)
+            VALUES ('00010', '94512104909', '00101');
+
+INSERT INTO componente (id, cpf_p, id_composto)
+            VALUES ('00011', '26467070615', '00110');
+
+INSERT INTO componente (id, cpf_p, id_composto)
+            VALUES ('00011', '26467070615', '00111');
+
+INSERT INTO componente (id, cpf_p, id_composto)
+            VALUES ('00011', '26467070615', '01000');
+
+--INSERINDO DADOS_COMPONENTE 
+
+INSERT INTO dados_componente (id, nome, peso)
+            VALUES ('00001', 'Antigripal', 4080)
+
+INSERT INTO dados_componente (id, nome, peso)
+            VALUES ('00010', 'Anti-Enxaqueca', 5650)
+
+INSERT INTO dados_componente (id, nome, peso)
+            VALUES ('00011', 'Anti-Enjoo', 3600)
+
+--INSERINDO COMPOSTO_COMPONENTE
+
+INSERT INTO composto_componente (id_componente, cpf_p_componente, id_composto_componente, id, peso)
+            VALUES ('00001', '04304130170', '00001', '00001', 408);
+
+INSERT INTO composto_componente (id_componente, cpf_p_componente, id_composto_componente, id, peso)
+            VALUES ('00001', '04304130170', '00010', '00010', 408);
+
+INSERT INTO composto_componente (id_componente, cpf_p_componente, id_composto_componente, id, peso)
+            VALUES ('00001', '04304130170', '00011', '00011', 408);
+
+INSERT INTO composto_componente (id_componente, cpf_p_componente, id_composto_componente, id, peso)
+            VALUES ('00010', '94512104909', '00100', '00100', 565);
+
+INSERT INTO composto_componente (id_componente, cpf_p_componente, id_composto_componente, id, peso)
+            VALUES ('00010', '94512104909', '00101', '00101', 565);
+
+INSERT INTO composto_componente (id_componente, cpf_p_componente, id_composto_componente, id, peso)
+            VALUES ('00011', '26467070615', '00110', '00110', 360);
+
+INSERT INTO composto_componente (id_componente, cpf_p_componente, id_composto_componente, id, peso)
+            VALUES ('00011', '26467070615', '00111', '00111', 360);
+
+INSERT INTO composto_componente (id_componente, cpf_p_componente, id_composto_componente, id, peso)
+            VALUES ('00011', '26467070615', '01000', '01000', 360);
 
 --INSERINDO PROMOCAO
 
