@@ -195,24 +195,42 @@ INSERT INTO cliente (cpf_cli)
 --INSERINDO COMPOSTO
 
 INSERT INTO composto (id_comp, custo, peso, nome) 
-            VALUES ('00001', 90, 400, 'Paracetamol');
+            VALUES ('00001', 90, 30, 'Cloridato de Nafazolina');
 
 INSERT INTO composto (id_comp, custo, peso, nome) 
-            VALUES ('00010', 30, 4, 'Maleato de Clorfeniramina');
+            VALUES ('00010', 80, 35, 'Orfenadrina');
 
 INSERT INTO composto (id_comp, custo, peso, nome) 
-            VALUES ('00011', 20, 4, 'Cloridato de Fenilefrina'); -- Multigrip, Benegrip
+            VALUES ('00011', 120, 50, 'Losartan');
 
 INSERT INTO composto (id_comp, custo, peso, nome) 
-            VALUES ('00101', 200, 65, 'Cafeina');  -- Tylenol
+            VALUES ('00100', 30, 80, 'Sinvastatina');
 
 INSERT INTO composto (id_comp, custo, peso, nome) 
-            VALUES ('00110', 60, 300, 'Dipirona');
+            VALUES ('00101', 20, 300, 'Dipirona');
 
 INSERT INTO composto (id_comp, custo, peso, nome) 
-            VALUES ('01000', 76, 30, 'Mucato de Isometepteno'); -- Doralgina
+            VALUES ('00110', 240, 30, 'Rivotril');
+
+INSERT INTO composto (id_comp, custo, peso, nome) 
+            VALUES ('00111', 250, 25, 'Puran T4');
 
 --INSERINDO RECEITA MEDICA
+
+INSERT INTO receita_medica (cpf_cliente, medico)
+            VALUES ('42937926193', 'Kakashi');
+
+INSERT INTO receita_medica (cpf_cliente, medico)
+            VALUES ('06018888980', 'Asuma');
+
+INSERT INTO receita_medica (cpf_cliente, medico)
+            VALUES ('34938034867', 'Baki');
+
+INSERT INTO receita_medica (cpf_cliente, medico)
+            VALUES ('63469369054', 'Kurenai');
+
+INSERT INTO receita_medica (cpf_cliente, medico)
+            VALUES ('15051468446', 'Guy');
 
 --INSERINDO MANIPULOU_MEDICAMENTO
 
