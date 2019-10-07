@@ -4,6 +4,6 @@ WHERE r.medico LIKE 'Sa%'
 AND p.cpf = r.cpf_cliente
 
 SELECT *
-FROM fornecedor f
-WHERE f.complemento IS NULL
+FROM promocao p
+WHERE p.intervalo_de_duracao IS NULL
 
