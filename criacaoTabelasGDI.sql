@@ -6,7 +6,7 @@ DROP table farmaceutico;
 DROP table balconista;
 DROP table cliente;
 DROP table composto;
-DROP table formula;
+DROP table receita_medica;
 DROP table manipulou_medicamento;
 DROP table medicamento_manipulado;
 DROP table dados_medicamento;

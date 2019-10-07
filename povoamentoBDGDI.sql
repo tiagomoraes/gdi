@@ -204,111 +204,21 @@ INSERT INTO composto (id_comp, custo, peso, nome)
             VALUES ('00011', 20, 4, 'Cloridato de Fenilefrina'); -- Multigrip, Benegrip
 
 INSERT INTO composto (id_comp, custo, peso, nome) 
-            VALUES ('00100', 120, 500, 'Paracetamol');
-
-INSERT INTO composto (id_comp, custo, peso, nome) 
             VALUES ('00101', 200, 65, 'Cafeina');  -- Tylenol
 
 INSERT INTO composto (id_comp, custo, peso, nome) 
             VALUES ('00110', 60, 300, 'Dipirona');
 
 INSERT INTO composto (id_comp, custo, peso, nome) 
-            VALUES ('00111', 100, 30, 'Cafeina');
-
-INSERT INTO composto (id_comp, custo, peso, nome) 
             VALUES ('01000', 76, 30, 'Mucato de Isometepteno'); -- Doralgina
 
---INSERINDO CRIOU_COMPONENTE
-
-INSERT INTO criou_componente (cpf_p, data_e_hora)
-            VALUES ('04304130170', '06/10/19 14:58');
-
-INSERT INTO criou_componente (cpf_p, data_e_hora)
-            VALUES ('04304130170', '04/10/19 11:37');
-
-INSERT INTO criou_componente (cpf_p, data_e_hora)
-            VALUES ('94512104909', '04/10/19 16:19');
-
-INSERT INTO criou_componente (cpf_p, data_e_hora)
-            VALUES ('26467070615', '06/10/19 15:38');
-
-INSERT INTO criou_componente (cpf_p, data_e_hora)
-            VALUES ('58142191571', '06/10/19 08:25');
-
---INSERINDO COMPONENTE
-
-INSERT INTO componente (id, cpf_p, id_composto)
-            VALUES ('00001', '04304130170', '00001');
-
-INSERT INTO componente (id, cpf_p, id_composto)
-            VALUES ('00001', '04304130170', '00010');
-
-INSERT INTO componente (id, cpf_p, id_composto)
-            VALUES ('00001', '04304130170', '00011');
-
-INSERT INTO componente (id, cpf_p, id_composto)
-            VALUES ('00010', '94512104909', '00100');
-
-INSERT INTO componente (id, cpf_p, id_composto)
-            VALUES ('00010', '94512104909', '00101');
-
-INSERT INTO componente (id, cpf_p, id_composto)
-            VALUES ('00011', '26467070615', '00110');
-
-INSERT INTO componente (id, cpf_p, id_composto)
-            VALUES ('00011', '26467070615', '00111');
-
-INSERT INTO componente (id, cpf_p, id_composto)
-            VALUES ('00011', '26467070615', '01000');
-
---INSERINDO DADOS_COMPONENTE 
-
-INSERT INTO dados_componente (id, nome, peso)
-            VALUES ('00001', 'Antigripal', 4080)
-
-INSERT INTO dados_componente (id, nome, peso)
-            VALUES ('00010', 'Anti-Enxaqueca', 5650)
-
-INSERT INTO dados_componente (id, nome, peso)
-            VALUES ('00011', 'Anti-Enjoo', 3600)
-
---INSERINDO COMPOSTO_COMPONENTE
-
-INSERT INTO composto_componente (id_componente, cpf_p_componente, id_composto_componente, id, peso)
-            VALUES ('00001', '04304130170', '00001', '00001', 408);
-
-INSERT INTO composto_componente (id_componente, cpf_p_componente, id_composto_componente, id, peso)
-            VALUES ('00001', '04304130170', '00010', '00010', 408);
-
-INSERT INTO composto_componente (id_componente, cpf_p_componente, id_composto_componente, id, peso)
-            VALUES ('00001', '04304130170', '00011', '00011', 408);
-
-INSERT INTO composto_componente (id_componente, cpf_p_componente, id_composto_componente, id, peso)
-            VALUES ('00010', '94512104909', '00100', '00100', 565);
-
-INSERT INTO composto_componente (id_componente, cpf_p_componente, id_composto_componente, id, peso)
-            VALUES ('00010', '94512104909', '00101', '00101', 565);
-
-INSERT INTO composto_componente (id_componente, cpf_p_componente, id_composto_componente, id, peso)
-            VALUES ('00011', '26467070615', '00110', '00110', 360);
-
-INSERT INTO composto_componente (id_componente, cpf_p_componente, id_composto_componente, id, peso)
-            VALUES ('00011', '26467070615', '00111', '00111', 360);
-
-INSERT INTO composto_componente (id_componente, cpf_p_componente, id_composto_componente, id, peso)
-            VALUES ('00011', '26467070615', '01000', '01000', 360);
-
---INSERINDO FORMULA
-
---INSERINDO COMPONENTE_FORMULA
+--INSERINDO RECEITA MEDICA
 
 --INSERINDO MANIPULOU_MEDICAMENTO
 
 --INSERINDO MEDICAMENTO_MANIPULADO
 
 --INSERINDO DADOS_MEDICAMENTO
-
---INSERINDO COMPONENTE_MEDICAMENTO
 
 --INSERINDO PRODUTO
 
