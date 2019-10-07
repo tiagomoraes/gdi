@@ -88,7 +88,7 @@ CREATE table composto(
     id VARCHAR2(5),
     custo NUMBER,
     peso NUMBER,
-    nome VARCHAR2(40),
+    nome VARCHAR2(4DAD0),
     CONSTRAINT composto_pk PRIMARY KEY (id)
 );
 
@@ -260,7 +260,7 @@ CREATE table desconto(
 CREATE table fornecedor(
     cnpj VARCHAR2(14),
     complemento VARCHAR2(20),
-    numero NUMBER,
+    numero VARCHAR2(5),
     CONSTRAINT fornecedor_pk PRIMARY KEY (cnpj)
 );
 

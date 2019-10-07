@@ -298,87 +298,77 @@ INSERT INTO composto_componente (id_componente, cpf_p_componente, id_composto_co
 INSERT INTO composto_componente (id_componente, cpf_p_componente, id_composto_componente, id, peso)
             VALUES ('00011', '26467070615', '01000', '01000', 360);
 
---INSERINDO PROMOCAO
-
-INSERT INTO promocao (id_prom, percentual, intervalo_de_duracao) 
-            VALUES (000, 20, 6);
-
 --INSERINDO FORMULA
 
-INSERT INTO formula (cpf_cli, id_form, medico) 
-            VALUES (010, 000, 'Kakashi');
-
---INSERINDO DESCONTO
-
-
---INSERINDO COMPOSTO_FORNECEDOR
-
-INSERT INTO composto_fornecedor (fornecedor, nome_composto) 
-            VALUES (000, 'Cloridato de Fenilefrina');
-INSERT INTO composto_fornecedor (fornecedor, nome_composto) 
-            VALUES (000, 'Paracetamol');
-INSERT INTO composto_fornecedor (fornecedor, nome_composto) 
-            VALUES (000, 'Maleato de Clorfeniramina');
-
---INSERINDO TELEFONE_FORNECEDOR
-
-INSERT INTO telefone_fornecedor (fornecedor, num) 
-            VALUES (000, 01234567);
-
---INSERINDO COMPOSTO_COMPONENTE
-
-
-
---INSERINDO TELEFONE_PESSOA
-
-INSERT INTO telefone_pessoa (pessoa, num) 
-            VALUES (000, 12345678);
-
---INSERINDO COMPONENTE_MEDICAMENTO
-
 --INSERINDO COMPONENTE_FORMULA
-
-INSERT INTO componente_formula (formula, id, peso) 
-            VALUES (010, 000, 816);
-
---INSERINDO DADOS_COMPONENTE
-
-INSERT INTO dados_componente (id, nome, pessoa) 
-            VALUES ()
-
---INSERINDO CRIOU_COMPONENTE
-
---INSERINDO COMPONENTE
-
---INSERINDO DADOS_MEDICAMENTO
 
 --INSERINDO MANIPULOU_MEDICAMENTO
 
 --INSERINDO MEDICAMENTO_MANIPULADO
 
+--INSERINDO DADOS_MEDICAMENTO
+
+--INSERINDO COMPONENTE_MEDICAMENTO
+
 --INSERINDO PRODUTO
 
 --INSERINDO EMISSAO_COMPRA
 
+--INSERINDO PROMOCAO
+
 --INSERINDO CLIENTE_BALCONISTA_MEDICAMENTO
 
---INSERINDO FUNCIONARIO
-
-INSERT INTO funcionario (cpf_p, cpf_proximo_turno, salario, data_de_admissao, carga_horario
-                        complemento, numero_func, data_hora_troca)
-            VALUES (000, 0001, 2000, to_date('23/07/19', 'dd/mm/yy'), 6, 'A01', '16h');
-
---INSERINDO ENDERECO_FUNCIONARIO
-
-INSERT INTO endereco_funcionario (cep_func, cidade, bairro, cpf_p);
-            VALUES (10000, 'Recife', 'Iputinga', 000)
+--INSERINDO DESCONTO
 
 --INSERINDO FORNECEDOR
 
-INSERT INTO fornecedor (cnpj, complemento, numero_forn)
-            VALUES (123456, 'B202', 76543210)
+INSERT INTO fornecedor (cnpj, complemento, numero)
+            VALUES ('71527969000163', 'Bloco 2', '450');
+
+INSERT INTO fornecedor (cnpj, complemento, numero)
+            VALUES ('09477207000126', 'Bloco 1', '346');
+
+INSERT INTO fornecedor (cnpj, complemento, numero)
+            VALUES ('20270630000193', 'Bloco 2', '28');
+
+INSERT INTO fornecedor (cnpj, complemento, numero)
+            VALUES ('59500684000133', 'Bloco 3', '789');
+
+INSERT INTO fornecedor (cnpj, complemento, numero)
+            VALUES ('86493632000150', 'Bloco 1', '456');
 
 --INSERINDO ENDERECO_FORNECEDOR
 
-INSERT INTO endereco_fornecedor (cep_forn, cidade, bairro, cnpj_f)
-            VALUES (10001, 'Recife', 'Boa Viagem', 123456)
+INSERT INTO endereco_fornecedor (cep, cidade, bairro, cnpj_f)
+            VALUES ('56310380', 'Petrolina', 'Cohab', '71527969000163');
+
+INSERT INTO endereco_fornecedor (cep, cidade, bairro, cnpj_f)
+            VALUES ('55296160', 'Garanhuns', 'Heliopolis', '09477207000126');
+
+INSERT INTO endereco_fornecedor (cep, cidade, bairro, cnpj_f)
+            VALUES ('53402680', 'Paulista', 'Fragoso', '20270630000193');
+
+INSERT INTO endereco_fornecedor (cep, cidade, bairro, cnpj_f)
+            VALUES ('54410250', 'Jaboatao', 'Piedade', '59500684000133');
+
+INSERT INTO endereco_fornecedor (cep, cidade, bairro, cnpj_f)
+            VALUES ('55192285', 'Santa Cruz', 'Centro', '86493632000150');
+
+--INSERINDO COMPOSTO_FORNECEDOR
+
+--INSERINDO TELEFONE_FORNECEDOR
+
+INSERT INTO telefone_fornecedor (fornecedor, num)
+            VALUES ('71527969000163', '87361050482');
+
+INSERT INTO telefone_fornecedor (fornecedor, num)
+            VALUES ('09477207000126', '81368608189');
+
+INSERT INTO telefone_fornecedor (fornecedor, num)
+            VALUES ('20270630000193', '81041390277');
+
+INSERT INTO telefone_fornecedor (fornecedor, num)
+            VALUES ('59500684000133', '81401607655');
+
+INSERT INTO telefone_fornecedor (fornecedor, num)
+            VALUES ('86493632000150', '87385156975');
