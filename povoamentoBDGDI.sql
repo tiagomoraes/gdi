@@ -232,13 +232,80 @@ INSERT INTO receita_medica (cpf_cliente, medico)
 INSERT INTO receita_medica (cpf_cliente, medico)
             VALUES ('15051468446', 'Guy');
 
+INSERT INTO receita_medica (cpf_cliente, medico)
+            VALUES ('42937926193', 'Chiyo');
+
+INSERT INTO receita_medica (cpf_cliente, medico)
+            VALUES ('06018888980', 'Tsunade');
+
 --INSERINDO MANIPULOU_MEDICAMENTO
+
+INSERT INTO manipulou_medicamento (cpf_p, data_hora)
+            VALUES ('04304130170', '07/10/19 12:34');
+
+INSERT INTO manipulou_medicamento (cpf_p, data_hora)
+            VALUES ('94512104909', '07/10/19 15:44');
+
+INSERT INTO manipulou_medicamento (cpf_p, data_hora)
+            VALUES ('19876905910', '04/10/19 8:32');
+
+INSERT INTO manipulou_medicamento (cpf_p, data_hora)
+            VALUES ('26467070615', '03/10/19 9:15');
+
+INSERT INTO manipulou_medicamento (cpf_p, data_hora)
+            VALUES ('58142191571', '02/10/19 11:08');
+
+INSERT INTO manipulou_medicamento (cpf_p, data_hora)
+            VALUES ('19876905910', '02/10/19 15:22');
+
+INSERT INTO manipulou_medicamento (cpf_p, data_hora)
+            VALUES ('04304130170', '02/10/19 16:38');
 
 --INSERINDO MEDICAMENTO_MANIPULADO
 
---INSERINDO DADOS_MEDICAMENTO
+INSERT INTO medicamento_manipulado (id, cpf_p, id_composto)
+            VALUES  ('00001', '04304130170', '00001');
+
+INSERT INTO medicamento_manipulado (id, cpf_p, id_composto)
+            VALUES  ('00010', '94512104909', '00010');
+
+INSERT INTO medicamento_manipulado (id, cpf_p, id_composto)
+            VALUES  ('00011', '19876905910', '00011');
+
+INSERT INTO medicamento_manipulado (id, cpf_p, id_composto)
+            VALUES  ('00100', '26467070615', '00100');
+
+INSERT INTO medicamento_manipulado (id, cpf_p, id_composto)
+            VALUES  ('00101', '58142191571', '00101');
+
+INSERT INTO medicamento_manipulado (id, cpf_p, id_composto)
+            VALUES  ('00110', '19876905910', '00110');
+
+INSERT INTO medicamento_manipulado (id, cpf_p, id_composto)
+            VALUES  ('00111', '04304130170', '00111');
 
 --INSERINDO PRODUTO
+
+INSERT into produto (id, validade, peso, nome, preco, usuario, medico)
+            VALUES ('00001', to_date('01/09/20', 'dd/mm/yy'), 300, 920, 'Kakashi');
+
+INSERT into produto (id, validade, peso, nome, preco, usuario, medico)
+            VALUES ('00010', to_date('10/09/20', 'dd/mm/yy'), 350, 820, 'Kakashi');
+
+INSERT into produto (id, validade, peso, nome, preco, usuario, medico)
+            VALUES ('00011', to_date('20/09/20', 'dd/mm/yy'), 500, 1220, 'Kakashi');
+
+INSERT into produto (id, validade, peso, nome, preco, usuario, medico)
+            VALUES ('00100', to_date('30/09/20', 'dd/mm/yy'), 800, 320, 'Kakashi');
+
+INSERT into produto (id, validade, peso, nome, preco, usuario, medico)
+            VALUES ('00101', to_date('10/10/20', 'dd/mm/yy'), 3000, 220, 'Kakashi');
+
+INSERT into produto (id, validade, peso, nome, preco, usuario, medico)
+            VALUES ('00110', to_date('20/10/20', 'dd/mm/yy'), 300, 2420, 'Kakashi');
+
+INSERT into produto (id, validade, peso, nome, preco, usuario, medico)
+            VALUES ('00111', to_date('30/10/20', 'dd/mm/yy'), 250, 2520, 'Kakashi');
 
 --INSERINDO EMISSAO_COMPRA
 
