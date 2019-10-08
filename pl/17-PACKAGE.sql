@@ -9,6 +9,6 @@ PROCEDURE insere_fornecedor
 
 FUNCTION nome_medicamento (id_prod IN VARCHAR2) RETURN VARCHAR2;
 
-CURSOR c_composto;
+PROCEDURE listar_compostos;
 
 END funcionalidades;
