@@ -1,12 +1,11 @@
 -- função para inserir dados do fornecedor
 CREATE OR REPLACE PROCEDURE insere_fornecedor
 (
-    f_cnpj  fornecedor.cnpj%TYPE,
-    f_complemento fornecedor.complemento%TYPE
-    f_numero fornecedor.numero%TYPE
-) IS
+    cnpj IN fornecedor.cnpj%TYPE,
+    complemento IN fornecedor.complemento%TYPE,
+    numero IN fornecedor.numero%TYPE
+) AS
 BEGIN
-    INSERT INTO fornecedor VALUES (f_cnpj, f_complemento, f_numero);
+    INSERT INTO fornecedor VALUES (cnpj, complemento, numero);
     COMMIT;
 END insere_fornecedor;
-    
