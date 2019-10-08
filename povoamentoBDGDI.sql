@@ -2,32 +2,46 @@
 
 INSERT INTO pessoa (cpf, nome, data_de_nascimento) 
             VALUES ('04304130170', 'Naruto', to_date('10/10/00', 'dd/mm/yy'));
+
 INSERT INTO pessoa (cpf, nome, data_de_nascimento) 
             VALUES ('42937926193', 'Sakura', to_date('28/03/00', 'dd/mm/yy'));
+
 INSERT INTO pessoa (cpf, nome, data_de_nascimento) 
             VALUES ('40080313752', 'Sasuke', to_date('23/07/00', 'dd/mm/yy'));
+
 INSERT INTO pessoa (cpf, nome, data_de_nascimento) 
             VALUES ('94512104909', 'Shikamaru', to_date('22/09/00', 'dd/mm/yy'));
+
 INSERT INTO pessoa (cpf, nome, data_de_nascimento) 
             VALUES ('22827250349', 'Choji', to_date('01/05/00', 'dd/mm/yy'));
+
 INSERT INTO pessoa (cpf, nome, data_de_nascimento) 
             VALUES ('06018888980', 'Ino', to_date('23/09/00', 'dd/mm/yy'));
+
 INSERT INTO pessoa (cpf, nome, data_de_nascimento) 
             VALUES ('19876905910', 'Gaara', to_date('19/01/00', 'dd/mm/yy'));
+
 INSERT INTO pessoa (cpf, nome, data_de_nascimento) 
             VALUES ('22343283060', 'Temari', to_date('23/08/00', 'dd/mm/yy'));
+
 INSERT INTO pessoa (cpf, nome, data_de_nascimento) 
             VALUES ('34938034867', 'Kankuro', to_date('05/05/00', 'dd/mm/yy'));
+
 INSERT INTO pessoa (cpf, nome, data_de_nascimento) 
             VALUES ('26467070615', 'Hinata', to_date('27/12/00', 'dd/mm/yy'));
+
 INSERT INTO pessoa (cpf, nome, data_de_nascimento) 
             VALUES ('21779708149', 'Kiba', to_date('07/07/00', 'dd/mm/yy'));
+
 INSERT INTO pessoa (cpf, nome, data_de_nascimento) 
             VALUES ('63469369054', 'Shino', to_date('23/01/00', 'dd/mm/yy'));
+
 INSERT INTO pessoa (cpf, nome, data_de_nascimento) 
             VALUES ('58142191571', 'Neji', to_date('03/07/00', 'dd/mm/yy'));
+
 INSERT INTO pessoa (cpf, nome, data_de_nascimento) 
             VALUES ('89249155255', 'Tenten', to_date('09/03/00', 'dd/mm/yy'));
+
 INSERT INTO pessoa (cpf, nome, data_de_nascimento) 
             VALUES ('15051468446', 'Rock Lee', to_date('27/11/00', 'dd/mm/yy'));
 
@@ -84,19 +98,19 @@ INSERT INTO funcionario (cpf_p, cpf_proximo_turno, salario, data_de_admissao, ca
             VALUES ('04304130170', NULL, 9664, to_date('03/08/02', 'dd/mm/yy'), 36, 'Apt 101', '78', 14);
 
 INSERT INTO funcionario (cpf_p, cpf_proximo_turno, salario, data_de_admissao, carga_horaria, complemento, numero, data_hora_troca)
-            VALUES ('42937926193', NULL, 8543, to_date('10/08/02', 'dd/mm/yy'), 40, 'Apt 201', '29', 12);
+            VALUES ('40080313752', NULL, 8543, to_date('10/08/02', 'dd/mm/yy'), 40, 'Apt 201', '29', 12);
 
 INSERT INTO funcionario (cpf_p, cpf_proximo_turno, salario, data_de_admissao, carga_horaria, complemento, numero, data_hora_troca)
             VALUES ('94512104909', '04304130170', 5342, to_date('15/08/02', 'dd/mm/yy'), 48, 'Apt 402', '38', 16);
 
 INSERT INTO funcionario (cpf_p, cpf_proximo_turno, salario, data_de_admissao, carga_horaria, complemento, numero, data_hora_troca)
-            VALUES ('06018888980', '42937926193', 4567, to_date('15/08/02', 'dd/mm/yy'), 36, 'Apt 705', '79', 11);
+            VALUES ('22827250349', '40080313752', 4567, to_date('15/08/02', 'dd/mm/yy'), 36, 'Apt 705', '79', 11);
 
 INSERT INTO funcionario (cpf_p, cpf_proximo_turno, salario, data_de_admissao, carga_horaria, complemento, numero, data_hora_troca)
             VALUES ('19876905910', '94512104909', 7456, to_date('19/08/02', 'dd/mm/yy'), 40, 'Apt 209', '80', 17);
 
 INSERT INTO funcionario (cpf_p, cpf_proximo_turno, salario, data_de_admissao, carga_horaria, complemento, numero, data_hora_troca)
-            VALUES ('22343283060', '06018888980', 3567, to_date('26/08/02', 'dd/mm/yy'), 44, 'Apt 809', '33', 10);
+            VALUES ('22343283060', '22827250349', 3567, to_date('26/08/02', 'dd/mm/yy'), 44, 'Apt 809', '33', 10);
 
 INSERT INTO funcionario (cpf_p, cpf_proximo_turno, salario, data_de_admissao, carga_horaria, complemento, numero, data_hora_troca)
             VALUES ('26467070615', '19876905910', 4578, to_date('20/08/02', 'dd/mm/yy'), 48, 'Apt 102', '23', 18);
@@ -108,15 +122,15 @@ INSERT INTO funcionario (cpf_p, cpf_proximo_turno, salario, data_de_admissao, ca
             VALUES ('58142191571', '26467070615', 999, to_date('26/08/02', 'dd/mm/yy'), 40, 'Apt 502', '73', 11);
 
 INSERT INTO funcionario (cpf_p, cpf_proximo_turno, salario, data_de_admissao, carga_horaria, complemento, numero, data_hora_troca)
-            VALUES ('15051468446', '21779708149', 8001, to_date('29/08/02', 'dd/mm/yy'), 20, 'Apt 902', '71', 12);
+            VALUES ('89249155255', '21779708149', 8001, to_date('29/08/02', 'dd/mm/yy'), 20, 'Apt 902', '71', 12);
 
 UPDATE funcionario
 SET cpf_proximo_turno = '58142191571'
 WHERE cpf_p = '04304130170';
 
 UPDATE funcionario
-SET cpf_proximo_turno = '15051468446'
-WHERE cpf_p = '42937926193';
+SET cpf_proximo_turno = '89249155255'
+WHERE cpf_p = '40080313752';
 
 --INSERINDO ENDERECO_FUNCIONARIO
 
@@ -124,13 +138,13 @@ INSERT INTO endereco_funcionario (cep, cidade, bairro, cpf_p)
             VALUES ('56512360', 'Arcoverde', 'Sao Cristovao', '04304130170');
 
 INSERT INTO endereco_funcionario (cep, cidade, bairro, cpf_p) 
-            VALUES ('55200000', 'Pesqueira', 'Pedra Redonda', '42937926193');
+            VALUES ('55200000', 'Pesqueira', 'Pedra Redonda', '40080313752');
 
 INSERT INTO endereco_funcionario (cep, cidade, bairro, cpf_p) 
             VALUES ('55153065', 'Belo Jardim', 'Bom Conselho', '94512104909');
 
 INSERT INTO endereco_funcionario (cep, cidade, bairro, cpf_p) 
-            VALUES ('55130000', 'São Caetano', 'Sem bairro', '06018888980');
+            VALUES ('55130000', 'São Caetano', 'Sem bairro', '22827250349');
 
 INSERT INTO endereco_funcionario (cep, cidade, bairro, cpf_p) 
             VALUES ('55010280', 'Caruaru', 'Divinopolis', '19876905910');
@@ -148,7 +162,7 @@ INSERT INTO endereco_funcionario (cep, cidade, bairro, cpf_p)
             VALUES ('53690000', 'Moreno', 'Joao Paulo II', '58142191571');
 
 INSERT INTO endereco_funcionario (cep, cidade, bairro, cpf_p) 
-            VALUES ('50670350', 'Recife', 'Iputinga', '15051468446');
+            VALUES ('50670350', 'Recife', 'Iputinga', '89249155255');
 
 --INSERINDO FARMACEUTICO
 
@@ -185,42 +199,42 @@ INSERT INTO balconista (cpf_p, vendas_realizadas)
 
 --INSERINDO CLIENTE
 
-INSERT INTO cliente (cpf_cli) 
+INSERT INTO cliente (cpf_p) 
             VALUES ('42937926193');
 
-INSERT INTO cliente (cpf_cli) 
+INSERT INTO cliente (cpf_p) 
             VALUES ('06018888980');
 
-INSERT INTO cliente (cpf_cli) 
+INSERT INTO cliente (cpf_p) 
             VALUES ('34938034867');
 
-INSERT INTO cliente (cpf_cli) 
+INSERT INTO cliente (cpf_p) 
             VALUES ('63469369054');
 
-INSERT INTO cliente (cpf_cli) 
+INSERT INTO cliente (cpf_p) 
             VALUES ('15051468446');
 
 --INSERINDO COMPOSTO
 
-INSERT INTO composto (id_comp, custo, peso, nome) 
+INSERT INTO composto (id, custo, peso, nome) 
             VALUES ('00001', 90, 30, 'Cloridato de Nafazolina');
 
-INSERT INTO composto (id_comp, custo, peso, nome) 
+INSERT INTO composto (id, custo, peso, nome) 
             VALUES ('00010', 80, 35, 'Orfenadrina');
 
-INSERT INTO composto (id_comp, custo, peso, nome) 
+INSERT INTO composto (id, custo, peso, nome) 
             VALUES ('00011', 120, 50, 'Losartan');
 
-INSERT INTO composto (id_comp, custo, peso, nome) 
+INSERT INTO composto (id, custo, peso, nome) 
             VALUES ('00100', 30, 80, 'Sinvastatina');
 
-INSERT INTO composto (id_comp, custo, peso, nome) 
+INSERT INTO composto (id, custo, peso, nome) 
             VALUES ('00101', 20, 300, 'Dipirona');
 
-INSERT INTO composto (id_comp, custo, peso, nome) 
+INSERT INTO composto (id, custo, peso, nome) 
             VALUES ('00110', 240, 30, 'Rivotril');
 
-INSERT INTO composto (id_comp, custo, peso, nome) 
+INSERT INTO composto (id, custo, peso, nome) 
             VALUES ('00111', 250, 25, 'Puran T4');
 
 --INSERINDO RECEITA MEDICA
@@ -245,29 +259,6 @@ INSERT INTO receita_medica (cpf_cliente, medico)
 
 INSERT INTO receita_medica (cpf_cliente, medico)
             VALUES ('06018888980', 'Tsunade');
-
---INSERINDO MANIPULOU_MEDICAMENTO
-
-INSERT INTO manipulou_medicamento (cpf_p, data_hora)
-            VALUES ('04304130170', '07/10/19 12:34');
-
-INSERT INTO manipulou_medicamento (cpf_p, data_hora)
-            VALUES ('94512104909', '07/10/19 15:44');
-
-INSERT INTO manipulou_medicamento (cpf_p, data_hora)
-            VALUES ('19876905910', '04/10/19 8:32');
-
-INSERT INTO manipulou_medicamento (cpf_p, data_hora)
-            VALUES ('26467070615', '03/10/19 9:15');
-
-INSERT INTO manipulou_medicamento (cpf_p, data_hora)
-            VALUES ('58142191571', '02/10/19 11:08');
-
-INSERT INTO manipulou_medicamento (cpf_p, data_hora)
-            VALUES ('19876905910', '02/10/19 15:22');
-
-INSERT INTO manipulou_medicamento (cpf_p, data_hora)
-            VALUES ('04304130170', '02/10/19 16:38');
 
 --INSERINDO MEDICAMENTO_MANIPULADO
 
@@ -294,26 +285,26 @@ INSERT INTO medicamento_manipulado (id, cpf_p, id_composto)
 
 --INSERINDO PRODUTO
 
-INSERT into produto (id, validade, peso, nome, preco, usuario, medico)
-            VALUES ('00001', to_date('01/09/20', 'dd/mm/yy'), 300, 920, 'Kakashi');
+INSERT into produto (id, validade, peso, nome, preco, usuario, medico, data_hora)
+            VALUES ('00001', to_date('01/09/20', 'dd/mm/yy'), 30, 300, 920, 'Sakura', 'Steve Rogers', '07/10/19 12:34');
 
-INSERT into produto (id, validade, peso, nome, preco, usuario, medico)
-            VALUES ('00010', to_date('10/09/20', 'dd/mm/yy'), 350, 820, 'Asuma');
+INSERT into produto (id, validade, peso, nome, preco, usuario, medico, data_hora)
+            VALUES ('00010', to_date('10/09/20', 'dd/mm/yy'), 20, 350, 820, 'Ino', 'Tony Stark', '07/10/19 15:44');
 
-INSERT into produto (id, validade, peso, nome, preco, usuario, medico)
-            VALUES ('00011', to_date('20/09/20', 'dd/mm/yy'), 500, 1220, 'Baki');
+INSERT into produto (id, validade, peso, nome, preco, usuario, medico, data_hora)
+            VALUES ('00011', to_date('20/09/20', 'dd/mm/yy'), 23, 500, 1220, 'Kankuro', 'Peter Parker', '04/10/19 8:32');
 
-INSERT into produto (id, validade, peso, nome, preco, usuario, medico)
-            VALUES ('00100', to_date('30/09/20', 'dd/mm/yy'), 800, 320, 'Kurenai');
+INSERT into produto (id, validade, peso, nome, preco, usuario, medico, data_hora)
+            VALUES ('00100', to_date('30/09/20', 'dd/mm/yy'), 38, 800, 320, 'Hinata', 'Stephen Strange', '03/10/19 9:15');
 
-INSERT into produto (id, validade, peso, nome, preco, usuario, medico)
-            VALUES ('00101', to_date('10/10/20', 'dd/mm/yy'), 3000, 220, 'Guy');
+INSERT into produto (id, validade, peso, nome, preco, usuario, medico, data_hora)
+            VALUES ('00101', to_date('10/10/20', 'dd/mm/yy'), 19, 3000, 220, 'Rock Lee', 'Matheus Belfort', '02/10/19 11:08');
 
-INSERT into produto (id, validade, peso, nome, preco, usuario, medico)
-            VALUES ('00110', to_date('20/10/20', 'dd/mm/yy'), 300, 2420, 'Chiyo');
+INSERT into produto (id, validade, peso, nome, preco, usuario, medico, data_hora)
+            VALUES ('00110', to_date('20/10/20', 'dd/mm/yy'), 10, 300, 2420, 'Sakura', 'Natasha Romanoff', '02/10/19 15:22');
 
-INSERT into produto (id, validade, peso, nome, preco, usuario, medico)
-            VALUES ('00111', to_date('30/10/20', 'dd/mm/yy'), 250, 2520, 'Tsunade');
+INSERT into produto (id, validade, peso, nome, preco, usuario, medico, data_hora)
+            VALUES ('00111', to_date('30/10/20', 'dd/mm/yy'), 15, 250, 2520, 'Ino', 'Thor', '02/10/19 16:38');
 
 --INSERINDO EMISSAO_COMPRA
 
