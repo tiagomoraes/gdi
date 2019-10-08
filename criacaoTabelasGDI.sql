@@ -81,7 +81,7 @@ CREATE table composto(
     id VARCHAR2(5),
     custo NUMBER,
     peso NUMBER,
-    nome VARCHAR2(20),
+    nome VARCHAR2(30),
     CONSTRAINT composto_pk PRIMARY KEY (id)
 );
 
@@ -93,13 +93,6 @@ CREATE table receita_medica(
     medico VARCHAR2(20),
     CONSTRAINT receita_medica_pk PRIMARY KEY (cpf_cliente, qtd),
     CONSTRAINT receita_medica_fk FOREIGN KEY (cpf_cliente) REFERENCES cliente (cpf_p)
-);
-
-CREATE table manipulou_medicamento(
-    cpf_p VARCHAR2(11),
-    data_hora VARCHAR2(20),
-    CONSTRAINT manipulou_medicamento_pk PRIMARY KEY (cpf_p),
-    CONSTRAINT manipulou_medicamento_fk FOREIGN KEY (cpf_p) references farmaceutico (cpf_p)
 );
 
 CREATE table medicamento_manipulado(
@@ -119,6 +112,7 @@ CREATE table produto(
     preco NUMBER,
     usuario VARCHAR2(20),
     medico VARCHAR2(20),
+    data_hora VARCHAR2(20),
     CONSTRAINT dados_medicamento_pk PRIMARY KEY (id)
 );
 
