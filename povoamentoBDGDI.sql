@@ -290,26 +290,57 @@ INSERT into produto (id, validade, peso, nome, preco, usuario, medico)
             VALUES ('00001', to_date('01/09/20', 'dd/mm/yy'), 300, 920, 'Kakashi');
 
 INSERT into produto (id, validade, peso, nome, preco, usuario, medico)
-            VALUES ('00010', to_date('10/09/20', 'dd/mm/yy'), 350, 820, 'Kakashi');
+            VALUES ('00010', to_date('10/09/20', 'dd/mm/yy'), 350, 820, 'Asuma');
 
 INSERT into produto (id, validade, peso, nome, preco, usuario, medico)
-            VALUES ('00011', to_date('20/09/20', 'dd/mm/yy'), 500, 1220, 'Kakashi');
+            VALUES ('00011', to_date('20/09/20', 'dd/mm/yy'), 500, 1220, 'Baki');
 
 INSERT into produto (id, validade, peso, nome, preco, usuario, medico)
-            VALUES ('00100', to_date('30/09/20', 'dd/mm/yy'), 800, 320, 'Kakashi');
+            VALUES ('00100', to_date('30/09/20', 'dd/mm/yy'), 800, 320, 'Kurenai');
 
 INSERT into produto (id, validade, peso, nome, preco, usuario, medico)
-            VALUES ('00101', to_date('10/10/20', 'dd/mm/yy'), 3000, 220, 'Kakashi');
+            VALUES ('00101', to_date('10/10/20', 'dd/mm/yy'), 3000, 220, 'Guy');
 
 INSERT into produto (id, validade, peso, nome, preco, usuario, medico)
-            VALUES ('00110', to_date('20/10/20', 'dd/mm/yy'), 300, 2420, 'Kakashi');
+            VALUES ('00110', to_date('20/10/20', 'dd/mm/yy'), 300, 2420, 'Chiyo');
 
 INSERT into produto (id, validade, peso, nome, preco, usuario, medico)
-            VALUES ('00111', to_date('30/10/20', 'dd/mm/yy'), 250, 2520, 'Kakashi');
+            VALUES ('00111', to_date('30/10/20', 'dd/mm/yy'), 250, 2520, 'Tsunade');
 
 --INSERINDO EMISSAO_COMPRA
 
+INSERT into emissao_compra (cpf_c, cpf_b, data_hora)
+            VALUES('42937926193', '22343283060', '08/10/19 16:38');
+
+INSERT into emissao_compra (cpf_c, cpf_b, data_hora)
+            VALUES('06018888980', '40080313752', '08/10/19 12:38');
+
+INSERT into emissao_compra (cpf_c, cpf_b, data_hora)
+            VALUES('34938034867', '22827250349', '08/10/19 11:45');
+
+INSERT into emissao_compra (cpf_c, cpf_b, data_hora)
+            VALUES('63469369054', '22343283060', '08/10/19 15:24');
+
+INSERT into emissao_compra (cpf_c, cpf_b, data_hora)
+            VALUES('15051468446', '89249155255', '08/10/19 09:36');
+
+INSERT into emissao_compra (cpf_c, cpf_b, data_hora)
+            VALUES('15051468446', '21779708149', '08/10/19 08:18');
+
+INSERT into emissao_compra (cpf_c, cpf_b, data_hora)
+            VALUES('06018888980', '21779708149', '08/10/19 17:29');
+
 --INSERINDO PROMOCAO
+
+INSERT into promocao (id, percentual, intervalo_de_duracao)
+            VALUES ('00001', 20, 5);
+
+INSERT into promocao (id, percentual, intervalo_de_duracao)
+            VALUES ('00010', 10, 9);
+
+INSERT into promocao (id, percentual, intervalo_de_duracao)
+            VALUES ('00011', 50, 2);
+
 
 --INSERINDO CLIENTE_BALCONISTA_MEDICAMENTO
 
