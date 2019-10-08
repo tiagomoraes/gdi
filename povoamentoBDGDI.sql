@@ -80,35 +80,35 @@ INSERT INTO telefone_pessoa (cpf_p, num)
 
 -- INSERINDO FUNCIONARIO
 
-INSERT INTO funcionario (cpf-p, cpf_proximo_turno, salario, data_de_admissao, carga_horaria, complemento, numero, data_hora_troca)
-            VALUES ('04304130170', '94512104909', 9664, to_date('03/08/02', 'dd/mm/yy'), 'Apt 101', '78', 14);
+INSERT INTO funcionario (cpf_p, cpf_proximo_turno, salario, data_de_admissao, carga_horaria, complemento, numero, data_hora_troca)
+            VALUES ('04304130170', '94512104909', 9664, to_date('03/08/02', 'dd/mm/yy'), 36, 'Apt 101', '78', 14);
 
-INSERT INTO funcionario (cpf-p, cpf_proximo_turno, salario, data_de_admissao, carga_horaria, complemento, numero, data_hora_troca)
-            VALUES ('42937926193', '06018888980', 8543, to_date('10/08/02', 'dd/mm/yy'), 'Apt 201', '29', 12);
+INSERT INTO funcionario (cpf_p, cpf_proximo_turno, salario, data_de_admissao, carga_horaria, complemento, numero, data_hora_troca)
+            VALUES ('42937926193', '06018888980', 8543, to_date('10/08/02', 'dd/mm/yy'), 40, 'Apt 201', '29', 12);
 
-INSERT INTO funcionario (cpf-p, cpf_proximo_turno, salario, data_de_admissao, carga_horaria, complemento, numero, data_hora_troca)
-            VALUES ('94512104909', '19876905910', 5342, to_date('15/08/02', 'dd/mm/yy'), 'Apt 402', '38', 16);
+INSERT INTO funcionario (cpf_p, cpf_proximo_turno, salario, data_de_admissao, carga_horaria, complemento, numero, data_hora_troca)
+            VALUES ('94512104909', '19876905910', 5342, to_date('15/08/02', 'dd/mm/yy'), 48, 'Apt 402', '38', 16);
 
-INSERT INTO funcionario (cpf-p, cpf_proximo_turno, salario, data_de_admissao, carga_horaria, complemento, numero, data_hora_troca)
-            VALUES ('06018888980', '22343283060', 4567, to_date('15/08/02', 'dd/mm/yy'), 'Apt 705', '79', 11);
+INSERT INTO funcionario (cpf_p, cpf_proximo_turno, salario, data_de_admissao, carga_horaria, complemento, numero, data_hora_troca)
+            VALUES ('06018888980', '22343283060', 4567, to_date('15/08/02', 'dd/mm/yy'), 36, 'Apt 705', '79', 11);
 
-INSERT INTO funcionario (cpf-p, cpf_proximo_turno, salario, data_de_admissao, carga_horaria, complemento, numero, data_hora_troca)
-            VALUES ('19876905910', '26467070615', 7456, to_date('19/08/02', 'dd/mm/yy'), 'Apt 209', '80', 17);
+INSERT INTO funcionario (cpf_p, cpf_proximo_turno, salario, data_de_admissao, carga_horaria, complemento, numero, data_hora_troca)
+            VALUES ('19876905910', '26467070615', 7456, to_date('19/08/02', 'dd/mm/yy'), 40, 'Apt 209', '80', 17);
 
-INSERT INTO funcionario (cpf-p, cpf_proximo_turno, salario, data_de_admissao, carga_horaria, complemento, numero, data_hora_troca)
-            VALUES ('22343283060', '21779708149', 3567, to_date('26/08/02', 'dd/mm/yy'), 'Apt 809', '33', 10);
+INSERT INTO funcionario (cpf_p, cpf_proximo_turno, salario, data_de_admissao, carga_horaria, complemento, numero, data_hora_troca)
+            VALUES ('22343283060', '21779708149', 3567, to_date('26/08/02', 'dd/mm/yy'), 44, 'Apt 809', '33', 10);
 
-INSERT INTO funcionario (cpf-p, cpf_proximo_turno, salario, data_de_admissao, carga_horaria, complemento, numero, data_hora_troca)
-            VALUES ('26467070615', '58142191571', 4578, to_date('20/08/02', 'dd/mm/yy'), 'Apt 102', '23', 18);
+INSERT INTO funcionario (cpf_p, cpf_proximo_turno, salario, data_de_admissao, carga_horaria, complemento, numero, data_hora_troca)
+            VALUES ('26467070615', '58142191571', 4578, to_date('20/08/02', 'dd/mm/yy'), 48, 'Apt 102', '23', 18);
 
-INSERT INTO funcionario (cpf-p, cpf_proximo_turno, salario, data_de_admissao, carga_horaria, complemento, numero, data_hora_troca)
-            VALUES ('21779708149', '15051468446', 1356, to_date('30/08/02', 'dd/mm/yy'), 'Apt 508', '81', 15);
+INSERT INTO funcionario (cpf_p, cpf_proximo_turno, salario, data_de_admissao, carga_horaria, complemento, numero, data_hora_troca)
+            VALUES ('21779708149', '15051468446', 1356, to_date('30/08/02', 'dd/mm/yy'), 36, 'Apt 508', '81', 15);
 
-INSERT INTO funcionario (cpf-p, cpf_proximo_turno, salario, data_de_admissao, carga_horaria, complemento, numero, data_hora_troca)
-            VALUES ('58142191571', '04304130170', 999, to_date('26/08/02', 'dd/mm/yy'), 'Apt 502', '73', 11);
+INSERT INTO funcionario (cpf_p, cpf_proximo_turno, salario, data_de_admissao, carga_horaria, complemento, numero, data_hora_troca)
+            VALUES ('58142191571', '04304130170', 999, to_date('26/08/02', 'dd/mm/yy'), 40, 'Apt 502', '73', 11);
 
-INSERT INTO funcionario (cpf-p, cpf_proximo_turno, salario, data_de_admissao, carga_horaria, complemento, numero, data_hora_troca)
-            VALUES ('15051468446', '42937926193', 8001, to_date('29/08/02', 'dd/mm/yy'), 'Apt 902', '71', 12);
+INSERT INTO funcionario (cpf_p, cpf_proximo_turno, salario, data_de_admissao, carga_horaria, complemento, numero, data_hora_troca)
+            VALUES ('15051468446', '42937926193', 8001, to_date('29/08/02', 'dd/mm/yy'), 20, 'Apt 902', '71', 12);
 
 --INSERINDO ENDERECO_FUNCIONARIO
 
@@ -161,10 +161,10 @@ INSERT INTO farmaceutico (cpf_p, formacao_academica)
 
 -- INSERINDO BALCONISTA
 INSERT INTO balconista (cpf_p, vendas_realizadas) 
-            VALUES ('40080313752', 79);
+            VALUES ('42937926193', 79);
 
 INSERT INTO balconista (cpf_p, vendas_realizadas) 
-            VALUES ('22827250349', 23);
+            VALUES ('06018888980', 23);
 
 INSERT INTO balconista (cpf_p, vendas_realizadas) 
             VALUES ('22343283060', 26);
@@ -173,15 +173,15 @@ INSERT INTO balconista (cpf_p, vendas_realizadas)
             VALUES ('21779708149', 45);
 
 INSERT INTO balconista (cpf_p, vendas_realizadas) 
-            VALUES ('89249155255', 12);
+            VALUES ('15051468446', 12);
 
 --INSERINDO CLIENTE
 
 INSERT INTO cliente (cpf_cli) 
-            VALUES ('42937926193');
+            VALUES ('40080313752');
 
 INSERT INTO cliente (cpf_cli) 
-            VALUES ('06018888980');
+            VALUES ('22827250349');
 
 INSERT INTO cliente (cpf_cli) 
             VALUES ('34938034867');
@@ -190,261 +190,195 @@ INSERT INTO cliente (cpf_cli)
             VALUES ('63469369054');
 
 INSERT INTO cliente (cpf_cli) 
-            VALUES ('15051468446');
+            VALUES ('89249155255');
 
 --INSERINDO COMPOSTO
 
 INSERT INTO composto (id_comp, custo, peso, nome) 
-            VALUES ('00001', 90, 30, 'Cloridato de Nafazolina');
+            VALUES ('00001', 90, 400, 'Paracetamol');
 
 INSERT INTO composto (id_comp, custo, peso, nome) 
-            VALUES ('00010', 80, 35, 'Orfenadrina');
+            VALUES ('00010', 30, 4, 'Maleato de Clorfeniramina');
 
 INSERT INTO composto (id_comp, custo, peso, nome) 
-            VALUES ('00011', 120, 50, 'Losartan');
+            VALUES ('00011', 20, 4, 'Cloridato de Fenilefrina'); -- Multigrip, Benegrip
 
 INSERT INTO composto (id_comp, custo, peso, nome) 
-            VALUES ('00100', 30, 80, 'Sinvastatina');
+            VALUES ('00100', 120, 500, 'Paracetamol');
 
 INSERT INTO composto (id_comp, custo, peso, nome) 
-            VALUES ('00101', 20, 300, 'Dipirona');
+            VALUES ('00101', 200, 65, 'Cafeina');  -- Tylenol
 
 INSERT INTO composto (id_comp, custo, peso, nome) 
-            VALUES ('00110', 240, 30, 'Rivotril');
+            VALUES ('00110', 60, 300, 'Dipirona');
 
 INSERT INTO composto (id_comp, custo, peso, nome) 
-            VALUES ('00111', 250, 25, 'Puran T4');
+            VALUES ('00111', 100, 30, 'Cafeina');
 
---INSERINDO RECEITA MEDICA
+INSERT INTO composto (id_comp, custo, peso, nome) 
+            VALUES ('01000', 76, 30, 'Mucato de Isometepteno'); -- Doralgina
 
-INSERT INTO receita_medica (cpf_cliente, medico)
-            VALUES ('42937926193', 'Kakashi');
+--INSERINDO CRIOU_COMPONENTE
 
-INSERT INTO receita_medica (cpf_cliente, medico)
-            VALUES ('06018888980', 'Asuma');
+INSERT INTO criou_componente (cpf_p, data_e_hora)
+            VALUES ('04304130170', '06/10/19 14:58');
 
-INSERT INTO receita_medica (cpf_cliente, medico)
-            VALUES ('34938034867', 'Baki');
+INSERT INTO criou_componente (cpf_p, data_e_hora)
+            VALUES ('04304130170', '04/10/19 11:37');
 
-INSERT INTO receita_medica (cpf_cliente, medico)
-            VALUES ('63469369054', 'Kurenai');
+INSERT INTO criou_componente (cpf_p, data_e_hora)
+            VALUES ('94512104909', '04/10/19 16:19');
 
-INSERT INTO receita_medica (cpf_cliente, medico)
-            VALUES ('15051468446', 'Guy');
+INSERT INTO criou_componente (cpf_p, data_e_hora)
+            VALUES ('26467070615', '06/10/19 15:38');
 
-INSERT INTO receita_medica (cpf_cliente, medico)
-            VALUES ('42937926193', 'Chiyo');
+INSERT INTO criou_componente (cpf_p, data_e_hora)
+            VALUES ('58142191571', '06/10/19 08:25');
 
-INSERT INTO receita_medica (cpf_cliente, medico)
-            VALUES ('06018888980', 'Tsunade');
+--INSERINDO COMPONENTE
 
---INSERINDO MANIPULOU_MEDICAMENTO
+INSERT INTO componente (id, cpf_p, id_composto)
+            VALUES ('00001', '04304130170', '00001');
 
-INSERT INTO manipulou_medicamento (cpf_p, data_hora)
-            VALUES ('04304130170', '07/10/19 12:34');
+INSERT INTO componente (id, cpf_p, id_composto)
+            VALUES ('00001', '04304130170', '00010');
 
-INSERT INTO manipulou_medicamento (cpf_p, data_hora)
-            VALUES ('94512104909', '07/10/19 15:44');
+INSERT INTO componente (id, cpf_p, id_composto)
+            VALUES ('00001', '04304130170', '00011');
 
-INSERT INTO manipulou_medicamento (cpf_p, data_hora)
-            VALUES ('19876905910', '04/10/19 8:32');
+INSERT INTO componente (id, cpf_p, id_composto)
+            VALUES ('00010', '94512104909', '00100');
 
-INSERT INTO manipulou_medicamento (cpf_p, data_hora)
-            VALUES ('26467070615', '03/10/19 9:15');
+INSERT INTO componente (id, cpf_p, id_composto)
+            VALUES ('00010', '94512104909', '00101');
 
-INSERT INTO manipulou_medicamento (cpf_p, data_hora)
-            VALUES ('58142191571', '02/10/19 11:08');
+INSERT INTO componente (id, cpf_p, id_composto)
+            VALUES ('00011', '26467070615', '00110');
 
-INSERT INTO manipulou_medicamento (cpf_p, data_hora)
-            VALUES ('19876905910', '02/10/19 15:22');
+INSERT INTO componente (id, cpf_p, id_composto)
+            VALUES ('00011', '26467070615', '00111');
 
-INSERT INTO manipulou_medicamento (cpf_p, data_hora)
-            VALUES ('04304130170', '02/10/19 16:38');
+INSERT INTO componente (id, cpf_p, id_composto)
+            VALUES ('00011', '26467070615', '01000');
 
---INSERINDO MEDICAMENTO_MANIPULADO
+--INSERINDO DADOS_COMPONENTE 
 
-INSERT INTO medicamento_manipulado (id, cpf_p, id_composto)
-            VALUES  ('00001', '04304130170', '00001');
+INSERT INTO dados_componente (id, nome, peso)
+            VALUES ('00001', 'Antigripal', 4080)
 
-INSERT INTO medicamento_manipulado (id, cpf_p, id_composto)
-            VALUES  ('00010', '94512104909', '00010');
+INSERT INTO dados_componente (id, nome, peso)
+            VALUES ('00010', 'Anti-Enxaqueca', 5650)
 
-INSERT INTO medicamento_manipulado (id, cpf_p, id_composto)
-            VALUES  ('00011', '19876905910', '00011');
+INSERT INTO dados_componente (id, nome, peso)
+            VALUES ('00011', 'Anti-Enjoo', 3600)
 
-INSERT INTO medicamento_manipulado (id, cpf_p, id_composto)
-            VALUES  ('00100', '26467070615', '00100');
+--INSERINDO COMPOSTO_COMPONENTE
 
-INSERT INTO medicamento_manipulado (id, cpf_p, id_composto)
-            VALUES  ('00101', '58142191571', '00101');
+INSERT INTO composto_componente (id_componente, cpf_p_componente, id_composto_componente, id, peso)
+            VALUES ('00001', '04304130170', '00001', '00001', 408);
 
-INSERT INTO medicamento_manipulado (id, cpf_p, id_composto)
-            VALUES  ('00110', '19876905910', '00110');
+INSERT INTO composto_componente (id_componente, cpf_p_componente, id_composto_componente, id, peso)
+            VALUES ('00001', '04304130170', '00010', '00010', 408);
 
-INSERT INTO medicamento_manipulado (id, cpf_p, id_composto)
-            VALUES  ('00111', '04304130170', '00111');
+INSERT INTO composto_componente (id_componente, cpf_p_componente, id_composto_componente, id, peso)
+            VALUES ('00001', '04304130170', '00011', '00011', 408);
 
---INSERINDO PRODUTO
+INSERT INTO composto_componente (id_componente, cpf_p_componente, id_composto_componente, id, peso)
+            VALUES ('00010', '94512104909', '00100', '00100', 565);
 
-INSERT into produto (id, validade, peso, nome, preco, usuario, medico)
-            VALUES ('00001', to_date('01/09/20', 'dd/mm/yy'), 300, 920, 'Kakashi');
+INSERT INTO composto_componente (id_componente, cpf_p_componente, id_composto_componente, id, peso)
+            VALUES ('00010', '94512104909', '00101', '00101', 565);
 
-INSERT into produto (id, validade, peso, nome, preco, usuario, medico)
-            VALUES ('00010', to_date('10/09/20', 'dd/mm/yy'), 350, 820, 'Asuma');
+INSERT INTO composto_componente (id_componente, cpf_p_componente, id_composto_componente, id, peso)
+            VALUES ('00011', '26467070615', '00110', '00110', 360);
 
-INSERT into produto (id, validade, peso, nome, preco, usuario, medico)
-            VALUES ('00011', to_date('20/09/20', 'dd/mm/yy'), 500, 1220, 'Baki');
+INSERT INTO composto_componente (id_componente, cpf_p_componente, id_composto_componente, id, peso)
+            VALUES ('00011', '26467070615', '00111', '00111', 360);
 
-INSERT into produto (id, validade, peso, nome, preco, usuario, medico)
-            VALUES ('00100', to_date('30/09/20', 'dd/mm/yy'), 800, 320, 'Kurenai');
-
-INSERT into produto (id, validade, peso, nome, preco, usuario, medico)
-            VALUES ('00101', to_date('10/10/20', 'dd/mm/yy'), 3000, 220, 'Guy');
-
-INSERT into produto (id, validade, peso, nome, preco, usuario, medico)
-            VALUES ('00110', to_date('20/10/20', 'dd/mm/yy'), 300, 2420, 'Chiyo');
-
-INSERT into produto (id, validade, peso, nome, preco, usuario, medico)
-            VALUES ('00111', to_date('30/10/20', 'dd/mm/yy'), 250, 2520, 'Tsunade');
-
---INSERINDO EMISSAO_COMPRA
-
-INSERT into emissao_compra (cpf_c, cpf_b, data_hora)
-            VALUES('42937926193', '22343283060', '08/10/19 16:38');
-
-INSERT into emissao_compra (cpf_c, cpf_b, data_hora)
-            VALUES('06018888980', '40080313752', '08/10/19 12:38');
-
-INSERT into emissao_compra (cpf_c, cpf_b, data_hora)
-            VALUES('34938034867', '22827250349', '08/10/19 11:45');
-
-INSERT into emissao_compra (cpf_c, cpf_b, data_hora)
-            VALUES('63469369054', '22343283060', '08/10/19 15:24');
-
-INSERT into emissao_compra (cpf_c, cpf_b, data_hora)
-            VALUES('15051468446', '89249155255', '08/10/19 09:36');
-
-INSERT into emissao_compra (cpf_c, cpf_b, data_hora)
-            VALUES('15051468446', '21779708149', '08/10/19 08:18');
-
-INSERT into emissao_compra (cpf_c, cpf_b, data_hora)
-            VALUES('06018888980', '21779708149', '08/10/19 17:29');
+INSERT INTO composto_componente (id_componente, cpf_p_componente, id_composto_componente, id, peso)
+            VALUES ('00011', '26467070615', '01000', '01000', 360);
 
 --INSERINDO PROMOCAO
 
-INSERT into promocao (id, percentual, intervalo_de_duracao)
-            VALUES ('00001', 20, 5);
+INSERT INTO promocao (id_prom, percentual, intervalo_de_duracao) 
+            VALUES (000, 20, 6);
 
-INSERT into promocao (id, percentual, intervalo_de_duracao)
-            VALUES ('00010', 10, 9);
+--INSERINDO FORMULA
 
-INSERT into promocao (id, percentual, intervalo_de_duracao)
-            VALUES ('00011', 50, 2);
-
---INSERINDO CLIENTE_BALCONISTA_MEDICAMENTO
-
-INSERT into cliente_balconista_medicamento (cpf_c, cpf_b, id_medicamento, cpf_p_medicamento, id_composto_medicamento)
-            VALUES ('42937926193', '22343283060', '00001', '04304130170', '00001');
-
-INSERT into cliente_balconista_medicamento (cpf_c, cpf_b, id_medicamento, cpf_p_medicamento, id_composto_medicamento)
-            VALUES ('06018888980', '40080313752', '00011', '19876905910', '00011');
-
-INSERT into cliente_balconista_medicamento (cpf_c, cpf_b, id_medicamento, cpf_p_medicamento, id_composto_medicamento)
-            VALUES ('34938034867', '22827250349', '00101', '58142191571', '00101');
-
-INSERT into cliente_balconista_medicamento (cpf_c, cpf_b, id_medicamento, cpf_p_medicamento, id_composto_medicamento)
-            VALUES ('63469369054', '22343283060', '00111', '04304130170', '00111');
-
-INSERT into cliente_balconista_medicamento (cpf_c, cpf_b, id_medicamento, cpf_p_medicamento, id_composto_medicamento)
-            VALUES ('15051468446', '89249155255', '00110', '19876905910', '00110');
-
-INSERT into cliente_balconista_medicamento (cpf_c, cpf_b, id_medicamento, cpf_p_medicamento, id_composto_medicamento)
-            VALUES ('15051468446', '21779708149', '00011', '19876905910', '00011');
-
-INSERT into cliente_balconista_medicamento (cpf_c, cpf_b, id_medicamento, cpf_p_medicamento, id_composto_medicamento)
-            VALUES ('06018888980', '21779708149', '00010', '94512104909', '00010');
+INSERT INTO formula (cpf_cli, id_form, medico) 
+            VALUES (010, 000, 'Kakashi');
 
 --INSERINDO DESCONTO
 
-INSERT into desconto (cpf_c, cpf_b, id_medicamento_cbm, cpf_p_medicamento_cbm, id_composto_medicamento_cbm, promocao, valor)
-            VALUES ('34938034867', '22827250349', '00101', '58142191571', '00101', '00010', 30);
-
-INSERT into desconto (cpf_c, cpf_b, id_medicamento_cbm, cpf_p_medicamento_cbm, id_composto_medicamento_cbm, promocao, valor)
-            VALUES ('15051468446', '21779708149', '00011', '19876905910', '00011', '00011', 20);
-
-INSERT into desconto (cpf_c, cpf_b, id_medicamento_cbm, cpf_p_medicamento_cbm, id_composto_medicamento_cbm, promocao, valor)
-            VALUES ('42937926193', '22343283060', '00001', '04304130170', '00001', '00011', 10);
-
---INSERINDO FORNECEDOR
-
-INSERT INTO fornecedor (cnpj, complemento, numero)
-            VALUES ('71527969000163', 'Bloco 2', '450');
-
-INSERT INTO fornecedor (cnpj, complemento, numero)
-            VALUES ('09477207000126', 'Bloco 1', '346');
-
-INSERT INTO fornecedor (cnpj, complemento, numero)
-            VALUES ('20270630000193', 'Bloco 2', '28');
-
-INSERT INTO fornecedor (cnpj, complemento, numero)
-            VALUES ('59500684000133', 'Bloco 3', '789');
-
-INSERT INTO fornecedor (cnpj, complemento, numero)
-            VALUES ('86493632000150', 'Bloco 1', '456');
-
---INSERINDO ENDERECO_FORNECEDOR
-
-INSERT INTO endereco_fornecedor (cep, cidade, bairro, cnpj_f)
-            VALUES ('56310380', 'Petrolina', 'Cohab', '71527969000163');
-
-INSERT INTO endereco_fornecedor (cep, cidade, bairro, cnpj_f)
-            VALUES ('55296160', 'Garanhuns', 'Heliopolis', '09477207000126');
-
-INSERT INTO endereco_fornecedor (cep, cidade, bairro, cnpj_f)
-            VALUES ('53402680', 'Paulista', 'Fragoso', '20270630000193');
-
-INSERT INTO endereco_fornecedor (cep, cidade, bairro, cnpj_f)
-            VALUES ('54410250', 'Jaboatao', 'Piedade', '59500684000133');
-
-INSERT INTO endereco_fornecedor (cep, cidade, bairro, cnpj_f)
-            VALUES ('55192285', 'Santa Cruz', 'Centro', '86493632000150');
 
 --INSERINDO COMPOSTO_FORNECEDOR
 
-INSERT INTO composto_fornecedor (fornecedor, nome_composto)
-            VALUES ('71527969000163', 'Cloridato de Nafazolina');
-
-INSERT INTO composto_fornecedor (fornecedor, nome_composto)
-            VALUES ('20270630000193', 'Orfenadrina');
-
-INSERT INTO composto_fornecedor (fornecedor, nome_composto)
-            VALUES ('86493632000150', 'Losartan');
-
-INSERT INTO composto_fornecedor (fornecedor, nome_composto)
-            VALUES ('09477207000126', 'Sinvastatina');
-
-INSERT INTO composto_fornecedor (fornecedor, nome_composto)
-            VALUES ('71527969000163', 'Dipirona');
-
-INSERT INTO composto_fornecedor (fornecedor, nome_composto)
-            VALUES ('59500684000133', 'Rivotril');
-
-INSERT INTO composto_fornecedor (fornecedor, nome_composto)
-            VALUES ('59500684000133', 'Puran T4');
+INSERT INTO composto_fornecedor (fornecedor, nome_composto) 
+            VALUES (000, 'Cloridato de Fenilefrina');
+INSERT INTO composto_fornecedor (fornecedor, nome_composto) 
+            VALUES (000, 'Paracetamol');
+INSERT INTO composto_fornecedor (fornecedor, nome_composto) 
+            VALUES (000, 'Maleato de Clorfeniramina');
 
 --INSERINDO TELEFONE_FORNECEDOR
 
-INSERT INTO telefone_fornecedor (fornecedor, num)
-            VALUES ('71527969000163', '87361050482');
+INSERT INTO telefone_fornecedor (fornecedor, num) 
+            VALUES (000, 01234567);
 
-INSERT INTO telefone_fornecedor (fornecedor, num)
-            VALUES ('09477207000126', '81368608189');
+--INSERINDO COMPOSTO_COMPONENTE
 
-INSERT INTO telefone_fornecedor (fornecedor, num)
-            VALUES ('20270630000193', '81041390277');
 
-INSERT INTO telefone_fornecedor (fornecedor, num)
-            VALUES ('59500684000133', '81401607655');
 
-INSERT INTO telefone_fornecedor (fornecedor, num)
-            VALUES ('86493632000150', '87385156975');
+--INSERINDO TELEFONE_PESSOA
+
+INSERT INTO telefone_pessoa (pessoa, num) 
+            VALUES (000, 12345678);
+
+--INSERINDO COMPONENTE_MEDICAMENTO
+
+--INSERINDO COMPONENTE_FORMULA
+
+INSERT INTO componente_formula (formula, id, peso) 
+            VALUES (010, 000, 816);
+
+--INSERINDO DADOS_COMPONENTE
+
+INSERT INTO dados_componente (id, nome, pessoa) 
+            VALUES ()
+
+--INSERINDO CRIOU_COMPONENTE
+
+--INSERINDO COMPONENTE
+
+--INSERINDO DADOS_MEDICAMENTO
+
+--INSERINDO MANIPULOU_MEDICAMENTO
+
+--INSERINDO MEDICAMENTO_MANIPULADO
+
+--INSERINDO PRODUTO
+
+--INSERINDO EMISSAO_COMPRA
+
+--INSERINDO CLIENTE_BALCONISTA_MEDICAMENTO
+
+--INSERINDO FUNCIONARIO
+
+INSERT INTO funcionario (cpf_p, cpf_proximo_turno, salario, data_de_admissao, carga_horario
+                        complemento, numero_func, data_hora_troca)
+            VALUES (000, 0001, 2000, to_date('23/07/19', 'dd/mm/yy'), 6, 'A01', '16h');
+
+--INSERINDO ENDERECO_FUNCIONARIO
+
+INSERT INTO endereco_funcionario (cep_func, cidade, bairro, cpf_p);
+            VALUES (10000, 'Recife', 'Iputinga', 000)
+
+--INSERINDO FORNECEDOR
+
+INSERT INTO fornecedor (cnpj, complemento, numero_forn)
+            VALUES (123456, 'B202', 76543210)
+
+--INSERINDO ENDERECO_FORNECEDOR
+
+INSERT INTO endereco_fornecedor (cep_forn, cidade, bairro, cnpj_f)
+            VALUES (10001, 'Recife', 'Boa Viagem', 123456)
