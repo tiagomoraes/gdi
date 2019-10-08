@@ -138,13 +138,13 @@ INSERT INTO endereco_funcionario (cep, cidade, bairro, cpf_p)
             VALUES ('56512360', 'Arcoverde', 'Sao Cristovao', '04304130170');
 
 INSERT INTO endereco_funcionario (cep, cidade, bairro, cpf_p) 
-            VALUES ('55200000', 'Pesqueira', 'Pedra Redonda', '42937926193');
+            VALUES ('55200000', 'Pesqueira', 'Pedra Redonda', '40080313752');
 
 INSERT INTO endereco_funcionario (cep, cidade, bairro, cpf_p) 
             VALUES ('55153065', 'Belo Jardim', 'Bom Conselho', '94512104909');
 
 INSERT INTO endereco_funcionario (cep, cidade, bairro, cpf_p) 
-            VALUES ('55130000', 'São Caetano', 'Sem bairro', '06018888980');
+            VALUES ('55130000', 'São Caetano', 'Sem bairro', '22827250349');
 
 INSERT INTO endereco_funcionario (cep, cidade, bairro, cpf_p) 
             VALUES ('55010280', 'Caruaru', 'Divinopolis', '19876905910');
@@ -162,7 +162,7 @@ INSERT INTO endereco_funcionario (cep, cidade, bairro, cpf_p)
             VALUES ('53690000', 'Moreno', 'Joao Paulo II', '58142191571');
 
 INSERT INTO endereco_funcionario (cep, cidade, bairro, cpf_p) 
-            VALUES ('50670350', 'Recife', 'Iputinga', '15051468446');
+            VALUES ('50670350', 'Recife', 'Iputinga', '89249155255');
 
 --INSERINDO FARMACEUTICO
 
@@ -216,25 +216,25 @@ INSERT INTO cliente (cpf_p)
 
 --INSERINDO COMPOSTO
 
-INSERT INTO composto (id_comp, custo, peso, nome) 
+INSERT INTO composto (id, custo, peso, nome) 
             VALUES ('00001', 90, 30, 'Cloridato de Nafazolina');
 
-INSERT INTO composto (id_comp, custo, peso, nome) 
+INSERT INTO composto (id, custo, peso, nome) 
             VALUES ('00010', 80, 35, 'Orfenadrina');
 
-INSERT INTO composto (id_comp, custo, peso, nome) 
+INSERT INTO composto (id, custo, peso, nome) 
             VALUES ('00011', 120, 50, 'Losartan');
 
-INSERT INTO composto (id_comp, custo, peso, nome) 
+INSERT INTO composto (id, custo, peso, nome) 
             VALUES ('00100', 30, 80, 'Sinvastatina');
 
-INSERT INTO composto (id_comp, custo, peso, nome) 
+INSERT INTO composto (id, custo, peso, nome) 
             VALUES ('00101', 20, 300, 'Dipirona');
 
-INSERT INTO composto (id_comp, custo, peso, nome) 
+INSERT INTO composto (id, custo, peso, nome) 
             VALUES ('00110', 240, 30, 'Rivotril');
 
-INSERT INTO composto (id_comp, custo, peso, nome) 
+INSERT INTO composto (id, custo, peso, nome) 
             VALUES ('00111', 250, 25, 'Puran T4');
 
 --INSERINDO RECEITA MEDICA
@@ -259,29 +259,6 @@ INSERT INTO receita_medica (cpf_cliente, medico)
 
 INSERT INTO receita_medica (cpf_cliente, medico)
             VALUES ('06018888980', 'Tsunade');
-
---INSERINDO MANIPULOU_MEDICAMENTO
-
-INSERT INTO manipulou_medicamento (cpf_p, data_hora)
-            VALUES ('04304130170', '07/10/19 12:34');
-
-INSERT INTO manipulou_medicamento (cpf_p, data_hora)
-            VALUES ('94512104909', '07/10/19 15:44');
-
-INSERT INTO manipulou_medicamento (cpf_p, data_hora)
-            VALUES ('19876905910', '04/10/19 8:32');
-
-INSERT INTO manipulou_medicamento (cpf_p, data_hora)
-            VALUES ('26467070615', '03/10/19 9:15');
-
-INSERT INTO manipulou_medicamento (cpf_p, data_hora)
-            VALUES ('58142191571', '02/10/19 11:08');
-
-INSERT INTO manipulou_medicamento (cpf_p, data_hora)
-            VALUES ('19876905910', '02/10/19 15:22');
-
-INSERT INTO manipulou_medicamento (cpf_p, data_hora)
-            VALUES ('04304130170', '02/10/19 16:38');
 
 --INSERINDO MEDICAMENTO_MANIPULADO
 
@@ -308,26 +285,26 @@ INSERT INTO medicamento_manipulado (id, cpf_p, id_composto)
 
 --INSERINDO PRODUTO
 
-INSERT into produto (id, validade, peso, nome, preco, usuario, medico)
-            VALUES ('00001', to_date('01/09/20', 'dd/mm/yy'), 300, 920, 'Kakashi');
+INSERT into produto (id, validade, peso, nome, preco, usuario, medico, data_hora)
+            VALUES ('00001', to_date('01/09/20', 'dd/mm/yy'), 30, 300, 920, 'Sakura', 'Steve Rogers', '07/10/19 12:34');
 
-INSERT into produto (id, validade, peso, nome, preco, usuario, medico)
-            VALUES ('00010', to_date('10/09/20', 'dd/mm/yy'), 350, 820, 'Asuma');
+INSERT into produto (id, validade, peso, nome, preco, usuario, medico, data_hora)
+            VALUES ('00010', to_date('10/09/20', 'dd/mm/yy'), 20, 350, 820, 'Ino', 'Tony Stark', '07/10/19 15:44');
 
-INSERT into produto (id, validade, peso, nome, preco, usuario, medico)
-            VALUES ('00011', to_date('20/09/20', 'dd/mm/yy'), 500, 1220, 'Baki');
+INSERT into produto (id, validade, peso, nome, preco, usuario, medico, data_hora)
+            VALUES ('00011', to_date('20/09/20', 'dd/mm/yy'), 23, 500, 1220, 'Kankuro', 'Peter Parker', '04/10/19 8:32');
 
-INSERT into produto (id, validade, peso, nome, preco, usuario, medico)
-            VALUES ('00100', to_date('30/09/20', 'dd/mm/yy'), 800, 320, 'Kurenai');
+INSERT into produto (id, validade, peso, nome, preco, usuario, medico, data_hora)
+            VALUES ('00100', to_date('30/09/20', 'dd/mm/yy'), 38, 800, 320, 'Hinata', 'Stephen Strange', '03/10/19 9:15');
 
-INSERT into produto (id, validade, peso, nome, preco, usuario, medico)
-            VALUES ('00101', to_date('10/10/20', 'dd/mm/yy'), 3000, 220, 'Guy');
+INSERT into produto (id, validade, peso, nome, preco, usuario, medico, data_hora)
+            VALUES ('00101', to_date('10/10/20', 'dd/mm/yy'), 19, 3000, 220, 'Rock Lee', 'Matheus Belfort', '02/10/19 11:08');
 
-INSERT into produto (id, validade, peso, nome, preco, usuario, medico)
-            VALUES ('00110', to_date('20/10/20', 'dd/mm/yy'), 300, 2420, 'Chiyo');
+INSERT into produto (id, validade, peso, nome, preco, usuario, medico, data_hora)
+            VALUES ('00110', to_date('20/10/20', 'dd/mm/yy'), 10, 300, 2420, 'Sakura', 'Natasha Romanoff', '02/10/19 15:22');
 
-INSERT into produto (id, validade, peso, nome, preco, usuario, medico)
-            VALUES ('00111', to_date('30/10/20', 'dd/mm/yy'), 250, 2520, 'Tsunade');
+INSERT into produto (id, validade, peso, nome, preco, usuario, medico, data_hora)
+            VALUES ('00111', to_date('30/10/20', 'dd/mm/yy'), 15, 250, 2520, 'Ino', 'Thor', '02/10/19 16:38');
 
 --INSERINDO EMISSAO_COMPRA
 
