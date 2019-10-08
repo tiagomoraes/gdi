@@ -286,25 +286,25 @@ INSERT INTO medicamento_manipulado (id, cpf_p, id_composto)
 --INSERINDO PRODUTO
 
 INSERT into produto (id, validade, peso, nome, preco, usuario, medico, data_hora)
-            VALUES ('00001', to_date('01/09/20', 'dd/mm/yy'), 30, 300, 920, 'Sakura', 'Steve Rogers', '07/10/19 12:34');
+            VALUES ('00001', to_date('01/09/20', 'dd/mm/yy'), 300, 'Neosoro', 920, 'Sakura', 'Steve Rogers', '07/10/19 12:34');
 
 INSERT into produto (id, validade, peso, nome, preco, usuario, medico, data_hora)
-            VALUES ('00010', to_date('10/09/20', 'dd/mm/yy'), 20, 350, 820, 'Ino', 'Tony Stark', '07/10/19 15:44');
+            VALUES ('00010', to_date('10/09/20', 'dd/mm/yy'), 350, 'Dorflex', 820, 'Ino', 'Tony Stark', '07/10/19 15:44');
 
 INSERT into produto (id, validade, peso, nome, preco, usuario, medico, data_hora)
-            VALUES ('00011', to_date('20/09/20', 'dd/mm/yy'), 23, 500, 1220, 'Kankuro', 'Peter Parker', '04/10/19 8:32');
+            VALUES ('00011', to_date('20/09/20', 'dd/mm/yy'), 500, 'Losartana', 1220, 'Kankuro', 'Peter Parker', '04/10/19 8:32');
 
 INSERT into produto (id, validade, peso, nome, preco, usuario, medico, data_hora)
-            VALUES ('00100', to_date('30/09/20', 'dd/mm/yy'), 38, 800, 320, 'Hinata', 'Stephen Strange', '03/10/19 9:15');
+            VALUES ('00100', to_date('30/09/20', 'dd/mm/yy'), 800, 'Sinvastatina', 320, 'Hinata', 'Stephen Strange', '03/10/19 9:15');
 
 INSERT into produto (id, validade, peso, nome, preco, usuario, medico, data_hora)
-            VALUES ('00101', to_date('10/10/20', 'dd/mm/yy'), 19, 3000, 220, 'Rock Lee', 'Matheus Belfort', '02/10/19 11:08');
+            VALUES ('00101', to_date('10/10/20', 'dd/mm/yy'), 3000, 'Neosaldina', 220, 'Rock Lee', 'Matheus Belfort', '02/10/19 11:08');
 
 INSERT into produto (id, validade, peso, nome, preco, usuario, medico, data_hora)
-            VALUES ('00110', to_date('20/10/20', 'dd/mm/yy'), 10, 300, 2420, 'Sakura', 'Natasha Romanoff', '02/10/19 15:22');
+            VALUES ('00110', to_date('20/10/20', 'dd/mm/yy'), 300, 'Rivotril', 2420, 'Sakura', 'Natasha Romanoff', '02/10/19 15:22');
 
 INSERT into produto (id, validade, peso, nome, preco, usuario, medico, data_hora)
-            VALUES ('00111', to_date('30/10/20', 'dd/mm/yy'), 15, 250, 2520, 'Ino', 'Thor', '02/10/19 16:38');
+            VALUES ('00111', to_date('30/10/20', 'dd/mm/yy'), 250, 'Puran T4', 2520, 'Ino', 'Thor', '02/10/19 16:38');
 
 --INSERINDO EMISSAO_COMPRA
 
