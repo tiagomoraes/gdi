@@ -1,3 +1,4 @@
+-- função para classificação de promoções
 CREATE OR REPLACE FUNCTION faixa_de_promocao
 RETURN VARCHAR2;
 IS

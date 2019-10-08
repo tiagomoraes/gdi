@@ -1,3 +1,4 @@
+-- função para inserir dados do fornecedor
 CREATE OR REPLACE PROCEDURE insere_fornecedor
 (
     f_cnpj  fornecedor.cnpj%TYPE,

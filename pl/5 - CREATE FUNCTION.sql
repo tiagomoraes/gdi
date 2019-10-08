@@ -1,3 +1,4 @@
+-- função para retorno de madicamento a partir do id
 CREATE OR REPLACE FUNCTION nome_medicamento
 RETURN VARCHAR(20);
 IS

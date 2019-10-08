@@ -1,3 +1,4 @@
+-- função para gerar output de cpf a partir do id do medicamento
 BEGIN
     SELECT * 
     FROM medicamento_manipulado
