@@ -2,32 +2,46 @@
 
 INSERT INTO pessoa (cpf, nome, data_de_nascimento) 
             VALUES ('04304130170', 'Naruto', to_date('10/10/00', 'dd/mm/yy'));
+
 INSERT INTO pessoa (cpf, nome, data_de_nascimento) 
             VALUES ('42937926193', 'Sakura', to_date('28/03/00', 'dd/mm/yy'));
+
 INSERT INTO pessoa (cpf, nome, data_de_nascimento) 
             VALUES ('40080313752', 'Sasuke', to_date('23/07/00', 'dd/mm/yy'));
+
 INSERT INTO pessoa (cpf, nome, data_de_nascimento) 
             VALUES ('94512104909', 'Shikamaru', to_date('22/09/00', 'dd/mm/yy'));
+
 INSERT INTO pessoa (cpf, nome, data_de_nascimento) 
             VALUES ('22827250349', 'Choji', to_date('01/05/00', 'dd/mm/yy'));
+
 INSERT INTO pessoa (cpf, nome, data_de_nascimento) 
             VALUES ('06018888980', 'Ino', to_date('23/09/00', 'dd/mm/yy'));
+
 INSERT INTO pessoa (cpf, nome, data_de_nascimento) 
             VALUES ('19876905910', 'Gaara', to_date('19/01/00', 'dd/mm/yy'));
+
 INSERT INTO pessoa (cpf, nome, data_de_nascimento) 
             VALUES ('22343283060', 'Temari', to_date('23/08/00', 'dd/mm/yy'));
+
 INSERT INTO pessoa (cpf, nome, data_de_nascimento) 
             VALUES ('34938034867', 'Kankuro', to_date('05/05/00', 'dd/mm/yy'));
+
 INSERT INTO pessoa (cpf, nome, data_de_nascimento) 
             VALUES ('26467070615', 'Hinata', to_date('27/12/00', 'dd/mm/yy'));
+
 INSERT INTO pessoa (cpf, nome, data_de_nascimento) 
             VALUES ('21779708149', 'Kiba', to_date('07/07/00', 'dd/mm/yy'));
+
 INSERT INTO pessoa (cpf, nome, data_de_nascimento) 
             VALUES ('63469369054', 'Shino', to_date('23/01/00', 'dd/mm/yy'));
+
 INSERT INTO pessoa (cpf, nome, data_de_nascimento) 
             VALUES ('58142191571', 'Neji', to_date('03/07/00', 'dd/mm/yy'));
+
 INSERT INTO pessoa (cpf, nome, data_de_nascimento) 
             VALUES ('89249155255', 'Tenten', to_date('09/03/00', 'dd/mm/yy'));
+
 INSERT INTO pessoa (cpf, nome, data_de_nascimento) 
             VALUES ('15051468446', 'Rock Lee', to_date('27/11/00', 'dd/mm/yy'));
 
@@ -84,19 +98,19 @@ INSERT INTO funcionario (cpf_p, cpf_proximo_turno, salario, data_de_admissao, ca
             VALUES ('04304130170', NULL, 9664, to_date('03/08/02', 'dd/mm/yy'), 36, 'Apt 101', '78', 14);
 
 INSERT INTO funcionario (cpf_p, cpf_proximo_turno, salario, data_de_admissao, carga_horaria, complemento, numero, data_hora_troca)
-            VALUES ('42937926193', NULL, 8543, to_date('10/08/02', 'dd/mm/yy'), 40, 'Apt 201', '29', 12);
+            VALUES ('40080313752', NULL, 8543, to_date('10/08/02', 'dd/mm/yy'), 40, 'Apt 201', '29', 12);
 
 INSERT INTO funcionario (cpf_p, cpf_proximo_turno, salario, data_de_admissao, carga_horaria, complemento, numero, data_hora_troca)
             VALUES ('94512104909', '04304130170', 5342, to_date('15/08/02', 'dd/mm/yy'), 48, 'Apt 402', '38', 16);
 
 INSERT INTO funcionario (cpf_p, cpf_proximo_turno, salario, data_de_admissao, carga_horaria, complemento, numero, data_hora_troca)
-            VALUES ('06018888980', '42937926193', 4567, to_date('15/08/02', 'dd/mm/yy'), 36, 'Apt 705', '79', 11);
+            VALUES ('22827250349', '40080313752', 4567, to_date('15/08/02', 'dd/mm/yy'), 36, 'Apt 705', '79', 11);
 
 INSERT INTO funcionario (cpf_p, cpf_proximo_turno, salario, data_de_admissao, carga_horaria, complemento, numero, data_hora_troca)
             VALUES ('19876905910', '94512104909', 7456, to_date('19/08/02', 'dd/mm/yy'), 40, 'Apt 209', '80', 17);
 
 INSERT INTO funcionario (cpf_p, cpf_proximo_turno, salario, data_de_admissao, carga_horaria, complemento, numero, data_hora_troca)
-            VALUES ('22343283060', '06018888980', 3567, to_date('26/08/02', 'dd/mm/yy'), 44, 'Apt 809', '33', 10);
+            VALUES ('22343283060', '22827250349', 3567, to_date('26/08/02', 'dd/mm/yy'), 44, 'Apt 809', '33', 10);
 
 INSERT INTO funcionario (cpf_p, cpf_proximo_turno, salario, data_de_admissao, carga_horaria, complemento, numero, data_hora_troca)
             VALUES ('26467070615', '19876905910', 4578, to_date('20/08/02', 'dd/mm/yy'), 48, 'Apt 102', '23', 18);
@@ -108,15 +122,15 @@ INSERT INTO funcionario (cpf_p, cpf_proximo_turno, salario, data_de_admissao, ca
             VALUES ('58142191571', '26467070615', 999, to_date('26/08/02', 'dd/mm/yy'), 40, 'Apt 502', '73', 11);
 
 INSERT INTO funcionario (cpf_p, cpf_proximo_turno, salario, data_de_admissao, carga_horaria, complemento, numero, data_hora_troca)
-            VALUES ('15051468446', '21779708149', 8001, to_date('29/08/02', 'dd/mm/yy'), 20, 'Apt 902', '71', 12);
+            VALUES ('89249155255', '21779708149', 8001, to_date('29/08/02', 'dd/mm/yy'), 20, 'Apt 902', '71', 12);
 
 UPDATE funcionario
 SET cpf_proximo_turno = '58142191571'
 WHERE cpf_p = '04304130170';
 
 UPDATE funcionario
-SET cpf_proximo_turno = '15051468446'
-WHERE cpf_p = '42937926193';
+SET cpf_proximo_turno = '89249155255'
+WHERE cpf_p = '40080313752';
 
 --INSERINDO ENDERECO_FUNCIONARIO
 
@@ -185,19 +199,19 @@ INSERT INTO balconista (cpf_p, vendas_realizadas)
 
 --INSERINDO CLIENTE
 
-INSERT INTO cliente (cpf_cli) 
+INSERT INTO cliente (cpf_p) 
             VALUES ('42937926193');
 
-INSERT INTO cliente (cpf_cli) 
+INSERT INTO cliente (cpf_p) 
             VALUES ('06018888980');
 
-INSERT INTO cliente (cpf_cli) 
+INSERT INTO cliente (cpf_p) 
             VALUES ('34938034867');
 
-INSERT INTO cliente (cpf_cli) 
+INSERT INTO cliente (cpf_p) 
             VALUES ('63469369054');
 
-INSERT INTO cliente (cpf_cli) 
+INSERT INTO cliente (cpf_p) 
             VALUES ('15051468446');
 
 --INSERINDO COMPOSTO
