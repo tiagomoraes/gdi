@@ -341,10 +341,39 @@ INSERT into promocao (id, percentual, intervalo_de_duracao)
 INSERT into promocao (id, percentual, intervalo_de_duracao)
             VALUES ('00011', 50, 2);
 
-
 --INSERINDO CLIENTE_BALCONISTA_MEDICAMENTO
 
+INSERT into cliente_balconista_medicamento (cpf_c, cpf_b, id_medicamento, cpf_p_medicamento, id_composto_medicamento)
+            VALUES ('42937926193', '22343283060', '00001', '04304130170', '00001');
+
+INSERT into cliente_balconista_medicamento (cpf_c, cpf_b, id_medicamento, cpf_p_medicamento, id_composto_medicamento)
+            VALUES ('06018888980', '40080313752', '00011', '19876905910', '00011');
+
+INSERT into cliente_balconista_medicamento (cpf_c, cpf_b, id_medicamento, cpf_p_medicamento, id_composto_medicamento)
+            VALUES ('34938034867', '22827250349', '00101', '58142191571', '00101');
+
+INSERT into cliente_balconista_medicamento (cpf_c, cpf_b, id_medicamento, cpf_p_medicamento, id_composto_medicamento)
+            VALUES ('63469369054', '22343283060', '00111', '04304130170', '00111');
+
+INSERT into cliente_balconista_medicamento (cpf_c, cpf_b, id_medicamento, cpf_p_medicamento, id_composto_medicamento)
+            VALUES ('15051468446', '89249155255', '00110', '19876905910', '00110');
+
+INSERT into cliente_balconista_medicamento (cpf_c, cpf_b, id_medicamento, cpf_p_medicamento, id_composto_medicamento)
+            VALUES ('15051468446', '21779708149', '00011', '19876905910', '00011');
+
+INSERT into cliente_balconista_medicamento (cpf_c, cpf_b, id_medicamento, cpf_p_medicamento, id_composto_medicamento)
+            VALUES ('06018888980', '21779708149', '00010', '94512104909', '00010');
+
 --INSERINDO DESCONTO
+
+INSERT into desconto (cpf_c, cpf_b, id_medicamento_cbm, cpf_p_medicamento_cbm, id_composto_medicamento_cbm, promocao, valor)
+            VALUES ('34938034867', '22827250349', '00101', '58142191571', '00101', '00010', 30);
+
+INSERT into desconto (cpf_c, cpf_b, id_medicamento_cbm, cpf_p_medicamento_cbm, id_composto_medicamento_cbm, promocao, valor)
+            VALUES ('15051468446', '21779708149', '00011', '19876905910', '00011', '00011', 20);
+
+INSERT into desconto (cpf_c, cpf_b, id_medicamento_cbm, cpf_p_medicamento_cbm, id_composto_medicamento_cbm, promocao, valor)
+            VALUES ('42937926193', '22343283060', '00001', '04304130170', '00001', '00011', 10);
 
 --INSERINDO FORNECEDOR
 
@@ -381,6 +410,27 @@ INSERT INTO endereco_fornecedor (cep, cidade, bairro, cnpj_f)
             VALUES ('55192285', 'Santa Cruz', 'Centro', '86493632000150');
 
 --INSERINDO COMPOSTO_FORNECEDOR
+
+INSERT INTO composto_fornecedor (fornecedor, nome_composto)
+            VALUES ('71527969000163', 'Cloridato de Nafazolina');
+
+INSERT INTO composto_fornecedor (fornecedor, nome_composto)
+            VALUES ('20270630000193', 'Orfenadrina');
+
+INSERT INTO composto_fornecedor (fornecedor, nome_composto)
+            VALUES ('86493632000150', 'Losartan');
+
+INSERT INTO composto_fornecedor (fornecedor, nome_composto)
+            VALUES ('09477207000126', 'Sinvastatina');
+
+INSERT INTO composto_fornecedor (fornecedor, nome_composto)
+            VALUES ('71527969000163', 'Dipirona');
+
+INSERT INTO composto_fornecedor (fornecedor, nome_composto)
+            VALUES ('59500684000133', 'Rivotril');
+
+INSERT INTO composto_fornecedor (fornecedor, nome_composto)
+            VALUES ('59500684000133', 'Puran T4');
 
 --INSERINDO TELEFONE_FORNECEDOR
 
