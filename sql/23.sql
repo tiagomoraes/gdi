@@ -1,4 +1,3 @@
-SELECT p.nome
-FROM pessoa p, receita_medica r
-WHERE r.medico = ANY(SELECT r.medico FROM receita_medica r WHERE r.medico LIKE '%Belfort%')
-AND p.cpf = r.cpf_cliente
+SELECT p.usuario
+FROM produto p
+WHERE p.medico = ANY(SELECT p.medico FROM produto p WHERE p.medico NOT LIKE '%Belfort%');
