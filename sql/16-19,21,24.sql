@@ -11,7 +11,7 @@ WHERE f.salario < (SELECT AVG (salario) FROM funcionario);
 --Compostos cujo o custo é maior que o todos os preços dos produtos
 SELECT c.nome, c.custo
 FROM composto c
-WHERE c.custo > ALL (SELECT preco FROM produto);
+WHERE c.custo < ALL (SELECT preco FROM produto);
 
 --peso e o nome do remedio com menor peso
 SELECT  p.nome, p.peso

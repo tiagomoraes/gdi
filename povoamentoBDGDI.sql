@@ -22,7 +22,7 @@ INSERT INTO pessoa (cpf, nome, data_de_nascimento)
             VALUES ('19876905910', 'Gaara', to_date('19/01/00', 'dd/mm/yy'));
 
 INSERT INTO pessoa (cpf, nome, data_de_nascimento) 
-            VALUES ('22343283060', 'Temari', to_date('23/08/00', 'dd/mm/yy'));
+            VALUES ('22343283060', 'Edmilson Sá', to_date('23/08/00', 'dd/mm/yy'));
 
 INSERT INTO pessoa (cpf, nome, data_de_nascimento) 
             VALUES ('34938034867', 'Kankuro', to_date('05/05/00', 'dd/mm/yy'));
@@ -150,13 +150,13 @@ INSERT INTO endereco_funcionario (cep, cidade, bairro, cpf_p)
             VALUES ('55010280', 'Caruaru', 'Divinopolis', '19876905910');
 
 INSERT INTO endereco_funcionario (cep, cidade, bairro, cpf_p) 
-            VALUES ('55660000', 'Bezerros', 'Gameleira', '22343283060');
+            VALUES ('55660000', 'Recife', 'Iputinga', '22343283060');
 
 INSERT INTO endereco_funcionario (cep, cidade, bairro, cpf_p) 
             VALUES ('55644510', 'Gravatá', 'Cruzeiro', '26467070615');
 
 INSERT INTO endereco_funcionario (cep, cidade, bairro, cpf_p) 
-            VALUES ('55602520', 'Vitória', 'Mangueira', '21779708149');
+            VALUES ('55602520', 'Recife', 'Imbiribeira', '21779708149');
 
 INSERT INTO endereco_funcionario (cep, cidade, bairro, cpf_p) 
             VALUES ('53690000', 'Moreno', 'Joao Paulo II', '58142191571');
@@ -189,7 +189,7 @@ INSERT INTO balconista (cpf_p, vendas_realizadas)
             VALUES ('22827250349', 23);
 
 INSERT INTO balconista (cpf_p, vendas_realizadas) 
-            VALUES ('22343283060', 26);
+            VALUES ('22343283060', 2);
 
 INSERT INTO balconista (cpf_p, vendas_realizadas) 
             VALUES ('21779708149', 45);
@@ -335,7 +335,7 @@ INSERT into promocao (id, percentual, intervalo_de_duracao)
             VALUES ('00001', 20, 5);
 
 INSERT into promocao (id, percentual, intervalo_de_duracao)
-            VALUES ('00010', 10, 9);
+            VALUES ('00010', 10, null);
 
 INSERT into promocao (id, percentual, intervalo_de_duracao)
             VALUES ('00011', 50, 2);
@@ -400,10 +400,10 @@ INSERT INTO endereco_fornecedor (cep, cidade, bairro, cnpj_f)
             VALUES ('55296160', 'Garanhuns', 'Heliopolis', '09477207000126');
 
 INSERT INTO endereco_fornecedor (cep, cidade, bairro, cnpj_f)
-            VALUES ('53402680', 'Paulista', 'Fragoso', '20270630000193');
+            VALUES ('53402680', 'Ipojuca', 'Fragoso', '20270630000193');
 
 INSERT INTO endereco_fornecedor (cep, cidade, bairro, cnpj_f)
-            VALUES ('54410250', 'Jaboatao', 'Piedade', '59500684000133');
+            VALUES ('54410250', 'Brasilia', 'Piedade', '59500684000133');
 
 INSERT INTO endereco_fornecedor (cep, cidade, bairro, cnpj_f)
             VALUES ('55192285', 'Santa Cruz', 'Centro', '86493632000150');
@@ -430,6 +430,18 @@ INSERT INTO composto_fornecedor (fornecedor, nome_composto)
 
 INSERT INTO composto_fornecedor (fornecedor, nome_composto)
             VALUES ('59500684000133', 'Puran T4');
+
+INSERT INTO composto_fornecedor (fornecedor, nome_composto)
+            VALUES ('59500684000133', 'Danazol');
+
+INSERT INTO composto_fornecedor (fornecedor, nome_composto)
+            VALUES ('59500684000133', 'Idoxuridina');
+
+INSERT INTO composto_fornecedor (fornecedor, nome_composto)
+            VALUES ('71527969000163', 'Ocitocina');
+
+INSERT INTO composto_fornecedor (fornecedor, nome_composto)
+            VALUES ('86493632000150', 'Zinco');
 
 --INSERINDO TELEFONE_FORNECEDOR
 
