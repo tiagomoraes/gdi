@@ -1,6 +1,6 @@
-SELECT f.data_de_admissao, p.nome
+SELECT f.data_de_admissao, count(*)
 FROM funcionario f, pessoa p
-WHERE f.carga_horaria >= 24 
+WHERE f.carga_horaria >= 6 
 AND f.cpf_p = p.cpf
 GROUP BY f.data_de_admissao
-HAVING f.data_de_admissao > '12/09/2012'
+HAVING count(*) > 1
