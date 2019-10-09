@@ -1,4 +1,2 @@
--- Remove todos os balconistas que não vendem kk
-
-DELETE FROM balconista
-WHERE vendas_realizadas = 0;
+DELETE FROM composto_fornecedor
+WHERE nome_composto = 'Zinco';

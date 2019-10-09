@@ -1,1 +1,1 @@
-GRANT UPDATE, INSERT, DELETE ON ranking_balconistas TO edson_sa
+GRANT UPDATE, INSERT, DELETE ON ranking_balconistas TO edson_sa;

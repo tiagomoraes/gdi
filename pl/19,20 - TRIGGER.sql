@@ -8,5 +8,6 @@ IF :NEW.formacao_academica NOT IN ('Graduando', 'Graduado', 'Pos-Graduando', 'Po
 END IF;
 END;
 
-INSERT INTO farmaceutico (cpf_p, formacao_academica)
-            VALUES ('04304130170', 'Meme');
+--Para teste
+--INSERT INTO farmaceutico (cpf_p, formacao_academica)
+--            VALUES ('04304130170', 'Meme');
