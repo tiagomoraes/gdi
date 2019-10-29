@@ -1,4 +1,7 @@
 package jbdc;
+
+import java.io.DataInputStream;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
@@ -67,20 +70,37 @@ public class Pessoa {
 	}
 
 	public void adicionarMidia(String cpf, String path) throws FileNotFoundException {
-		InputStream file = new FileInputStream(path);
+		File img = new File(path);
+		byte[] imagem = new byte[(int) img.length()];
+		DataInputStream is = new DataInputStream(new FileInputStream(path));
+		is.readFully(imagem);
+		is.close();
 		try (Connection con = DriverManager.getConnection(url, name, password);
-				PreparedStatement stmt = con.prepareStatement("INSERT INTO midia(pessoa, midia) values(?, ?)");) {
+				PreparedStatement stmt = con.prepareStatement("INSERT INTO midia(pessoa, img) values(?, ?)");) {
 			stmt.setString(1, cpf);
-			stmt.setBinaryStream(2, file);
+			stmt.setObject(2, imagem);
 			stmt.executeUpdate();
 
 		} catch (SQLException e) {
 			JOptionPane.showMessageDialog(null, e.getMessage());
 		}
 	}
+
+	public inputStream retornarMidia(String cpf) {
+		InputStream is = null;
+		try(Connection con = DriverManager.getConnection(url, name, password);
+			PreparedStatement stmt = con.prepareStatement("SELECT img from midia where cpf = ? ");) {
+			stmt.setString(1, cpf);
+			ResultSet rs = stmt.executeQuery();
+			while (rs.next()) {
+				is = rs.getBinaryStream(1);
+			}
+			return is 
+		}
+		} catch (SQLException e) {
+			JOptionPane.showMessageDialog(null, e.getMessage());
+		}
 	
-//	public BinaryStream retornarMidia(String cpf) {
-//		try (Connection con = DriverManager.getConnection(url, name, password);
-//				PreparedStatement stmt = con.prepareStatement("INSERT INTO midia(pessoa, midia) values(?, ?)");) {
-//	}
 }
+
+// https://www.devmedia.com.br/blobs-com-jdbc-e-swing-aprenda-a-lidar-com-campos-binarios-em-java/8584
