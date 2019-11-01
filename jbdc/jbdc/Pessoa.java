@@ -15,10 +15,46 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 public class Pessoa {
-	final static String url = "http://oracle12c.cin.ufpe.br/";
+	final static String url = "jdbc:oracle:thin:@oracle12c.cin.ufpe.br:1521:instance01";
 	final static String name = "g192if685cc_eq06";
 	final static String password = "wbhbxwvi";
 	public static ArrayList<String> pessoas;
+	private Connection con;
+	private PreparedStatement stmt;
+	
+	public Pessoa () {
+		try  {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			Connection con = DriverManager.getConnection(url, name, password);
+			PreparedStatement stmt = con.prepareStatement("CREATE table meme(\n" + 
+					"    cpf VARCHAR2(11) NOT NULL,\n" + 
+					"    nome VARCHAR2(20) NOT NULL,\n" + 
+					"    data_de_nascimento VARCHAR2(20) NOT NULL,\n" + 
+					"    CONSTRAINT pessoa_pk PRIMARY KEY (cpf)\n" + 
+					")");
+			stmt.executeUpdate();
+			stmt.close();
+			con.close();
+		} catch (Exception e) {
+			System.out.println("MEME1");
+			e.printStackTrace();
+		}
+		
+//		try  {
+//			Class.forName("oracle.jdbc.driver.OracleDriver");
+//			Connection con = DriverManager.getConnection(url, name, password);
+//			PreparedStatement stmt = con.prepareStatement("CREATE table pessoa(\n" + 
+//					"    cpf VARCHAR2(11) NOT NULL,\n" + 
+//					"    nome VARCHAR2(20) NOT NULL,\n" + 
+//					"    data_de_nascimento VARCHAR2(20) NOT NULL,\n" + 
+//					"    CONSTRAINT pessoa_pk PRIMARY KEY (cpf)\n" + 
+//					");");
+//			stmt.executeUpdate();
+//		} catch (Exception e) {
+//			System.out.println("MEME2");
+//			e.printStackTrace();
+//		}
+	}
 
 	public ArrayList<String> exibir() {
 		try (Connection con = DriverManager.getConnection(url, name, password);
