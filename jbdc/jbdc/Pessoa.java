@@ -19,19 +19,18 @@ public class Pessoa {
 	final static String name = "g192if685cc_eq06";
 	final static String password = "wbhbxwvi";
 	public static ArrayList<String> pessoas;
-	private Connection con;
-	private PreparedStatement stmt;
 	
 	public Pessoa () {
 		try  {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			Connection con = DriverManager.getConnection(url, name, password);
-			PreparedStatement stmt = con.prepareStatement("CREATE table meme(\n" + 
-					"    cpf VARCHAR2(11) NOT NULL,\n" + 
-					"    nome VARCHAR2(20) NOT NULL,\n" + 
-					"    data_de_nascimento VARCHAR2(20) NOT NULL,\n" + 
-					"    CONSTRAINT pessoa_pk PRIMARY KEY (cpf)\n" + 
-					")");
+//			PreparedStatement stmt = con.prepareStatement("CREATE table pessoa(\n" + 
+//					"    cpf VARCHAR2(11) NOT NULL,\n" + 
+//					"    nome VARCHAR2(20) NOT NULL,\n" + 
+//					"    data_de_nascimento VARCHAR2(20) NOT NULL,\n" + 
+//					"    CONSTRAINT pessoa_pk PRIMARY KEY (cpf)\n" + 
+//					")");
+			PreparedStatement stmt = con.prepareStatement("DROP table pessoa");
 			stmt.executeUpdate();
 			stmt.close();
 			con.close();
@@ -61,17 +60,20 @@ public class Pessoa {
 				Statement stmt = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
 				ResultSet rs = stmt.executeQuery("SELECT * from pessoa");) {
 
-			pessoas.clear();
+			ArrayList<String> ret = new ArrayList<String>();
 
 			while (rs.next()) {
 				String cpf = rs.getString(0);
 				String nome = rs.getString(1);
 				String nascimento = rs.getString(2);
-				pessoas.add(cpf);
-				pessoas.add(nome);
-				pessoas.add(nascimento);
+				ret.add(cpf);
+				ret.add(nome);
+				ret.add(nascimento);
 			}
-			return pessoas;
+			stmt.close();
+			rs.close();
+			con.close();
+			return ret;
 
 		} catch (SQLException e) {
 			JOptionPane.showMessageDialog(null, e.getMessage());
@@ -82,12 +84,13 @@ public class Pessoa {
 	public void adicionar(String cpf, String nome, String nascimento) {
 		try (Connection con = DriverManager.getConnection(url, name, password);
 				PreparedStatement stmt = con
-						.prepareStatement("INSERT INTO pessoa(cpf, nome, nascimento) values(?, ?, ?)");) {
+						.prepareStatement("INSERT INTO pessoa(cpf, nome, data_de_nascimento) values(?, ?, ?)");) {
 			stmt.setString(1, cpf);
 			stmt.setString(2, nome);
 			stmt.setString(3, nascimento);
 			stmt.executeUpdate();
-
+			stmt.close();
+			con.close();
 		} catch (SQLException e) {
 			JOptionPane.showMessageDialog(null, e.getMessage());
 		}
@@ -99,7 +102,8 @@ public class Pessoa {
 
 			stmt.setString(1, cpf);
 			stmt.executeUpdate();
-
+			stmt.close();
+			con.close();
 		} catch (SQLException e) {
 			JOptionPane.showMessageDialog(null, e.getMessage());
 		}
@@ -121,7 +125,8 @@ public class Pessoa {
 			stmt.setString(1, cpf);
 			stmt.setObject(2, imagem);
 			stmt.executeUpdate();
-
+			stmt.close();
+			con.close();
 		} catch (SQLException e) {
 			JOptionPane.showMessageDialog(null, e.getMessage());
 		}
@@ -136,7 +141,8 @@ public class Pessoa {
 			while (rs.next()) {
 				is = rs.getBinaryStream(1);
 			}
-			
+			stmt.close();
+			con.close();
 		} catch (SQLException e) {
 			JOptionPane.showMessageDialog(null, e.getMessage());
 		}
