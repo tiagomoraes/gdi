@@ -73,8 +73,13 @@ public class Pessoa {
 		File img = new File(path);
 		byte[] imagem = new byte[(int) img.length()];
 		DataInputStream is = new DataInputStream(new FileInputStream(path));
-		is.readFully(imagem);
-		is.close();
+		try {
+			is.readFully(imagem);
+			is.close();
+		} catch	(Exception e) {
+			e.printStackTrace();
+		}
+		
 		try (Connection con = DriverManager.getConnection(url, name, password);
 				PreparedStatement stmt = con.prepareStatement("INSERT INTO midia(pessoa, img) values(?, ?)");) {
 			stmt.setString(1, cpf);
@@ -86,7 +91,7 @@ public class Pessoa {
 		}
 	}
 
-	public inputStream retornarMidia(String cpf) {
+	public InputStream retornarMidia(String cpf) {
 		InputStream is = null;
 		try(Connection con = DriverManager.getConnection(url, name, password);
 			PreparedStatement stmt = con.prepareStatement("SELECT img from midia where cpf = ? ");) {
@@ -95,12 +100,12 @@ public class Pessoa {
 			while (rs.next()) {
 				is = rs.getBinaryStream(1);
 			}
-			return is 
-		}
+			
 		} catch (SQLException e) {
 			JOptionPane.showMessageDialog(null, e.getMessage());
 		}
-	
+		return is;
+	}
 }
 
 // https://www.devmedia.com.br/blobs-com-jdbc-e-swing-aprenda-a-lidar-com-campos-binarios-em-java/8584
