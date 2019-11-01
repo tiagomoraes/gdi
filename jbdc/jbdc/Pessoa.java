@@ -21,38 +21,41 @@ public class Pessoa {
 	public static ArrayList<String> pessoas;
 	
 	public Pessoa () {
-//		try  {
-//			Class.forName("oracle.jdbc.driver.OracleDriver");
-//			Connection con = DriverManager.getConnection(url, name, password);
-//			PreparedStatement stmt = con.prepareStatement("CREATE table pessoa(\n" + 
-//					"    cpf VARCHAR2(11) NOT NULL,\n" + 
-//					"    nome VARCHAR2(20) NOT NULL,\n" + 
-//					"    data_de_nascimento VARCHAR2(20) NOT NULL,\n" + 
-//					"    CONSTRAINT pessoa_pk PRIMARY KEY (cpf)\n" + 
-//					")");
-////			PreparedStatement stmt = con.prepareStatement("DROP table pessoa");
-//			stmt.executeUpdate();
-//			stmt.close();
-//			con.close();
-//		} catch (Exception e) {
-//			System.out.println("MEME1");
-//			e.printStackTrace();
-//		}
-		
-//		try  {
-//			Class.forName("oracle.jdbc.driver.OracleDriver");
-//			Connection con = DriverManager.getConnection(url, name, password);
-//			PreparedStatement stmt = con.prepareStatement("CREATE table pessoa(\n" + 
-//					"    cpf VARCHAR2(11) NOT NULL,\n" + 
-//					"    nome VARCHAR2(20) NOT NULL,\n" + 
-//					"    data_de_nascimento VARCHAR2(20) NOT NULL,\n" + 
-//					"    CONSTRAINT pessoa_pk PRIMARY KEY (cpf)\n" + 
-//					");");
-//			stmt.executeUpdate();
-//		} catch (Exception e) {
-//			System.out.println("MEME2");
-//			e.printStackTrace();
-//		}
+		try  {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			pessoas = new ArrayList<String>();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void deleteDatabase () {
+		try  {
+			Connection con = DriverManager.getConnection(url, name, password);
+			PreparedStatement stmt = con.prepareStatement("DROP table pessoa");
+			stmt.executeUpdate();
+			stmt.close();
+			con.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void createDatabase () {
+		try  {
+			Connection con = DriverManager.getConnection(url, name, password);
+			PreparedStatement stmt = con.prepareStatement("CREATE table pessoa(\n" + 
+					"    cpf VARCHAR2(11) NOT NULL,\n" + 
+					"    nome VARCHAR2(20) NOT NULL,\n" + 
+					"    data_de_nascimento VARCHAR2(20) NOT NULL,\n" + 
+					"    CONSTRAINT pessoa_pk PRIMARY KEY (cpf)\n" + 
+					")");
+			stmt.executeUpdate();
+			stmt.close();
+			con.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	public ArrayList<String> exibir() {
@@ -60,23 +63,23 @@ public class Pessoa {
 				Statement stmt = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
 				ResultSet rs = stmt.executeQuery("SELECT * from pessoa");) {
 
-			ArrayList<String> ret = new ArrayList<String>();
+			pessoas.clear();
 
 			while (rs.next()) {
 				String cpf = rs.getString(1);
 				String nome = rs.getString(2);
 				String nascimento = rs.getString(3);
-				ret.add(cpf);
-				ret.add(nome);
-				ret.add(nascimento);
+				pessoas.add(cpf);
+				pessoas.add(nome);
+				pessoas.add(nascimento);
 			}
+			
 			stmt.close();
 			rs.close();
 			con.close();
-			return ret;
+			return pessoas;
 
 		} catch (SQLException e) {
-			e.printStackTrace();
 			JOptionPane.showMessageDialog(null, e.getMessage());
 		}
 		return null;
