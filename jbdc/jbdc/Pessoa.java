@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
+import java.sql.Blob;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -43,7 +44,7 @@ public class Pessoa {
 	final static String exibirPessoa = "SELECT * from pessoa";
 	
 	final static String adicionarMidia = "INSERT INTO midia(id, imagem) values(?, ?)";
-	final static String removerMidia = "SELECT imagem from midia where id= ? ";
+	final static String retornarMidia = "SELECT imagem from midia where id= ? ";
 	
 	public static ArrayList<String> pessoas;
 	
@@ -110,16 +111,10 @@ public class Pessoa {
 			
 			stmt.setString(1, nome); stmt.setString(2, nascimento); stmt.setString(3, cpf);
 			
-			
-			System.out.println("OK");
-			
-			
 			stmt.executeUpdate(); stmt.close(); con.close();
 			
 		} catch (SQLException e) {
-			System.out.println("MEMED");
-			e.printStackTrace();
-			//JOptionPane.showMessageDialog(null, e.getMessage());
+			JOptionPane.showMessageDialog(null, e.getMessage());
 		}
 	}
 
@@ -159,22 +154,23 @@ public class Pessoa {
 		}
 	}
 
-	public InputStream retornarMidia(String cpf) {
-		InputStream is = null;
+	public byte[] retornarMidia(String cpf) {
+		Blob is = null;
+		byte[] ret = null ;
 		try(Connection con = DriverManager.getConnection(url, name, password);
-			PreparedStatement stmt = con.prepareStatement(removerMidia);) {
+			PreparedStatement stmt = con.prepareStatement(retornarMidia);) {
 			
 			stmt.setString(1, cpf);
 			ResultSet rs = stmt.executeQuery();
 			while (rs.next()) {
-				is = rs.getBinaryStream(1);
+				is = rs.getBlob("imagem");
 			}
-			
-			stmt.close(); con.close();
+			ret = is.getBytes(1, (int)is.length());
+			stmt.close(); rs.close(); con.close();
 		} catch (SQLException e) {
 			JOptionPane.showMessageDialog(null, e.getMessage());
 		}
-		return is;
+		return ret;
 	}
 }
 
