@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
+import java.sql.Blob;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -15,92 +16,162 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 public class Pessoa {
-	final static String url = "http://oracle12c.cin.ufpe.br/";
+	final static String url = "jdbc:oracle:thin:@oracle12c.cin.ufpe.br:1521:instance01";
 	final static String name = "g192if685cc_eq06";
 	final static String password = "wbhbxwvi";
+	
+	final static String dropPessoa = "DROP table pessoa";
+	final static String dropMidia = "DROP table midia";
+	
+	final static String createPessoa = 	"CREATE table pessoa(\n" + 
+										"    cpf VARCHAR2(11) NOT NULL,\n" + 
+										"    nome VARCHAR2(20) NOT NULL,\n" + 
+										"    data_de_nascimento VARCHAR2(20) NOT NULL,\n" + 
+										"    CONSTRAINT pessoa_pk PRIMARY KEY (cpf)\n" + 
+										")";
+	
+	final static String createMidia = 	"CREATE table midia(\n" + 
+										"    id VARCHAR2(11) NOT NULL,\n" + 
+										"    imagem blob,\n" + 
+										"    CONSTRAINT midia_pk PRIMARY KEY (id)\n" + 
+										")";
+	
+	final static String adicionarPessoa = "INSERT INTO pessoa(cpf, nome, data_de_nascimento) values(?, ?, ?)";
+	
+	final static String atualizarPessoa = "UPDATE pessoa SET nome=?, data_de_nascimento=? WHERE cpf=?";
+	
+	final static String removerPessoa = "DELETE FROM pessoa where cpf= ? ";
+	final static String exibirPessoa = "SELECT * from pessoa";
+	
+	final static String adicionarMidia = "INSERT INTO midia(id, imagem) values(?, ?)";
+	final static String retornarMidia = "SELECT imagem from midia where id= ? ";
+	
 	public static ArrayList<String> pessoas;
-
+	
+	public Pessoa () {
+		try  {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			pessoas = new ArrayList<String>();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void tableOperation (String crt) {
+		try  {
+			Connection con = DriverManager.getConnection(url, name, password);
+			PreparedStatement stmt = con.prepareStatement(crt);
+			stmt.executeUpdate(); stmt.close(); con.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
 	public ArrayList<String> exibir() {
 		try (Connection con = DriverManager.getConnection(url, name, password);
 				Statement stmt = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-				ResultSet rs = stmt.executeQuery("SELECT * from pessoa");) {
+				ResultSet rs = stmt.executeQuery(exibirPessoa);) {
 
 			pessoas.clear();
 
 			while (rs.next()) {
-				String cpf = rs.getString(0);
-				String nome = rs.getString(1);
-				String nascimento = rs.getString(2);
+				String cpf = rs.getString(1);
+				String nome = rs.getString(2);
+				String nascimento = rs.getString(3);
 				pessoas.add(cpf);
 				pessoas.add(nome);
 				pessoas.add(nascimento);
 			}
-			return pessoas;
+			
+			stmt.close(); rs.close(); con.close();
 
 		} catch (SQLException e) {
 			JOptionPane.showMessageDialog(null, e.getMessage());
 		}
-		return null;
+		return pessoas;
 	}
 
-	public void adicionar(String cpf, String nome, String nascimento) {
+	public void adicionarPessoa(String cpf, String nome, String nascimento) {
 		try (Connection con = DriverManager.getConnection(url, name, password);
 				PreparedStatement stmt = con
-						.prepareStatement("INSERT INTO pessoa(cpf, nome, nascimento) values(?, ?, ?)");) {
-			stmt.setString(1, cpf);
-			stmt.setString(2, nome);
-			stmt.setString(3, nascimento);
-			stmt.executeUpdate();
-
+						.prepareStatement(adicionarPessoa);) {
+			
+			stmt.setString(1, cpf); stmt.setString(2, nome); stmt.setString(3, nascimento);
+			
+			stmt.executeUpdate(); stmt.close(); con.close();
+			
 		} catch (SQLException e) {
 			JOptionPane.showMessageDialog(null, e.getMessage());
 		}
 	}
-
-	public void deletar(String cpf) {
+	
+	public void atualizarPessoa(String cpf, String nome, String nascimento) {
 		try (Connection con = DriverManager.getConnection(url, name, password);
-				PreparedStatement stmt = con.prepareStatement("DELETE FROM pessoa where cpf= ? ");) {
-
-			stmt.setString(1, cpf);
-			stmt.executeUpdate();
-
+				PreparedStatement stmt = con.prepareStatement(atualizarPessoa);) {
+			
+			stmt.setString(1, nome); stmt.setString(2, nascimento); stmt.setString(3, cpf);
+			
+			stmt.executeUpdate(); stmt.close(); con.close();
+			
 		} catch (SQLException e) {
 			JOptionPane.showMessageDialog(null, e.getMessage());
 		}
 	}
 
+	public void deletarPessoa(String cpf) {
+		try (Connection con = DriverManager.getConnection(url, name, password);
+				PreparedStatement stmt = con.prepareStatement(removerPessoa);) {
+
+			stmt.setString(1, cpf);
+			
+			stmt.executeUpdate(); stmt.close(); con.close();
+		
+		} catch (SQLException e) {
+			JOptionPane.showMessageDialog(null, e.getMessage());
+		}
+	}
+	
 	public void adicionarMidia(String cpf, String path) throws FileNotFoundException {
 		File img = new File(path);
 		byte[] imagem = new byte[(int) img.length()];
 		DataInputStream is = new DataInputStream(new FileInputStream(path));
-		is.readFully(imagem);
-		is.close();
+		
+		try {
+			is.readFully(imagem);
+			is.close();
+		} catch	(Exception e) {
+			e.printStackTrace();
+		}
+		
 		try (Connection con = DriverManager.getConnection(url, name, password);
-				PreparedStatement stmt = con.prepareStatement("INSERT INTO midia(pessoa, img) values(?, ?)");) {
-			stmt.setString(1, cpf);
-			stmt.setObject(2, imagem);
-			stmt.executeUpdate();
-
+				PreparedStatement stmt = con.prepareStatement(adicionarMidia);) {
+			
+			stmt.setString(1, cpf); stmt.setObject(2, imagem);
+			
+			stmt.executeUpdate(); stmt.close(); con.close();
 		} catch (SQLException e) {
 			JOptionPane.showMessageDialog(null, e.getMessage());
 		}
 	}
 
-	public inputStream retornarMidia(String cpf) {
-		InputStream is = null;
+	public byte[] retornarMidia(String cpf) {
+		Blob is = null;
+		byte[] ret = null ;
 		try(Connection con = DriverManager.getConnection(url, name, password);
-			PreparedStatement stmt = con.prepareStatement("SELECT img from midia where cpf = ? ");) {
+			PreparedStatement stmt = con.prepareStatement(retornarMidia);) {
+			
 			stmt.setString(1, cpf);
 			ResultSet rs = stmt.executeQuery();
 			while (rs.next()) {
-				is = rs.getBinaryStream(1);
+				is = rs.getBlob("imagem");
 			}
-			return is 
-		}
+			ret = is.getBytes(1, (int)is.length());
+			stmt.close(); rs.close(); con.close();
 		} catch (SQLException e) {
 			JOptionPane.showMessageDialog(null, e.getMessage());
 		}
-	
+		return ret;
+	}
 }
 
 // https://www.devmedia.com.br/blobs-com-jdbc-e-swing-aprenda-a-lidar-com-campos-binarios-em-java/8584
