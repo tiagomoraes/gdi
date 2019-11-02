@@ -1,4 +1,4 @@
-package jbdc;
+package model;
 
 import java.io.DataInputStream;
 import java.io.File;
@@ -65,6 +65,13 @@ public class Pessoa {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+	
+	public void resetTables() {
+		this.tableOperation(this.dropPessoa);
+		this.tableOperation(this.createPessoa);
+		this.tableOperation(this.dropMidia);
+		this.tableOperation(this.createMidia);
 	}
 	
 	public ArrayList<String> exibir() {

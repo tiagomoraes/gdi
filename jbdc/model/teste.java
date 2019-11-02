@@ -1,4 +1,4 @@
-package jbdc;
+package model;
 
 import java.awt.BorderLayout;
 import java.awt.Image;
@@ -15,8 +15,6 @@ import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-
-import jbdc.Pessoa;
 
 public class teste {
 
