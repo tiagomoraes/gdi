@@ -172,7 +172,11 @@ public class Pessoa {
 			while (rs.next()) {
 				is = rs.getBlob("imagem");
 			}
-			ret = is.getBytes(1, (int)is.length());
+			if(is == null) {
+				ret = null;
+			} else {				
+				ret = is.getBytes(1, (int)is.length());
+			}
 			stmt.close(); rs.close(); con.close();
 		} catch (SQLException e) {
 			JOptionPane.showMessageDialog(null, e.getMessage());

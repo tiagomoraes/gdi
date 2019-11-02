@@ -35,7 +35,7 @@ public class teste {
 		p.deletarPessoa("66441122233");
 		
 		try {
-			p.adicionarMidia("66611144233", "/home/vdj/gidt/gdi/jbdc/jbdc/wilson.png");
+			p.adicionarMidia("66611144233", "/home/tiago/Imagens/oi.png");
 		} catch (Exception e) {
 			System.out.println("deu meme");
 			e.printStackTrace();

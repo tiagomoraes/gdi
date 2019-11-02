@@ -100,10 +100,6 @@ public class Home {
 		tableModel = new DefaultTableModel();
 		tableModel.setColumnIdentifiers(colunas);
 		
-		table = new JTable(tableModel);
-		table.setBorder(new LineBorder(Color.GRAY, 2));
-		table.setBounds(40, 86, 646, 272);
-		
 		
 		// Adicionar pessoa
 		JButton btnCriar = new JButton("+ Adicionar Nova Pessoa");
@@ -124,12 +120,17 @@ public class Home {
 			}
 		});
 		
+		
 		panel.add(btnCriar);
 		
 		JPanel panelEdit = new JPanel();
 		panelEdit.setBounds(0, 420, 738, 360);
 		panel.add(panelEdit);
 		panelEdit.setLayout(null);
+		
+		JLabel lblImage = new JLabel();
+		lblImage.setBounds(90, 25, 165, 188);
+		panelEdit.add(lblImage);
 		
 		JLabel lblCpf = new JLabel("CPF*");
 		lblCpf.setBounds(364, 25, 66, 25);
@@ -179,6 +180,12 @@ public class Home {
                 if(retorno == JFileChooser.APPROVE_OPTION) {
                 	try {
                 		pessoa.adicionarMidia(selectedCpf, jfc.getSelectedFile().getPath());
+                		byte[] iconPath = pessoa.retornarMidia(selectedCpf);
+                		if(iconPath != null) {
+                			lblImage.setIcon(new ImageIcon(iconPath));                			
+                		} else {
+                			lblImage.setIcon(null);  
+                		}
 					} catch (FileNotFoundException ex) {
 						ex.printStackTrace();
 					}
@@ -196,33 +203,9 @@ public class Home {
 		btnExcuir.setBounds(378, 304, 114, 44);
 		panelEdit.add(btnExcuir);
 		
-		JLabel lblImage = new JLabel(new ImageIcon("/home/tiago/ufpe/gdi/jbdc/images/Captura de tela de 2019-10-23 10-41-34.png"));
-		lblImage.setBounds(90, 25, 165, 188);
-		panelEdit.add(lblImage);
-		
-		btnExcuir.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				System.out.println(txtCpf.getText());
-				System.out.println(txtNome.getText());
-				System.out.println(txtDataNascimento.getText());
-				pessoa.deletarPessoa(txtCpf.getText());		
-				loadTable();
-			}
-		});
-		
-		btnEditar.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				System.out.println(txtCpf.getText());
-				System.out.println(txtNome.getText());
-				System.out.println(txtDataNascimento.getText());
-				pessoa.atualizarPessoa(txtCpf.getText(), txtNome.getText(), txtDataNascimento.getText());		
-				loadTable();
-			}
-		});
+		table = new JTable(tableModel);
+		table.setBorder(new LineBorder(Color.GRAY, 2));
+		table.setBounds(40, 108, 646, 250);
 		
 		// Selecionar pessoa a ser editada
 		table.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
@@ -239,17 +222,78 @@ public class Home {
 		        	txtCpf.setText(selectedCpf);
 		        	txtNome.setText(selectedNome);
 		        	txtDataNascimento.setText(selectedDataNascimento);
+		        	byte[] iconPath = pessoa.retornarMidia(selectedCpf);
+            		if(iconPath != null) {
+            			lblImage.setIcon(new ImageIcon(iconPath));                			
+            		} else {
+            			lblImage.setIcon(null);  
+            		}
 		        }
 		    }
 		});
 		
 		panel.add(table);
 		
-		btnAdicionarImagem.addActionListener(new ActionListener() {
+		JLabel lblCpf_1 = new JLabel("CPF");
+		lblCpf_1.setBounds(40, 88, 66, 15);
+		panel.add(lblCpf_1);
+		
+		JLabel lblNome_1 = new JLabel("Nome");
+		lblNome_1.setBounds(263, 88, 66, 15);
+		panel.add(lblNome_1);
+		
+		JLabel lblDataDeNascimento = new JLabel("Data de Nascimento");
+		lblDataDeNascimento.setBounds(478, 88, 137, 15);
+		panel.add(lblDataDeNascimento);
+		
+		btnExcuir.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				System.out.println(txtCpf.getText());
+				System.out.println(txtNome.getText());
+				System.out.println(txtDataNascimento.getText());
+				pessoa.deletarPessoa(txtCpf.getText());		
+				loadTable();
 				
+				selectedLine = 0;
+				selectedCpf = "";
+				selectedNome = "";
+				selectedDataNascimento = "";
+				
+				txtCpf.setText(selectedCpf);
+	        	txtNome.setText(selectedNome);
+	        	txtDataNascimento.setText(selectedDataNascimento);
+	        	lblImage.setIcon(null);
+			}
+		});
+		
+		btnEditar.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				System.out.println(txtCpf.getText());
+				System.out.println(txtNome.getText());
+				System.out.println(txtDataNascimento.getText());
+				pessoa.atualizarPessoa(txtCpf.getText(), txtNome.getText(), txtDataNascimento.getText());
+							
+				loadTable();
+				
+				selectedCpf = table.getValueAt(selectedLine, 0).toString();
+				selectedNome = table.getValueAt(selectedLine, 1).toString();
+				selectedDataNascimento = table.getValueAt(selectedLine, 2).toString();
+				
+				if(selectedCpf != "") {
+		        	txtCpf.setText(selectedCpf);
+		        	txtNome.setText(selectedNome);
+		        	txtDataNascimento.setText(selectedDataNascimento);
+		        	byte[] iconPath = pessoa.retornarMidia(selectedCpf);
+            		if(iconPath != null) {
+            			lblImage.setIcon(new ImageIcon(iconPath));                			
+            		} else {
+            			lblImage.setIcon(null);  
+            		}
+		        }
 			}
 		});
 	}
