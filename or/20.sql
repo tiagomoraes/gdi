@@ -1,0 +1,1 @@
+SELECT VALUE(F) FROM tb_farmaceutico F
