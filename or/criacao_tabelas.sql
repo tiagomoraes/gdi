@@ -6,6 +6,10 @@ CREATE TABLE tb_balconista OF tp_balconista (
     cpf PRIMARY KEY
 );
 
+CREATE TABLE tb_cliente OF tp_cliente (
+    cpf PRIMARY KEY
+);
+
 CREATE TABLE tb_fornecedor OF tp_fornecedor (
     cnpj PRIMARY KEY
 );
