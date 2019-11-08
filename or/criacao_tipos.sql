@@ -1,6 +1,14 @@
 CREATE OR REPLACE TYPE tp_fone AS OBJECT (
-	numero VARCHAR2(11)
+	numero VARCHAR2(11),
+	CONSTRUCTOR FUNCTION tp_fone(fone VARCHAR2(11)) RETURN SELF AS RESULT
 );
+
+CREATE OR REPLACE TYPE BODY tp_fone AS 
+	CONSTRUCTOR FUNCTION tp_fone(fone VARCHAR2(11)) RETURN SELF AS RESULT IS
+		BEGIN
+			numero := fone
+		END;
+END;
 
 CREATE OR REPLACE TYPE tp_fones as VARRAY(5) OF tp_fone;
 
@@ -30,12 +38,13 @@ CREATE OR REPLACE TYPE tp_funcionario UNDER tp_pessoa (
 	MEMBER FUNCTION trabalhamuito RETURN VARCHAR2(3)
 ) NOT FINAL;
 
+
 CREATE OR REPLACE TYPE BODY tp_funcionario AS
 	MEMBER PROCEDURE trocarsalario(novo NUMBER) IS
 		BEGIN
 			salario := novo;
 		END;
-	MEMBER PROCEDURE trabalhamuito IS
+	MEMBER FUNCTION trabalhamuito IS
 		resposta VARCHAR2(3);
 		BEGIN:
 			IF (carga_horaria > 6) THEN
@@ -45,12 +54,25 @@ CREATE OR REPLACE TYPE BODY tp_funcionario AS
 			END IF;
 			RETURN resposta;
 		END;
-
 END;
 
 CREATE OR REPLACE TYPE tp_farmaceutico UNDER tp_funcionario (
 	formacao_academica VARCHAR2(20)
+	OVERRIDING MEMBER FUNCTION trabalhamuito RETURN VARCHAR2(3)
 );
+
+CREATE OR REPLACE TYPE BODY tp_farmaceutico AS
+	MEMBER FUNCTION trabalhamuito IS
+		resposta VARCHAR2(3);
+		BEGIN:
+			IF (carga_horaria > 4) THEN
+				resposta := 'SIM';
+			ELSE
+				resposta := 'NAO';
+			END IF;
+			RETURN resposta;
+		END;
+END;
 
 CREATE OR REPLACE TYPE tp_balconista UNDER tp_funcionario (
 	vendas_realizadas NUMBER
@@ -60,10 +82,12 @@ CREATE OR REPLACE TYPE tp_cliente UNDER tp_pessoa (
 
 );
 
+CREATE TYPE tp_lista_fones AS TABLE OF tp_fone;
+
 CREATE OR REPLACE tp_fornecedor(
 	cnpj VARCHAR2(14),
 	endereco tp_endereco
-	telefones tp_fones
+	telefones tp_lista_fones
 );
 
 CREATE OR REPLACE TYPE tp_composto (
@@ -111,12 +135,26 @@ CREATE OR REPLACE TYPE tp_emissao_compra(
 	data_hora VARCHAR2(20)
 );
 
-CREATE OR REPLACE tp_promocao(
+CREATE OR REPLACE TYPE tp_promocao(
 	id VARCHAR2(5),
     percentual NUMBER,
-    intervalo_de_duracao NUMBER
+    intervalo_de_duracao NUMBER,
+	ORDER MEMBER FUNCTION promocaomaior (p tp_periodo) RETURN INTEGER;
 );
 
+CREATE OR REPLACE TYPE BODY tp_promocao AS
+	ORDER MEMBER FUNCTION mesma(p tp_periodo) RETURN INTEGER IS
+		BEGIN
+			IF self.percentual > p.percentual
+				RETURN 1;
+			ELSIF self.percentual = p.percentual
+				RETURN 0;
+			ELSE
+				RETURN -1;
+			END IF;
+		END;
+END;
+			
 CREATE OR REPLACE tp_cliente_balconista_medicamento(
 	cliente tp_cliente,
 	balconista tp_balconista,
@@ -127,4 +165,4 @@ CREATE OR REPLACE tp_desconto(
 	compra tp_cliente_balconista_medicamento,
 	promocao VARCHAR2(5),
     valor NUMBER
-);
+) FINAL;
