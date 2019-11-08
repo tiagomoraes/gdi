@@ -2,14 +2,14 @@ CREATE OR REPLACE TYPE tp_fone AS OBJECT (
 	numero VARCHAR2(11)
 );
 
-CREATE OR REPLACE TYPLE tp_fones as VARRAY(5) OF tp_fone;
+CREATE OR REPLACE TYPE tp_fones as VARRAY(5) OF tp_fone;
 
 CREATE OR REPLACE TYPE tp_pessoa AS OBJECT ( 
 	cpf VARCHAR2(11),
 	nome VARCHAR2(20),
 	data_de_nascimento DATE,
 	telefone tp_fones
-) NOT FINAL;
+) NOT FINAL NOT INSTANTIABLE;
 
 CREATE OR REPLACE TYPE tp_endereco (
 	cep VARCHAR2(8),
@@ -25,8 +25,28 @@ CREATE OR REPLACE TYPE tp_funcionario UNDER tp_pessoa (
 	data_de_admissao DATE,
 	carga_horaria NUMBER,
 	data_hora_troca NUMBER,
-	endereco tp_endereco
+	endereco tp_endereco,
+	MEMBER PROCEDURE trocarsalario(novo NUMBER),
+	MEMBER FUNCTION trabalhamuito RETURN VARCHAR2(3)
 ) NOT FINAL;
+
+CREATE OR REPLACE TYPE BODY tp_funcionario AS
+	MEMBER PROCEDURE trocarsalario(novo NUMBER) IS
+		BEGIN
+			salario := novo;
+		END;
+	MEMBER PROCEDURE trabalhamuito IS
+		resposta VARCHAR2(3);
+		BEGIN:
+			IF (carga_horaria > 6) THEN
+				resposta := 'SIM';
+			ELSE
+				resposta := 'NAO';
+			END IF;
+			RETURN resposta;
+		END;
+
+END;
 
 CREATE OR REPLACE TYPE tp_farmaceutico UNDER tp_funcionario (
 	formacao_academica VARCHAR2(20)
@@ -51,8 +71,16 @@ CREATE OR REPLACE TYPE tp_composto (
     custo NUMBER,
     peso NUMBER,
     nome VARCHAR2(30),
-	fornecedor tp_fornecedor
+	fornecedor REF tp_fornecedor,
+	MAP MEMBER FUNCTION custoporgrama RETURN NUMBER
 );
+
+CREATE OR REPLACE TYPE BODY tp_composto AS
+	MAP MEMBER FUNCTION custoporgrama RETURN NUMBER IS
+		BEGIN
+			RETURN custo / peso
+		END;
+END;
 
 CREATE OR REPLACE TYPE tp_receita_medica (
 	cliente tp_cliente,
