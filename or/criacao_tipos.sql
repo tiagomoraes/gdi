@@ -157,12 +157,12 @@ CREATE OR REPLACE TYPE tp_promocao AS OBJECT (
 	id VARCHAR2(5),
     percentual NUMBER,
     intervalo_de_duracao NUMBER,
-	ORDER MEMBER FUNCTION promocaomaior (p tp_periodo) RETURN INTEGER
+	ORDER MEMBER FUNCTION promocaomaior (p tp_promocao) RETURN INTEGER
 );
 /
 
 CREATE OR REPLACE TYPE BODY tp_promocao AS
-	ORDER MEMBER FUNCTION mesma(p tp_periodo) RETURN INTEGER IS
+	ORDER MEMBER FUNCTION mesma(p tp_promocao) RETURN INTEGER IS
 		BEGIN
 			IF self.percentual > p.percentual
 				RETURN 1;
