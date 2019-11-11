@@ -1,7 +1,8 @@
 CREATE OR REPLACE TYPE tp_fone AS OBJECT (
 	numero VARCHAR2(11),
-	CONSTRUCTOR FUNCTION tp_fone(fone VARCHAR2(11)) RETURN SELF AS RESULT
+	CONSTRUCTOR FUNCTION tp_fone(fone VARCHAR2) RETURN SELF AS RESULT
 );
+/
 
 CREATE OR REPLACE TYPE BODY tp_fone AS 
 	CONSTRUCTOR FUNCTION tp_fone(fone VARCHAR2(11)) RETURN SELF AS RESULT IS
@@ -9,8 +10,10 @@ CREATE OR REPLACE TYPE BODY tp_fone AS
 			numero := fone
 		END;
 END;
+/
 
 CREATE OR REPLACE TYPE tp_fones as VARRAY(5) OF tp_fone;
+/
 
 CREATE OR REPLACE TYPE tp_pessoa AS OBJECT ( 
 	cpf VARCHAR2(11),
@@ -18,14 +21,16 @@ CREATE OR REPLACE TYPE tp_pessoa AS OBJECT (
 	data_de_nascimento DATE,
 	telefone tp_fones
 ) NOT FINAL NOT INSTANTIABLE;
+/
 
-CREATE OR REPLACE TYPE tp_endereco (
+CREATE OR REPLACE TYPE tp_endereco AS OBJECT (
 	cep VARCHAR2(8),
 	numero VARCHAR2(6),
     complemento VARCHAR2(20),
 	bairro VARCHAR2(20),
 	cidade VARCHAR2(20)
 );
+/
 
 CREATE OR REPLACE TYPE tp_funcionario UNDER tp_pessoa (
 	cpf_proximo_turno VARCHAR2(11),
@@ -35,9 +40,9 @@ CREATE OR REPLACE TYPE tp_funcionario UNDER tp_pessoa (
 	data_hora_troca NUMBER,
 	endereco tp_endereco,
 	MEMBER PROCEDURE trocarsalario(novo NUMBER),
-	MEMBER FUNCTION trabalhamuito RETURN VARCHAR2(3)
+	MEMBER FUNCTION trabalhamuito RETURN VARCHAR2
 ) NOT FINAL;
-
+/
 
 CREATE OR REPLACE TYPE BODY tp_funcionario AS
 	MEMBER PROCEDURE trocarsalario(novo NUMBER) IS
@@ -55,11 +60,13 @@ CREATE OR REPLACE TYPE BODY tp_funcionario AS
 			RETURN resposta;
 		END;
 END;
+/
 
 CREATE OR REPLACE TYPE tp_farmaceutico UNDER tp_funcionario (
-	formacao_academica VARCHAR2(20)
-	OVERRIDING MEMBER FUNCTION trabalhamuito RETURN VARCHAR2(3)
+	formacao_academica VARCHAR2(20),
+	OVERRIDING MEMBER FUNCTION trabalhamuito RETURN VARCHAR2
 );
+/
 
 CREATE OR REPLACE TYPE BODY tp_farmaceutico AS
 	MEMBER FUNCTION trabalhamuito IS
@@ -73,24 +80,29 @@ CREATE OR REPLACE TYPE BODY tp_farmaceutico AS
 			RETURN resposta;
 		END;
 END;
+/
 
 CREATE OR REPLACE TYPE tp_balconista UNDER tp_funcionario (
 	vendas_realizadas NUMBER
 );
+/
 
 CREATE OR REPLACE TYPE tp_cliente UNDER tp_pessoa (
 
 );
+/
 
 CREATE TYPE tp_lista_fones AS TABLE OF tp_fone;
+/
 
-CREATE OR REPLACE tp_fornecedor(
+CREATE OR REPLACE TYPE tp_fornecedor AS OBJECT (
 	cnpj VARCHAR2(14),
-	endereco tp_endereco
+	endereco tp_endereco,
 	telefones tp_lista_fones
 );
+/
 
-CREATE OR REPLACE TYPE tp_composto (
+CREATE OR REPLACE TYPE tp_composto AS OBJECT (
 	id VARCHAR2(5),
     custo NUMBER,
     peso NUMBER,
@@ -98,6 +110,7 @@ CREATE OR REPLACE TYPE tp_composto (
 	fornecedor REF tp_fornecedor,
 	MAP MEMBER FUNCTION custoporgrama RETURN NUMBER
 );
+/
 
 CREATE OR REPLACE TYPE BODY tp_composto AS
 	MAP MEMBER FUNCTION custoporgrama RETURN NUMBER IS
@@ -105,22 +118,25 @@ CREATE OR REPLACE TYPE BODY tp_composto AS
 			RETURN custo / peso
 		END;
 END;
+/
 
-CREATE OR REPLACE TYPE tp_receita_medica (
+CREATE OR REPLACE TYPE tp_receita_medica AS OBJECT (
 	cliente tp_cliente,
 	codigo VARCHAR2(5),
 	medico VARCHAR2(20)
 );
+/
 
-CREATE OR REPLACE TYPE tp_medicamento_manipulado(
+CREATE OR REPLACE TYPE tp_medicamento_manipulado AS OBJECT(
 	id VARCHAR2(5),
 	farmaceutico tp_farmaceutico,
 	composto tp_composto
 );
+/
 
-CREATE OR REPLACE TYPE tp_produto(
+CREATE OR REPLACE TYPE tp_produto AS OBJECT (
 	id VARCHAR2(5),
-    validade DATE NOT NULL,
+    validade DATE,
     peso NUMBER,
     nome VARCHAR2(20),
     preco NUMBER,
@@ -128,19 +144,22 @@ CREATE OR REPLACE TYPE tp_produto(
     medico VARCHAR2(20),
     data_hora VARCHAR2(20)
 );
+/
 
-CREATE OR REPLACE TYPE tp_emissao_compra(
+CREATE OR REPLACE TYPE tp_emissao_compra AS OBJECT (
 	cliente tp_cliente,
 	balconista tp_balconista,
 	data_hora VARCHAR2(20)
 );
+/
 
-CREATE OR REPLACE TYPE tp_promocao(
+CREATE OR REPLACE TYPE tp_promocao AS OBJECT (
 	id VARCHAR2(5),
     percentual NUMBER,
     intervalo_de_duracao NUMBER,
-	ORDER MEMBER FUNCTION promocaomaior (p tp_periodo) RETURN INTEGER;
+	ORDER MEMBER FUNCTION promocaomaior (p tp_periodo) RETURN INTEGER
 );
+/
 
 CREATE OR REPLACE TYPE BODY tp_promocao AS
 	ORDER MEMBER FUNCTION mesma(p tp_periodo) RETURN INTEGER IS
@@ -154,15 +173,18 @@ CREATE OR REPLACE TYPE BODY tp_promocao AS
 			END IF;
 		END;
 END;
+/
 			
-CREATE OR REPLACE tp_cliente_balconista_medicamento(
+CREATE OR REPLACE TYPE tp_cliente_balconista_medicamento AS OBJECT (
 	cliente tp_cliente,
 	balconista tp_balconista,
 	medicamento tp_medicamento_manipulado
 );
+/
 
-CREATE OR REPLACE tp_desconto(
+CREATE OR REPLACE TYPE tp_desconto AS OBJECT (
 	compra tp_cliente_balconista_medicamento,
 	promocao VARCHAR2(5),
     valor NUMBER
 ) FINAL;
+/
