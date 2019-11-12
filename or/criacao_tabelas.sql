@@ -21,14 +21,12 @@ CREATE TABLE tb_composto OF tp_composto (
 );
 /
 
-CREATE TABLE tb_medicamento_manipulado OF tp_medicamento_manipulado (
+CREATE TABLE tb_produto OF tp_produto (
     id PRIMARY KEY
 );
 /
 
-CREATE TABLE tb_produto OF tp_produto (
-    id PRIMARY KEY
-);
+CREATE TABLE tb_medicamento_manipulado OF tp_medicamento_manipulado;
 /
 
 CREATE TABLE tb_promocao of tp_promocao (

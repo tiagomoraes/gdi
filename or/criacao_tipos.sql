@@ -131,9 +131,9 @@ CREATE OR REPLACE TYPE tp_receita_medica AS OBJECT (
 /
 
 CREATE OR REPLACE TYPE tp_medicamento_manipulado AS OBJECT(
-	id VARCHAR2(5),
-	farmaceutico tp_farmaceutico,
-	composto tp_composto
+	produto REF tp_produto,
+	farmaceutico REF tp_farmaceutico,
+	composto REF tp_composto
 );
 /
 

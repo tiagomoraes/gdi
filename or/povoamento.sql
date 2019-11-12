@@ -443,3 +443,114 @@ INSERT INTO tb_composto VALUES(
     )
 );
 /
+
+--INSERINDO PRODUTO
+
+INSERT INTO tb_produto VALUES(
+    tp_produto (
+        '00001',
+        to_date('01/09/20', 'dd/mm/yy'),
+        300,
+        'Neosoro',
+        920,
+        'Sakura',
+        'Steve Rogers',
+        '07/10/19 12:34'
+    )
+);
+/
+
+INSERT INTO tb_produto VALUES(
+    tp_produto (
+        '00010',
+        to_date('10/09/20', 'dd/mm/yy'),
+        350,
+        'Dorflex',
+        820,
+        'Ino',
+        'Tony Stark',
+        '07/10/19 15:44'
+    )
+);
+/
+
+INSERT INTO tb_produto VALUES(
+    tp_produto (
+        '00011',
+        to_date('20/09/20', 'dd/mm/yy'),
+        500,
+        'Losartana',
+        1220,
+        'Kankuro',
+        'Peter Parker',
+        '04/10/19 8:32'
+    )
+);
+/
+
+INSERT INTO tb_produto VALUES(
+    tp_produto (
+        '00100',
+        to_date('30/09/20', 'dd/mm/yy'),
+        800,
+        'Sinvastatina',
+        320,
+        'Hinata',
+        'Stephen Strange',
+        '03/10/19 9:15'
+    )
+);
+/
+
+INSERT INTO tb_produto VALUES(
+    tp_produto (
+        '00101',
+        to_date('10/10/20', 'dd/mm/yy'),
+        3000,
+        'Neosaldina',
+        220,
+        'Rock Lee',
+        'Matheus Belfort',
+        '02/10/19 11:08'
+    )
+);
+/
+
+INSERT INTO tb_produto VALUES(
+    tp_produto (
+        '00110',
+        to_date('20/10/20', 'dd/mm/yy'),
+        300,
+        'Rivotril',
+        2420,
+        'Sakura',
+        'Natasha Romanoff',
+        '02/10/19 15:22'
+    )
+);
+/
+
+INSERT INTO tb_produto VALUES(
+    tp_produto (
+        '00111',
+        to_date('30/10/20', 'dd/mm/yy'),
+        250,
+        'Puran T4',
+        2520,
+        'Ino',
+        'Thor',
+        '02/10/19 16:38'
+    )
+);
+/
+
+--INSERINDO MEDICAMENTO_MANIPULADO
+
+--INSERT INTO tb_medicamento_manipulado VALUES(
+--    tp_medicamento_manipulado (
+--        (SELECT REF(P) FROM tb_produto P WHERE P.id = '00001'), -- ref p/ produto
+--        (SELECT REF(F) FROM tb_farmaceutico F WHERE F.cpf = '04304130170'), -- ref p/ farmaceutico
+--        (SELECT REF(C) FROM tb_composto C WHERE C.id = '00001') -- ref p/ composto
+--    )
+--);
+--/
