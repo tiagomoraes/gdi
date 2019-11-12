@@ -148,7 +148,7 @@ CREATE OR REPLACE TYPE tp_medicamento_manipulado AS OBJECT(
 );
 /
 
-ALTER TYPE tp_produto ADD ATTRIBUTE (data_hora VARCHAR2(20));
+ALTER TYPE tp_produto ADD ATTRIBUTE (data_hora VARCHAR2(20)) CASCADE;
 /
 
 CREATE OR REPLACE TYPE tp_emissao_compra AS OBJECT (
