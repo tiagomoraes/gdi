@@ -608,3 +608,32 @@ INSERT INTO tb_medicamento_manipulado VALUES(
     )
 );
 /
+
+--INSERINDO PROMOCAO
+
+INSERT INTO tb_promocao VALUES(
+    tp_promocao (
+        '00001',
+        20,
+        5
+    )
+);
+/
+
+INSERT INTO tb_promocao VALUES(
+    tp_promocao (
+        '00010',
+        10,
+        null
+    )
+);
+/
+
+INSERT INTO tb_promocao VALUES(
+    tp_promocao (
+        '00011',
+        50,
+        2
+    )
+);
+/
