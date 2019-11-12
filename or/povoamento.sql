@@ -231,3 +231,55 @@ INSERT INTO tb_balconista VALUES(
     )
 );
 /
+
+--INSERINDO CLIENTE
+
+INSERT INTO tb_cliente VALUES(
+    tp_cliente (
+        '42937926193', 
+        'Sakura', 
+        to_date('28/03/00', 'dd/mm/yy'), 
+        varray_fone(tp_fone('585241075'))
+    )
+);
+/
+
+INSERT INTO tb_cliente VALUES(
+    tp_cliente (
+        '06018888980', 
+        'Ino', 
+        to_date('23/09/00', 'dd/mm/yy'), 
+        varray_fone(tp_fone('969963798'))
+    )
+);
+/
+
+INSERT INTO tb_cliente VALUES(
+    tp_cliente (
+        '34938034867', 
+        'Kankuro', 
+        to_date('05/05/00', 'dd/mm/yy'), 
+        varray_fone(tp_fone('663669949'))
+    )
+);
+/
+
+INSERT INTO tb_cliente VALUES(
+    tp_cliente (
+        '63469369054', 
+        'Shino', 
+        to_date('23/01/00', 'dd/mm/yy'), 
+        varray_fone(tp_fone('538961938'))
+    )
+);
+/
+
+INSERT INTO tb_cliente VALUES(
+    tp_cliente (
+        '15051468446', 
+        'Rock Lee', 
+        to_date('27/11/00', 'dd/mm/yy'), 
+        varray_fone(tp_fone('394191384'))
+    )
+);
+/
