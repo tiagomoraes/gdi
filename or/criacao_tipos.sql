@@ -1,18 +1,19 @@
 CREATE OR REPLACE TYPE tp_fone AS OBJECT (
-	numero VARCHAR2(11),
+	ddd VARCHAR2(2),
+	numero VARCHAR2(9),
 	CONSTRUCTOR FUNCTION tp_fone(fone VARCHAR2) RETURN SELF AS RESULT
 );
 /
 
--- da erro na inserção quando tem mais de um cosntrutor igual
-
---CREATE OR REPLACE TYPE BODY tp_fone AS 
---	CONSTRUCTOR FUNCTION tp_fone(fone VARCHAR2(11)) RETURN SELF AS RESULT IS
---		BEGIN
---			numero := fone
---		END;
---END;
---/
+CREATE OR REPLACE TYPE BODY tp_fone AS 
+	CONSTRUCTOR FUNCTION tp_fone(fone VARCHAR2) RETURN SELF AS RESULT IS
+		BEGIN
+			ddd := '81';
+			numero := fone;
+			RETURN;
+		END;
+END;
+/
 
 CREATE OR REPLACE TYPE varray_fone as VARRAY(5) OF tp_fone;
 /
