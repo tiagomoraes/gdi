@@ -1,11 +1,9 @@
 INSERT INTO tb_farmaceutico VALUES(
     tp_farmaceutico (
-        tp_funcionario(
-            '04304130170', 
-            'Naruto', 
-            to_date('10/10/00', 'dd/mm/yy'), 
-            telefone('81630154211')
-        ), 
+        '04304130170', 
+        'Naruto', 
+        to_date('10/10/00', 'dd/mm/yy'), 
+        varray_fone(tp_fone('81630154211')),
         '58142191571', 
         9664, 
         to_date('03/08/02', 'dd/mm/yy'), 
@@ -17,19 +15,18 @@ INSERT INTO tb_farmaceutico VALUES(
             'Apt 101',
             'Sao Cristovao',
             'Arcoverde'
-        )
-    ),
-    'Doutor'
+        ),
+        'Doutor'
+    )
 );
+/
 
 INSERT INTO tb_farmaceutico VALUES(
     tp_farmaceutico (
-        tp_funcionario(
-            '94512104909', 
-            'Shikamaru', 
-            to_date('23/07/00', 'dd/mm/yy'), 
-            telefone('81767883214')
-        ), 
+        '94512104909', 
+        'Shikamaru', 
+        to_date('23/07/00', 'dd/mm/yy'), 
+        varray_fone(tp_fone('81767883214')),
         '04304130170', 
         5342, 
         to_date('15/08/02', 'dd/mm/yy'), 
@@ -41,7 +38,8 @@ INSERT INTO tb_farmaceutico VALUES(
             'Apt 201',
             'Bom Conselho',
             'Belo Jardim'
-        )
-    ),
-    'Doutorando'
+        ),
+        'Doutorando'
+    )
 );
+/
