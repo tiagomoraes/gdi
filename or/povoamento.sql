@@ -283,3 +283,80 @@ INSERT INTO tb_cliente VALUES(
     )
 );
 /
+
+--INSERINDO FORNECEDOR
+
+INSERT INTO tb_fornecedor VALUES(
+    tp_fornecedor (
+        '71527969000163',
+        tp_endereco(
+            '56310380',
+            '450',
+            'Bloco 2',
+            'Cohab',
+            'Petrolina'
+        ),
+        tp_lista_fones(tp_fone('87','361050482'))
+    )
+);
+/
+
+INSERT INTO tb_fornecedor VALUES(
+    tp_fornecedor (
+        '09477207000126',
+        tp_endereco(
+            '55296160',
+            '346',
+            'Bloco 1',
+            'Heliopolis',
+            'Garanhuns'
+        ),
+        tp_lista_fones(tp_fone('368608189'))
+    )
+);
+/
+
+INSERT INTO tb_fornecedor VALUES(
+    tp_fornecedor (
+        '20270630000193',
+        tp_endereco(
+            '53402680',
+            '28',
+            'Bloco 2',
+            'Fragoso',
+            'Ipojuca'
+        ),
+        tp_lista_fones(tp_fone('041390277'))
+    )
+);
+/
+
+INSERT INTO tb_fornecedor VALUES(
+    tp_fornecedor (
+        '59500684000133',
+        tp_endereco(
+            '54410250',
+            '789',
+            'Bloco 3',
+            'Piedade',
+            'Brasilia'
+        ),
+        tp_lista_fones(tp_fone('401607655'))
+    )
+);
+/
+
+INSERT INTO tb_fornecedor VALUES(
+    tp_fornecedor (
+        '86493632000150',
+        tp_endereco(
+            '55192285',
+            '456',
+            'Bloco 1',
+            'Centro',
+            'Santa Cruz'
+        ),
+        tp_lista_fones(tp_fone('87','385156975'))
+    )
+);
+/
