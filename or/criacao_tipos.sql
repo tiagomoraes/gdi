@@ -144,9 +144,11 @@ CREATE OR REPLACE TYPE tp_produto AS OBJECT (
     nome VARCHAR2(20),
     preco NUMBER,
     usuario VARCHAR2(20),
-    medico VARCHAR2(20),
-    data_hora VARCHAR2(20)
+    medico VARCHAR2(20)
 );
+/
+
+ALTER TYPE tp_produto ADD ATTRIBUTE (data_hora VARCHAR2(20));
 /
 
 CREATE OR REPLACE TYPE tp_emissao_compra AS OBJECT (
