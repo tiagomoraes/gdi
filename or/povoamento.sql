@@ -114,3 +114,120 @@ INSERT INTO tb_farmaceutico VALUES(
     )
 );
 /
+
+-- INSERINDO BALCONISTA
+
+INSERT INTO tb_balconista VALUES(
+    tp_balconista (
+        '40080313752', 
+        'Sasuke', 
+        to_date('23/07/00', 'dd/mm/yy'), 
+        varray_fone(tp_fone('150938350')),
+        '89249155255', 
+        8543, 
+        to_date('10/08/02', 'dd/mm/yy'), 
+        40, 
+        12, 
+        tp_endereco(
+            '55200000',
+            '29',
+            'Apt 201',
+            'Pedra Redonda',
+            'Pesqueira'
+        ),
+        79
+    )
+);
+/
+
+INSERT INTO tb_balconista VALUES(
+    tp_balconista (
+        '22827250349', 
+        'Choji', 
+        to_date('01/05/00', 'dd/mm/yy'), 
+        varray_fone(tp_fone('102727834')),
+        '40080313752', 
+        4567, 
+        to_date('15/08/02', 'dd/mm/yy'), 
+        36, 
+        11, 
+        tp_endereco(
+            '55130000',
+            '79',
+            'Apt 705',
+            'Sem bairro',
+            'São Caetano'
+        ),
+        23
+    )
+);
+/
+
+INSERT INTO tb_balconista VALUES(
+    tp_balconista (
+        '22343283060', 
+        'Edmilson Sá', 
+        to_date('23/08/00', 'dd/mm/yy'), 
+        varray_fone(tp_fone('270543237')),
+        '22827250349', 
+        3567, 
+        to_date('26/08/02', 'dd/mm/yy'), 
+        44, 
+        10, 
+        tp_endereco(
+            '55660000',
+            '33',
+            'Apt 809',
+            'Iputinga',
+            'Recife'
+        ),
+        2
+    )
+);
+/
+
+INSERT INTO tb_balconista VALUES(
+    tp_balconista (
+        '21779708149', 
+        'Kiba', 
+        to_date('07/07/00', 'dd/mm/yy'), 
+        varray_fone(tp_fone('520095708')),
+        '22343283060', 
+        1356, 
+        to_date('30/08/02', 'dd/mm/yy'), 
+        36, 
+        15, 
+        tp_endereco(
+            '55602520',
+            '81',
+            'Apt 508',
+            'Imbiribeira',
+            'Recife'
+        ),
+        45
+    )
+);
+/
+
+INSERT INTO tb_balconista VALUES(
+    tp_balconista (
+        '89249155255', 
+        'Tenten', 
+        to_date('09/03/00', 'dd/mm/yy'), 
+        varray_fone(tp_fone('734743323')),
+        '21779708149', 
+        8001, 
+        to_date('29/08/02', 'dd/mm/yy'), 
+        20, 
+        12, 
+        tp_endereco(
+            '50670350',
+            '71',
+            'Apt 902',
+            'Iputinga',
+            'Recife'
+        ),
+        12
+    )
+);
+/
