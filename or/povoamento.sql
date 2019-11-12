@@ -546,11 +546,65 @@ INSERT INTO tb_produto VALUES(
 
 --INSERINDO MEDICAMENTO_MANIPULADO
 
---INSERT INTO tb_medicamento_manipulado VALUES(
---    tp_medicamento_manipulado (
---        (SELECT REF(P) FROM tb_produto P WHERE P.id = '00001'), -- ref p/ produto
---        (SELECT REF(F) FROM tb_farmaceutico F WHERE F.cpf = '04304130170'), -- ref p/ farmaceutico
---        (SELECT REF(C) FROM tb_composto C WHERE C.id = '00001') -- ref p/ composto
---    )
---);
---/
+INSERT INTO tb_medicamento_manipulado VALUES(
+    tp_medicamento_manipulado (
+        (SELECT REF(P) FROM tb_produto P WHERE P.id = '00001'),
+        (SELECT REF(F) FROM tb_farmaceutico F WHERE F.cpf = '04304130170'),
+        (SELECT REF(C) FROM tb_composto C WHERE C.id = '00001')
+    )
+);
+/
+
+INSERT INTO tb_medicamento_manipulado VALUES(
+    tp_medicamento_manipulado (
+        (SELECT REF(P) FROM tb_produto P WHERE P.id = '00010'),
+        (SELECT REF(F) FROM tb_farmaceutico F WHERE F.cpf = '94512104909'),
+        (SELECT REF(C) FROM tb_composto C WHERE C.id = '00010')
+    )
+);
+/
+
+INSERT INTO tb_medicamento_manipulado VALUES(
+    tp_medicamento_manipulado (
+        (SELECT REF(P) FROM tb_produto P WHERE P.id = '00011'),
+        (SELECT REF(F) FROM tb_farmaceutico F WHERE F.cpf = '19876905910'),
+        (SELECT REF(C) FROM tb_composto C WHERE C.id = '00011')
+    )
+);
+/
+
+INSERT INTO tb_medicamento_manipulado VALUES(
+    tp_medicamento_manipulado (
+        (SELECT REF(P) FROM tb_produto P WHERE P.id = '00100'),
+        (SELECT REF(F) FROM tb_farmaceutico F WHERE F.cpf = '26467070615'),
+        (SELECT REF(C) FROM tb_composto C WHERE C.id = '00100')
+    )
+);
+/
+
+INSERT INTO tb_medicamento_manipulado VALUES(
+    tp_medicamento_manipulado (
+        (SELECT REF(P) FROM tb_produto P WHERE P.id = '00101'),
+        (SELECT REF(F) FROM tb_farmaceutico F WHERE F.cpf = '58142191571'),
+        (SELECT REF(C) FROM tb_composto C WHERE C.id = '00101')
+    )
+);
+/
+
+INSERT INTO tb_medicamento_manipulado VALUES(
+    tp_medicamento_manipulado (
+        (SELECT REF(P) FROM tb_produto P WHERE P.id = '00110'),
+        (SELECT REF(F) FROM tb_farmaceutico F WHERE F.cpf = '19876905910'),
+        (SELECT REF(C) FROM tb_composto C WHERE C.id = '00110')
+    )
+);
+/
+
+INSERT INTO tb_medicamento_manipulado VALUES(
+    tp_medicamento_manipulado (
+        (SELECT REF(P) FROM tb_produto P WHERE P.id = '00111'),
+        (SELECT REF(F) FROM tb_farmaceutico F WHERE F.cpf = '04304130170'),
+        (SELECT REF(C) FROM tb_composto C WHERE C.id = '00111')
+    )
+);
+/
