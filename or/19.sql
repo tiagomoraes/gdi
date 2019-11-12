@@ -1,1 +1,1 @@
-SELECT DEREF(C.fornecedor) FROM tb_composto C;
+SELECT DEREF(C.fornecedor).cnpj FROM tb_composto C;
