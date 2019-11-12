@@ -13,13 +13,8 @@ CREATE TABLE tb_cliente OF tp_cliente (
 );
 /
 
---CREATE TABLE tb_fornecedor OF tp_fornecedor NESTED TABLE telefones STORE AS nt_telefones;
---/
-
---CREATE TABLE tb_fornecedor OF tp_fornecedor (
---    cnpj PRIMARY KEY
---);
---/
+CREATE TABLE tb_fornecedor OF tp_fornecedor NESTED TABLE telefones STORE AS nt_telefones;
+/
 
 CREATE TABLE tb_composto OF tp_composto (
     id PRIMARY KEY
