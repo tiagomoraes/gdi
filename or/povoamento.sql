@@ -360,3 +360,86 @@ INSERT INTO tb_fornecedor VALUES(
     )
 );
 /
+
+--INSERINDO COMPOSTO
+
+INSERT INTO tb_composto VALUES(
+    tp_composto (
+        '00001',
+        90,
+        30,
+        'Cloridato de Nafazolina',
+        (SELECT REF(F) FROM tb_fornecedor F WHERE F.cnpj = '71527969000163')
+    )
+);
+/
+
+
+INSERT INTO tb_composto VALUES(
+    tp_composto (
+        '00010',
+        80,
+        35,
+        'Orfenadrina',
+        (SELECT REF(F) FROM tb_fornecedor F WHERE F.cnpj = '20270630000193')
+    )
+);
+/
+
+
+INSERT INTO tb_composto VALUES(
+    tp_composto (
+        '00011',
+        120,
+        50,
+        'Losartan',
+        (SELECT REF(F) FROM tb_fornecedor F WHERE F.cnpj = '86493632000150')
+    )
+);
+/
+
+
+INSERT INTO tb_composto VALUES(
+    tp_composto (
+        '00100',
+        30,
+        80,
+        'Sinvastatina',
+        (SELECT REF(F) FROM tb_fornecedor F WHERE F.cnpj = '09477207000126')
+    )
+);
+/
+
+
+INSERT INTO tb_composto VALUES(
+    tp_composto (
+        '00101',
+        20,
+        300,
+        'Dipirona',
+        null
+    )
+);
+/
+
+INSERT INTO tb_composto VALUES(
+    tp_composto (
+        '00110',
+        240,
+        30,
+        'Rivotril',
+        (SELECT REF(F) FROM tb_fornecedor F WHERE F.cnpj = '59500684000133')
+    )
+);
+/
+
+INSERT INTO tb_composto VALUES(
+    tp_composto (
+        '00111',
+        250,
+        25,
+        'Puran T4',
+        (SELECT REF(F) FROM tb_fornecedor F WHERE F.cnpj = '59500684000133')
+    )
+);
+/
