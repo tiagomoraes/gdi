@@ -52,15 +52,15 @@ CREATE OR REPLACE TYPE BODY tp_funcionario AS
 		BEGIN
 			salario := novo;
 		END;
-	MEMBER FUNCTION trabalhamuito IS
-		resposta VARCHAR2(3);
-		BEGIN:
+		
+	MEMBER FUNCTION trabalhamuito RETURN VARCHAR2 IS
+		BEGIN
+
 			IF (carga_horaria > 6) THEN
-				resposta := 'SIM';
-			ELSE
-				resposta := 'NAO';
+				RETURN 'SIM';
 			END IF;
-			RETURN resposta;
+
+			RETURN 'NAO';
 		END;
 END;
 /
@@ -72,15 +72,14 @@ CREATE OR REPLACE TYPE tp_farmaceutico UNDER tp_funcionario (
 /
 
 CREATE OR REPLACE TYPE BODY tp_farmaceutico AS
-	MEMBER FUNCTION trabalhamuito IS
-		resposta VARCHAR2(3);
-		BEGIN:
+	OVERRIDING MEMBER FUNCTION trabalhamuito RETURN VARCHAR2 IS
+		BEGIN
+			
 			IF (carga_horaria > 4) THEN
-				resposta := 'SIM';
-			ELSE
-				resposta := 'NAO';
+				RETURN 'SIM';
 			END IF;
-			RETURN resposta;
+
+			RETURN 'NAO';
 		END;
 END;
 /
@@ -118,7 +117,7 @@ CREATE OR REPLACE TYPE tp_composto AS OBJECT (
 CREATE OR REPLACE TYPE BODY tp_composto AS
 	MAP MEMBER FUNCTION custoporgrama RETURN NUMBER IS
 		BEGIN
-			RETURN custo / peso
+			RETURN custo/peso;
 		END;
 END;
 /
@@ -171,7 +170,7 @@ CREATE OR REPLACE TYPE BODY tp_promocao AS
 		BEGIN
 			IF self.percentual > p.percentual
 				RETURN 1;
-			ELSIF self.percentual = p.percentual
+			ELSE IF self.percentual = p.percentual
 				RETURN 0;
 			ELSE
 				RETURN -1;
