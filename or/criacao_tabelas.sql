@@ -27,7 +27,7 @@ CREATE TABLE tb_produto OF tp_produto (
 /
 
 CREATE TABLE tb_medicamento_manipulado OF tp_medicamento_manipulado(
-    produto SCOPE IS tb_produto,
+    produto WITH ROWID REFERENCES tb_produto,
     farmaceutico SCOPE IS tb_farmaceutico,
     composto SCOPE IS tb_composto
 );

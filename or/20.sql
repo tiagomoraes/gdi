@@ -1,1 +1,1 @@
-SELECT VALUE(F) FROM tb_farmaceutico F
+SELECT VALUE(F) AS value_farmaceutico FROM tb_farmaceutico F
