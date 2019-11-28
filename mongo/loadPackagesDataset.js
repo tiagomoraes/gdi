@@ -63,14 +63,56 @@ db.packages.find( { $text: { $search: "Cairo"} } );
 // 20
 db.packages.find( { cities: { $all: ["Calgary", "Quebec"] } } );
 
-//30
+// 30
 db.packages.update(
   {country: "China"},
   { $addToSet: { cities: "Wuxi"} }
 );
 
+// 28
+db.packages.aggregate(
+  [
+    {
+      $project:
+      {
+        country: 1,
+        barato:
+        {
+          $cond: { if: { $gte: ["price", 3500] }, then: "N", else: "Y" }
+        }
+      }
+    }
+  ]
+);
 
 
+// 24
+db.packages.aggregate([
+  {
+     $project: {
+        price: {
+           $filter: {
+              input: "$price",
+              as: "price",
+              cond: { $gte: [ "$$price", 5000 ] }
+           }
+        }
+     }
+  }
+])
+
+
+// 18                   é só isso??? tem que ser algo útil ou pode ser só assim?
+exports = function(nome) {
+  return "Bem vindo, " + nome + ", qual pacote deseja?"
+}
+
+// 15
+db.packages.aggregate(
+  {
+    $limit: 3
+  }
+)
 
 
 
