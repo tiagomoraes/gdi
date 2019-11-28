@@ -22,6 +22,24 @@ db.packages.update(
   }
 )
 
+// 11
+db.packages.update(
+  { country: "China"},
+  {
+    $max: {
+      price: 5248
+    }
+  }
+)
+
+// 12
+db.packages.aggregate([{
+  $group: {
+    _id: "$country",
+    price_avg: {$avg: "$price"}
+  }
+}])
+
 // 2 14 19
 db.packages.find().pretty().sort({ price: -1 });
 
@@ -113,7 +131,6 @@ db.packages.aggregate(
     $limit: 3
   }
 )
-
 
 
 
