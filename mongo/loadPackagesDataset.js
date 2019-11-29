@@ -2,11 +2,27 @@
 use packages;
 
 db.packages.insertMany([
-  { country: "Peru", price: 3210, cities: ["Lima", "Cusco", "Machu Picchu"], daysStaying: 10 },
+  { country: "Peru", price: 3210, cities: ["Lima", "Cusco", "Machu Picchu"], daysStaying: 10,  },
   { country: "Egypt", price: 5430, cities: ["Cairo", "Alexandria", "Luxor"], daysStaying: 10 },
   { country: "China", price: 5021, cities: ["Beijing", "Shanghai"], daysStaying: 10 },
   { country: "Canada", price: 6031, cities: ["Toronto", "Montreal", "Vancouver"], daysStaying: 10 },
-  { country: "Canada", price: 6532, cities: ["Calgary", "Quebec"], daysStaying: 10, discount: "Y" }
+  { country: "Canada", price: 6532, cities: ["Calgary", "Quebec"], daysStaying: 10, discount: "Y" },
+  { country: "Canada", price: 7420, cities: ["Quebec", "Toronto", "Vancouver"], daysStaying: 14},
+  { country: "Canada", price: 6956, cities: ["Ottawa",  "Montreal", "Quebec"], daysStaying: 9},
+  { country: "Russia", price: 7200, cities: ["Moscow", "Saint Petersburg", "Kazan", "Kaliningrad", "Vladivostok"], daysStaying: 14, discount: "Y" },
+  { country: "United Kingdom", price: 6200, cities: ["London", "Manchester", "Glasgow", "Liverpool"], daysStaying: 7},
+  { country: "United Kingdom", price: 5550, cities: ["London", "Birmingham", "Sheffield"], daysStaying: 5, discount: "Y" },
+  { country: "France", price: 8321, cities: ["Paris", "Marseille", "Lyon", "Nice"], daysStaying: 10 },
+  { country: "France", price: 6794, cities: ["Marseille", "Lyon", "Nice", "Nantes", "Toulon"], daysStaying: 7, discount: "Y" },
+  { country: "Portuagal", price: 6400, cities: ["Lisboa", "Porto", "Coimbra", "Évora"], daysStaying: 6, discount: "Y" },
+  { country: "Denmark", price: 7469, cities: ["Copenhagen", "Odense", "Kolding"], daysStaying: 8},
+  { country: "Bolivia", price: 3839, cities: ["Santa Cruz", "La Paz", "Potosí"], daysStaying: 7, discount: "Y" },
+  { country: "Argentina", price: 2932, cities: ["Rosario", "Córdoba", "La Plata", "Tucumán"], daysStaying: 6, discount: "Y" },
+  { country: "Mexico", price: 4121, cities: ["Mexico City", "Guadalajara", "Juárez"], daysStaying: 5, discount: "Y" },
+  { country: "Mexico", price: 6532, cities: ["Mexico City", "Guadalajara", "Cancún"], daysStaying: 14},
+  { country: "United States", price: 7132, cities: ["Los Angeles", "San Diego", "San Jose", "San Francisco"], daysStaying: 10},
+  { country: "United States", price: 8123, cities: ["Las Vegas", "New York", "Chicago"], daysStaying: 13},
+  { country: "Ejasland", price: 999999, cities: ["Disney", "Rip rbu", "Monster Energy", "Edmilson Town"], daysStaying: 666}
 ]);
 
 // 26
@@ -105,7 +121,6 @@ db.packages.aggregate(
   ]
 );
 
-
 // 24
 db.packages.aggregate([
   {
@@ -120,12 +135,6 @@ db.packages.aggregate([
      }
   }
 ]);
-
-
-// 18                   é só isso??? tem que ser algo útil ou pode ser só assim?
-// exports = function(nome) {
-//   return "Bem vindo, " + nome + ", qual pacote deseja?"
-// }
 
 // 15
 db.packages.aggregate(
