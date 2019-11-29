@@ -62,7 +62,7 @@ db.packages.aggregate([
   {
     $group: {
       _id: "$cities",
-      count: { $sum: 1 } /////////////////////////////////////////////////////////////////////////////
+      count: { $sum: 1 }
     }
   }
 ]);
@@ -96,7 +96,7 @@ db.packages.aggregate(
         country: 1,
         barato:
         {
-          $cond: { if: { $gte: ["price", 3500] }, then: "N", else: "Y" }
+          $cond: { if: { $gte: ["$price", 3500] }, then: "N", else: "Y" }
         }
       }
     }
@@ -147,7 +147,7 @@ db.packages.mapReduce(
   {out: "package_frequency_country"}
 );
 
-db.package_frequency_country();
+db.package_frequency_country.find();
 
 // 27
 db.packages.renameCollection("pacotes");
