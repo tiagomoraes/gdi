@@ -10,7 +10,7 @@ db.packages.insertMany([
 ]);
 
 // 26
-db.packages.save( { country: "Pernambuco", price: 1234, cities: ["Recife", "Arcoverde", "Caruaru"], daysStaying: 10  } ) // meu país pernambuco
+db.packages.save( { country: "Pernambuco", price: 1234, cities: ["Recife", "Arcoverde", "Caruaru"], daysStaying: 10  } ); // meu país pernambuco
 
 // 21 25
 db.packages.update(
@@ -20,7 +20,7 @@ db.packages.update(
       daysStaying: 12
     }
   }
-)
+);
 
 // 11
 db.packages.update(
@@ -30,7 +30,7 @@ db.packages.update(
       price: 5248
     }
   }
-)
+);
 
 // 12
 db.packages.aggregate([{
@@ -38,7 +38,7 @@ db.packages.aggregate([{
     _id: "$country",
     price_avg: {$avg: "$price"}
   }
-}])
+}]);
 
 // 2 14 19
 db.packages.find().pretty().sort({ price: -1 });
@@ -117,23 +117,37 @@ db.packages.aggregate([
         }
      }
   }
-])
+]);
 
 
 // 18                   é só isso??? tem que ser algo útil ou pode ser só assim?
-exports = function(nome) {
-  return "Bem vindo, " + nome + ", qual pacote deseja?"
-}
+// exports = function(nome) {
+//   return "Bem vindo, " + nome + ", qual pacote deseja?"
+// }
 
 // 15
 db.packages.aggregate(
   {
     $limit: 3
   }
-)
+);
 
+// 17 18
+let mapFunction = function() {
+  emit(this.country, 1);
+};
 
+let reduceFunction = function(country, values) {
+  return Array.sum(values);
+};
 
+db.packages.mapReduce(
+  mapFunction,
+  reduceFunction,
+  {out: "package_frequency_country"}
+);
+
+db.package_frequency_country();
 
 // 27
 db.packages.renameCollection("pacotes");
