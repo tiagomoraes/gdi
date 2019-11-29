@@ -76,6 +76,8 @@ db.packages.aggregate([
 db.packages.find( { discount: { $exists: true} } );
 
 // 22 23
+db.packages.createIndex( { cities: "text" } );
+
 db.packages.find( { $text: { $search: "Cairo"} } );
 
 // 20
@@ -110,9 +112,9 @@ db.packages.aggregate([
      $project: {
         price: {
            $filter: {
-              input: "$price",
+              input: "$cities",
               as: "price",
-              cond: { $gte: [ "$$price", 5000 ] }
+              cond: { $gte: [ "$price", 5000 ] }
            }
         }
      }
