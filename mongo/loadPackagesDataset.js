@@ -124,15 +124,15 @@ db.packages.aggregate(
 // 24
 db.packages.aggregate([
   {
-     $project: {
-        price: {
-           $filter: {
-              input: "$cities",
-              as: "price",
-              cond: { $gte: [ "$price", 5000 ] }
-           }
+    $project: {
+      hotels: {
+        $filter: {
+          input: "$hotels",
+          as: "hotel",
+          cond: { $gte: ["$$hotel.daysStaying", 2] }
         }
-     }
+      }
+    }
   }
 ]);
 
